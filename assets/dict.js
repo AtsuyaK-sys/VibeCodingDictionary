@@ -453,6 +453,11 @@ function render(cfg){
     });
     main.classList.toggle('allmiss', !any);
   }
+  // 一覧ページの横断検索から来たとき（?q=…）は、その言葉で検索した状態で開く。URL の ?q= は残さない
+  try{
+    const q0 = new URLSearchParams(location.search).get('q');
+    if (q0){ tb.input.value = q0; runSearch(q0); history.replaceState(null, '', location.pathname + location.hash); }
+  }catch(e){}
   return { select };
 }
 
