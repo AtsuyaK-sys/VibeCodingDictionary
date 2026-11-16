@@ -41,6 +41,12 @@
   .p-steps i{ font-style:normal; font:700 12px var(--mono); color:var(--accent); display:block; margin-bottom:2px; }
   .p-tree{ background:var(--code-bg); border:1px solid var(--border); border-radius:14px; padding:14px 18px; font:12.5px/1.7 var(--mono); overflow:auto; white-space:pre; }
   .p-empty{ display:none; color:var(--muted); padding:30px 0; text-align:center; }
+  .p-start{ display:inline-flex; flex-wrap:wrap; gap:4px 10px; align-items:center; margin:0 0 14px; padding:10px 16px; border-radius:12px; background:color-mix(in srgb, #16a34a 12%, var(--surface)); border:1.5px solid color-mix(in srgb, #16a34a 45%, var(--border)); color:var(--text); font-size:13.5px; max-width:100%; }
+  .p-start:hover{ text-decoration:none; border-color:#16a34a; }
+  .p-start b{ color:#15803d; }
+  :root[data-theme="dark"] .p-start b{ color:#4ade80; }
+  @media (prefers-color-scheme:dark){ :root:not([data-theme="light"]) .p-start b{ color:#4ade80; } }
+  .p-start span{ color:var(--muted); }
   /* 全辞典の横断検索 */
   .p-find{ position:relative; max-width:760px; margin:0 0 14px; }
   .p-find input{ width:100%; border:1.5px solid var(--border-strong); background:var(--surface); border-radius:14px; padding:13px 16px 13px 46px; font:500 15.5px var(--font); color:var(--text); box-shadow:0 6px 20px rgb(0 0 0 / .06); }
@@ -73,6 +79,7 @@
   <p class="eyebrow">✦ Vibe Coding Dictionary</p>
   <h1>AIと作るための、<br><span>名前と見本の辞典。</span></h1>
   <p class="lead">バイブコーディングでは「何と呼ぶか」を知っているだけで、AIへの指示が一気に正確になります。デザイン・アニメーション・動画・音・ゲーム・API・技術選び・エラー対処まで、<b>実際に動く見本</b>と<b>そのまま使える指示文</b>を用途ごとにまとめました。</p>
+  <a class="p-start" href="start.html"><b>🔰 はじめての方へ</b><span>何から読めばいいか・最初の1時間の進め方はこちら →</span></a>
   <div class="p-find"><input id="find" type="search" placeholder="全辞典から探す（例：モーダル、イージング、CORS、逆光）" aria-label="全辞典を横断検索" autocomplete="off"><p class="hint">全部の辞典の項目をまとめて検索できます。日本語でも英語でも。<kbd>/</kbd> キーで入力欄へ移動します。</p></div>
   <div class="p-res" id="res" aria-live="polite"></div>
   <div class="stats" id="stats"></div>
@@ -128,6 +135,7 @@
     'security.html':['基本の考え方','APIキー','認証','認可','攻撃と対策','通信・ブラウザ','AIコードの危険','運用チェック'],
     'database.html':['基本','テーブル設計','SQL（実行可）','インデックス','データを守る','型・日付・お金','サービス','AI・エラー'],
     'git-terminal.html':['Gitの基本','ブランチ','元に戻す','GitHub','ターミナル','パッケージ','環境変数','ローカル開発'],
+    'start.html':['バイブコーディングとは','目的別の読む順番','最初の1時間','まず覚える言葉','つまずいたら','辞典の地図'],
     'ai-basics.html':['AIの地図','学習のしくみ','分ける・まとめる','評価のしかた','ニューラルネット','文章を作るAI','画像・音声を作るAI','限界と付き合い方'],
     'ai-workflow.html':['作るものを決める','要件を書く','画面と流れ','作業を分ける','AIとの開発サイクル','エージェント','確認・テスト','テンプレート'],
     'ai-integration.html':['LLMの基本','APIの呼び方','構造化出力','ツール・エージェント','RAG','コスト・キャッシュ','品質・評価・安全','AI機能のUX'],
@@ -146,7 +154,7 @@
     'release.html':['SEO','SNS共有','表示速度','セキュリティ','アクセシビリティ','法務','直前チェック'],
     'resources.html':['アイコン','イラスト','写真','動画','音','フォント','3D','ゲーム素材','参考サイト','ツール'],
   };
-  const LIVE = { 'ai-basics.html':'LIVE', 'motion-math.html':'LIVE', 'image-prompts.html':'LIVE', 'ux-writing.html':'LIVE','3d.html':'3D', 'dataviz.html':'LIVE', 'automation.html':'LIVE', 'app-distribution.html':'LIVE', 'payments.html':'LIVE', 'testing.html':'TEST', 'ai-workflow.html':'LIVE', 'ai-integration.html':'LIVE', 'security.html':'LIVE', 'database.html':'SQL', 'git-terminal.html':'LIVE', 'motion.html':'LIVE', 'web-design.html':'LIVE', 'ui-components.html':'LIVE', 'color-typography.html':'LIVE', 'video.html':'LIVE', 'sound.html':'SOUND', 'game-dev.html':'LIVE', 'free-api.html':'API', 'release.html':'CHECK' };
+  const LIVE = { 'start.html':'START', 'ai-basics.html':'LIVE', 'motion-math.html':'LIVE', 'image-prompts.html':'LIVE', 'ux-writing.html':'LIVE','3d.html':'3D', 'dataviz.html':'LIVE', 'automation.html':'LIVE', 'app-distribution.html':'LIVE', 'payments.html':'LIVE', 'testing.html':'TEST', 'ai-workflow.html':'LIVE', 'ai-integration.html':'LIVE', 'security.html':'LIVE', 'database.html':'SQL', 'git-terminal.html':'LIVE', 'motion.html':'LIVE', 'web-design.html':'LIVE', 'ui-components.html':'LIVE', 'color-typography.html':'LIVE', 'video.html':'LIVE', 'sound.html':'SOUND', 'game-dev.html':'LIVE', 'free-api.html':'API', 'release.html':'CHECK' };
   const all = VD.DICTS.concat(VD.EXTRA);
   const grid = document.getElementById('grid'), filter = document.getElementById('filter'), empty = document.getElementById('empty');
   document.getElementById('stats').append(
