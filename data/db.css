@@ -1,0 +1,129 @@
+/* =========================================================
+   データベース・データ設計辞典（db- 接頭辞）
+   ========================================================= */
+/* SQLプレイグラウンド */
+.db-sql{ font:12px/1.55 var(--mono); min-height:58px; tab-size:2; }
+.db-res{ display:flex; flex-direction:column; gap:6px; overflow:auto; min-height:0; }
+.db-res .meta{ font:11px var(--mono); color:var(--muted); }
+.db-res .err{ font:11.5px/1.55 var(--mono); color:var(--bad); background:color-mix(in srgb, var(--bad) 7%, var(--surface)); border:1px solid color-mix(in srgb, var(--bad) 40%, var(--border)); border-radius:8px; padding:6px 9px; white-space:pre-wrap; }
+.db-res .err b{ font-family:var(--font); display:block; color:var(--stage-ink); font-size:11.5px; margin-top:3px; }
+.db-res .okmsg{ font:11.5px var(--mono); color:var(--ok); }
+.db-res .kt-tbl{ width:auto; min-width:60%; }
+.db-loading{ font-size:12px; color:var(--muted); }
+
+/* 表の部位 */
+.db-anat{ position:relative; }
+.db-anat .kt-tbl td, .db-anat .kt-tbl th{ cursor:pointer; transition:background .15s; }
+.db-anat .kt-tbl .sel{ background:color-mix(in srgb, var(--accent) 22%, var(--surface)) !important; }
+.db-anat .tname{ display:inline-block; font:800 12px var(--mono); padding:3px 9px; border-radius:7px 7px 0 0; background:var(--accent); color:#fff; cursor:pointer; }
+
+/* DBの種類 */
+.db-doc{ font:11px/1.5 var(--mono); }
+.db-kv{ display:flex; flex-direction:column; gap:4px; font:11.5px var(--mono); }
+.db-kv div{ display:flex; gap:8px; align-items:center; background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:4px 8px; }
+.db-kv b{ color:var(--accent); white-space:nowrap; }
+.db-kv i{ font-style:normal; color:var(--muted); overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.db-svg{ width:100%; height:100%; display:block; }
+.db-svg text{ font:700 10.5px var(--font); fill:var(--stage-ink); }
+.db-svg .dot{ fill:var(--accent); opacity:.55; }
+.db-svg .dot.hit{ opacity:1; stroke:var(--stage-ink); stroke-width:1.5; }
+.db-svg .q{ fill:var(--bad); }
+.db-svg .edge{ stroke:color-mix(in srgb, var(--stage-ink) 35%, transparent); stroke-width:1.5; }
+.db-svg .node{ fill:var(--surface); stroke:var(--accent); stroke-width:2; }
+
+/* ER図 */
+.db-er{ position:relative; flex:1; min-height:0; }
+.db-er svg{ position:absolute; inset:0; width:100%; height:100%; pointer-events:none; overflow:visible; }
+.db-er svg line{ stroke:color-mix(in srgb, var(--stage-ink) 45%, transparent); stroke-width:1.6; transition:stroke .2s; }
+.db-er svg line.on{ stroke:var(--accent); stroke-width:2.4; }
+.db-er svg text{ font:800 10px var(--mono); fill:var(--muted); }
+.db-ent{ position:absolute; min-width:90px; max-width:31%; background:var(--surface); border:1.5px solid var(--border-strong); border-radius:9px; font:11px/1.45 var(--mono); cursor:pointer; box-shadow:0 2px 6px rgb(0 0 0 / .06); transition:border-color .2s, box-shadow .2s; z-index:1; }
+.db-ent b{ display:block; padding:3px 8px; border-radius:7px 7px 0 0; background:color-mix(in srgb, var(--stage-ink) 8%, transparent); font-size:11px; }
+.db-ent div{ padding:0 8px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.db-ent div:last-child{ padding-bottom:3px; }
+.db-ent .pk{ color:var(--warn); font-weight:700; } .db-ent .fk{ color:var(--accent); }
+.db-ent.on{ border-color:var(--accent); box-shadow:0 0 0 3px var(--accent-soft); }
+.db-ent.dim{ opacity:.4; }
+
+/* 関係のサンプルデータ */
+.db-rel{ display:flex; gap:10px; align-items:flex-start; min-height:0; overflow:auto; }
+.db-rel > div{ flex:1; min-width:0; }
+.db-rel .kt-tbl tr{ cursor:pointer; }
+
+/* インデックスの探索 */
+.db-cells{ display:grid; grid-template-columns:repeat(16, 1fr); gap:3px; }
+.db-cells i{ aspect-ratio:1; border-radius:3px; background:color-mix(in srgb, var(--stage-ink) 10%, transparent); font:700 8px/1 var(--mono); display:grid; place-items:center; color:var(--muted); font-style:normal; transition:background .12s; }
+.db-cells i.seen{ background:color-mix(in srgb, var(--warn) 45%, transparent); color:#fff; }
+.db-cells i.hit{ background:var(--ok); color:#fff; }
+.db-cells i.out{ opacity:.25; }
+
+/* 棒グラフ・タイムライン */
+.db-bars{ display:flex; flex-direction:column; gap:6px; }
+.db-bars .r{ display:grid; grid-template-columns:96px 1fr 70px; gap:8px; align-items:center; font-size:11.5px; }
+.db-bars .bar{ height:16px; border-radius:5px; background:color-mix(in srgb, var(--stage-ink) 8%, transparent); overflow:hidden; }
+.db-bars .bar i{ display:block; height:100%; background:var(--accent); border-radius:5px; transition:width .4s; }
+.db-bars .bar i.bad{ background:var(--bad); } .db-bars .bar i.ok{ background:var(--ok); }
+.db-bars b{ font:700 11.5px var(--mono); text-align:right; }
+.db-q{ display:flex; flex-wrap:wrap; gap:2px; }
+.db-q i{ width:9px; height:14px; border-radius:2px; background:var(--accent); opacity:.85; }
+.db-q i.bad{ background:var(--bad); }
+
+/* 口座（トランザクション） */
+.db-acc{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:6px; }
+.db-acc div{ text-align:center; background:var(--surface); border:1.5px solid var(--border); border-radius:10px; padding:6px; font-size:11px; font-weight:700; }
+.db-acc div b{ display:block; font:900 16px var(--mono); }
+.db-acc div.bad{ border-color:var(--bad); color:var(--bad); }
+.db-log{ font:11px/1.6 var(--mono); background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:5px 8px; overflow:auto; min-height:0; }
+.db-log div.ok{ color:var(--ok); } .db-log div.bad{ color:var(--bad); } .db-log div.dim{ color:var(--faint); }
+
+/* マイグレーション */
+.db-mig{ display:flex; flex-direction:column; gap:3px; }
+.db-mig div{ display:flex; align-items:center; gap:8px; font:11.5px var(--mono); padding:4px 8px; border-radius:7px; background:var(--surface); border:1px solid var(--border); }
+.db-mig div.done{ border-color:color-mix(in srgb, var(--ok) 55%, var(--border)); }
+.db-mig div.done::before{ content:"✓"; color:var(--ok); font-weight:900; }
+.db-mig div.todo::before{ content:"○"; color:var(--faint); }
+.db-mig div.cur{ box-shadow:0 0 0 2px var(--accent-soft); border-color:var(--accent); }
+
+/* 接続文字列の分解 */
+.db-url{ font:12.5px/1.8 var(--mono); overflow-wrap:anywhere; background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:8px 10px; }
+.db-url span{ border-radius:4px; padding:1px 2px; cursor:pointer; transition:background .15s; }
+.db-url span:hover, .db-url span.on{ background:var(--accent-soft); outline:1.5px solid var(--accent); }
+.db-url .c0{ color:#7c3aed; } .db-url .c1{ color:#0369a1; } .db-url .c2{ color:#dc2626; } .db-url .c3{ color:#15803d; } .db-url .c4{ color:#b45309; } .db-url .c5{ color:#be185d; } .db-url .c6{ color:var(--muted); }
+
+/* 時計（タイムゾーン） */
+.db-tz{ display:grid; grid-template-columns:repeat(3, 1fr); gap:6px; }
+.db-tz div{ text-align:center; background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:6px 4px; font-size:11px; font-weight:700; }
+.db-tz div b{ display:block; font:900 17px var(--mono); }
+.db-tz div.bad{ border-color:var(--bad); color:var(--bad); }
+
+/* 長さの比較・数値 */
+.db-len{ display:grid; grid-template-columns:1fr 1fr; gap:5px; }
+.db-len div{ display:flex; justify-content:space-between; gap:8px; background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:5px 9px; font-size:11.5px; }
+.db-len div b{ font:800 13px var(--mono); }
+.db-cells3{ display:grid; grid-template-columns:repeat(3, 1fr); gap:6px; }
+.db-cells3 div{ text-align:center; background:var(--surface); border:1.5px solid var(--border); border-radius:10px; padding:8px 4px; font-size:11px; }
+.db-cells3 div b{ display:block; font:900 18px var(--mono); min-height:24px; }
+.db-cells3 div b.null{ color:var(--faint); font-style:italic; font-size:14px; }
+
+/* IDの生成 */
+.db-ids{ display:flex; flex-direction:column; gap:3px; font:11.5px var(--mono); overflow:auto; min-height:0; }
+.db-ids div{ display:flex; gap:8px; padding:3px 8px; border-radius:6px; background:var(--surface); border:1px solid var(--border); }
+.db-ids div b{ min-width:72px; font-family:var(--font); font-size:11px; color:var(--muted); }
+.db-ids div span{ overflow-wrap:anywhere; }
+
+/* Firestore の木 */
+.db-tree{ font:11.5px/1.75 var(--mono); background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:6px 10px; overflow:auto; min-height:0; }
+.db-tree .col{ color:#0369a1; font-weight:700; } .db-tree .doc{ color:#7c3aed; } .db-tree .fld{ color:var(--muted); }
+.db-tree div{ white-space:nowrap; }
+
+/* 実行順序 */
+.db-order{ display:flex; flex-wrap:wrap; gap:4px; }
+.db-order span{ font:800 10.5px var(--mono); padding:3px 7px; border-radius:6px; background:var(--surface); border:1px solid var(--border); color:var(--muted); }
+.db-order span.on{ background:var(--accent); border-color:var(--accent); color:#fff; }
+.db-order span.done{ color:var(--stage-ink); border-color:var(--accent-line); }
+
+/* ベン図（JOIN） */
+.db-venn{ width:150px; height:86px; flex:none; }
+.db-venn circle{ stroke:var(--stage-ink); stroke-width:1.5; fill:transparent; }
+.db-venn .f{ fill:var(--accent); opacity:.55; }
+@media (max-width:360px){ .db-cells{ grid-template-columns:repeat(12, 1fr); } .db-bars .r{ grid-template-columns:70px 1fr 56px; } .db-tz div b{ font-size:14px; } .db-venn{ width:120px; height:70px; } }

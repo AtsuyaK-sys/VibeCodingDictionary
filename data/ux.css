@@ -1,0 +1,71 @@
+/* =========================================================
+   UXライティング辞典（ux- 接頭辞）
+   ========================================================= */
+.ux-two{ display:grid; grid-template-columns:1fr 1fr; gap:8px; flex:1; min-height:0; }
+.ux-two > *{ min-height:0; min-width:0; display:flex; flex-direction:column; gap:4px; }
+@media (max-width:560px){ .ux-two{ grid-template-columns:1fr; } }
+/* 前と後 */
+.ux-ba{ display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+@media (max-width:460px){ .ux-ba{ grid-template-columns:1fr; } }
+.ux-ba > div{ border-radius:10px; padding:8px 10px; font-size:12.5px; line-height:1.6; border:1px solid var(--border); background:var(--surface); }
+.ux-ba > div::before{ display:block; font:800 10.5px var(--font); margin-bottom:2px; }
+.ux-ba .bad{ border-color:color-mix(in srgb, var(--bad) 40%, var(--border)); background:color-mix(in srgb, var(--bad) 5%, var(--surface)); }
+.ux-ba .bad::before{ content:'✗ 改善前'; color:var(--bad); }
+.ux-ba .good{ border-color:color-mix(in srgb, var(--ok) 45%, var(--border)); background:color-mix(in srgb, var(--ok) 6%, var(--surface)); }
+.ux-ba .good::before{ content:'✓ 改善後'; color:var(--ok); }
+/* チェッカー */
+.ux-out{ font-size:12.5px; line-height:1.9; background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:6px 10px; overflow:auto; min-height:0; white-space:pre-wrap; overflow-wrap:anywhere; }
+.ux-out mark{ background:color-mix(in srgb, var(--warn) 30%, transparent); color:inherit; border-radius:3px; padding:0 1px; border-bottom:2px solid var(--warn); cursor:help; }
+.ux-out mark.bad{ background:color-mix(in srgb, var(--bad) 22%, transparent); border-bottom-color:var(--bad); }
+.ux-out mark.info{ background:color-mix(in srgb, #0ea5e9 20%, transparent); border-bottom-color:#0ea5e9; }
+.ux-stats{ display:flex; flex-wrap:wrap; gap:5px; }
+.ux-stats span{ font-size:11px; padding:2px 8px; border-radius:999px; background:var(--surface); border:1px solid var(--border); }
+.ux-stats span b{ font-variant-numeric:tabular-nums; }
+.ux-stats span.ok{ border-color:color-mix(in srgb, var(--ok) 45%, var(--border)); }
+.ux-stats span.warn{ border-color:color-mix(in srgb, var(--warn) 55%, var(--border)); background:color-mix(in srgb, var(--warn) 8%, var(--surface)); }
+.ux-stats span.bad{ border-color:color-mix(in srgb, var(--bad) 45%, var(--border)); background:color-mix(in srgb, var(--bad) 7%, var(--surface)); }
+.ux-list{ display:flex; flex-direction:column; gap:3px; overflow:auto; min-height:0; font-size:11.5px; }
+.ux-list div{ padding:3px 8px; border-radius:6px; background:var(--surface); border:1px solid var(--border); }
+.ux-list div b{ color:var(--bad); }
+.ux-list div i{ font-style:normal; color:var(--ok); font-weight:700; }
+/* 画面の見本 */
+.ux-scr{ position:relative; flex:1; min-height:0; border-radius:12px; background:var(--surface); border:1px solid var(--border); overflow:hidden; display:flex; flex-direction:column; }
+.ux-scr .bar{ padding:6px 10px; font-weight:800; font-size:12px; border-bottom:1px solid var(--border); background:var(--surface-2); }
+.ux-dim{ position:absolute; inset:0; background:rgb(0 0 0 / .35); display:grid; place-items:center; padding:10px; z-index:3; }
+.ux-dlg{ background:var(--surface); color:var(--text); border-radius:14px; padding:14px; width:min(300px, 100%); box-shadow:0 12px 34px rgb(0 0 0 / .3); font-size:12.5px; line-height:1.6; }
+.ux-dlg h5{ margin:0 0 4px; font-size:14px; }
+.ux-dlg .bt{ display:flex; justify-content:flex-end; gap:6px; margin-top:12px; flex-wrap:wrap; }
+.ux-b{ border-radius:8px; padding:6px 12px; font:700 12px var(--font); border:1px solid var(--border-strong); background:var(--surface); color:var(--text); cursor:pointer; }
+.ux-b.pri{ background:var(--accent); border-color:var(--accent); color:#fff; }
+.ux-b.danger{ background:var(--bad); border-color:var(--bad); color:#fff; }
+.ux-field{ display:flex; flex-direction:column; gap:3px; font-size:12px; }
+.ux-field label{ font-weight:700; font-size:11.5px; }
+.ux-field .help{ font-size:10.5px; color:var(--muted); }
+.ux-field .err{ font-size:11px; color:var(--bad); font-weight:700; }
+.ux-field input{ padding:6px 9px; border-radius:7px; border:1.5px solid var(--border-strong); font:12.5px var(--font); background:var(--surface); color:var(--text); width:100%; min-width:0; }
+.ux-field input.bad{ border-color:var(--bad); }
+.ux-toast{ position:absolute; left:50%; bottom:12px; transform:translateX(-50%); z-index:4; background:#1f2937; color:#fff; border-radius:10px; padding:8px 12px; font-size:12px; display:flex; gap:12px; align-items:center; box-shadow:0 8px 22px rgb(0 0 0 / .3); white-space:nowrap; max-width:92%; overflow:hidden; }
+.ux-toast u{ color:#93c5fd; cursor:pointer; font-weight:700; text-decoration:none; }
+.ux-toast.err{ background:#7f1d1d; }
+.ux-empty{ flex:1; display:grid; place-items:center; align-content:center; gap:6px; text-align:center; padding:12px; font-size:12px; color:var(--muted); }
+.ux-empty .ic{ font-size:34px; }
+.ux-empty b{ color:var(--text); font-size:13.5px; }
+/* 通知・メール */
+.ux-lock{ border-radius:14px; padding:10px; background:linear-gradient(160deg, #1e3a8a, #6d28d9); display:flex; flex-direction:column; gap:6px; }
+.ux-notif{ background:rgb(255 255 255 / .85); color:#111; border-radius:12px; padding:7px 10px; font-size:11.5px; line-height:1.45; display:grid; grid-template-columns:22px 1fr; gap:2px 8px; }
+.ux-notif i{ grid-row:span 2; width:22px; height:22px; border-radius:6px; background:var(--accent); display:grid; place-items:center; font-style:normal; color:#fff; font-size:12px; }
+.ux-notif b{ display:-webkit-box; -webkit-line-clamp:1; -webkit-box-orient:vertical; overflow:hidden; }
+.ux-notif span{ display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+.ux-inbox{ display:flex; flex-direction:column; border:1px solid var(--border); border-radius:10px; overflow:hidden; background:var(--surface); }
+.ux-inbox div{ padding:6px 10px; border-bottom:1px solid var(--border); font-size:11.5px; display:grid; grid-template-columns:1fr auto; gap:0 8px; }
+.ux-inbox div:last-child{ border-bottom:0; }
+.ux-inbox b, .ux-inbox span{ white-space:nowrap; overflow:hidden; text-overflow:ellipsis; min-width:0; }
+.ux-inbox span{ color:var(--muted); grid-column:1 / -1; }
+.ux-inbox .me{ background:color-mix(in srgb, var(--accent) 8%, var(--surface)); }
+/* トーンの表 */
+.ux-grid{ display:grid; grid-template-columns:auto repeat(3, 1fr); gap:4px; font-size:11px; }
+.ux-grid > b{ display:grid; place-items:center; color:var(--muted); font-size:10.5px; text-align:center; }
+.ux-grid button{ border:1px solid var(--border); background:var(--surface); color:var(--text); border-radius:8px; padding:6px; font:11.5px/1.45 var(--font); text-align:left; cursor:pointer; min-height:52px; }
+.ux-grid button.on{ border-color:var(--accent); box-shadow:0 0 0 2px color-mix(in srgb, var(--accent) 30%, transparent); }
+.ux-btnrow{ display:flex; flex-wrap:wrap; gap:6px; align-items:center; }
+.ux-fix{ display:inline-block; overflow:hidden; white-space:nowrap; text-overflow:clip; border-radius:8px; padding:6px 10px; background:var(--accent); color:#fff; font:700 12px var(--font); }

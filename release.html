@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>公開・品質チェック辞典 | Vibe Coding 辞典</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Noto+Sans+JP:wght@400;500;700;900&display=swap">
+<link rel="stylesheet" href="assets/dict.css">
+</head>
+<body>
+<script src="assets/dict.js"></script>
+<script>window.TABS = [];</script>
+<script src="data/release.js"></script>
+<script>
+VD.render({
+  id: 'release',
+  icon: '✓',
+  en: 'Launch Checklist',
+  title: '公開・品質チェック辞典',
+  accent: '#15803d',
+  lead: '作ったものを<b>世に出す前</b>に確認したいSEO・SNS共有・表示速度・セキュリティ・アクセシビリティ・法務の項目を、チェックリスト形式でまとめました。チェックの状態はこのブラウザに保存されます。',
+  howto: [
+    ['チェックする', '各項目の左のチェックボックスで完了を記録。カテゴリごとに達成度が表示されます'],
+    ['コードをコピー', 'metaタグや設定ファイルは「コード」を開いてそのまま使えます'],
+    ['AIに点検させる', '「公開直前チェック」タブの総点検プロンプトでまとめて確認'],
+  ],
+  tabs: TABS,
+});
+</script>
+</body>
+</html>

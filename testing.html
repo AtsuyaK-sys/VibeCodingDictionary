@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>テスト・品質辞典 | Vibe Coding 辞典</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700;800;900&display=swap">
+<link rel="stylesheet" href="assets/dict.css">
+<link rel="stylesheet" href="assets/kit.css">
+<link rel="stylesheet" href="data/ts.css">
+</head>
+<body>
+<script src="assets/dict.js"></script>
+<script src="assets/kit.js"></script>
+<script>window.TABS = [];</script>
+<script src="data/ts-a.js"></script>
+<script src="data/ts-b.js"></script>
+<script>
+VD.render({
+  id: 'testing',
+  icon: '☑',
+  en: 'Testing & Quality',
+  title: 'テスト・品質辞典',
+  accent: '#4d7c0f',
+  lead: '作ったものが<b>思った通りに動き続ける</b>ための辞典です。テストの種類と書き方、ページの中で実際に動く<b>ミニテストランナー</b>、境界値・モック・カバレッジ、Playwright の E2E テスト、アクセシビリティと表示速度の確認、見た目のテスト、CI、そして<b>AIが書きがちな「いつも通るテスト」</b>の見抜き方まで。',
+  howto: [
+    ['書いてみる', '「単体テスト」のミニテストランナーで、バグのある関数をテストを見ながら直す'],
+    ['境目を狙う', 'バグは「以上・未満」の境目に集まる。境界値のテストを必ず入れる'],
+    ['自動で守る', 'CI で毎回テストを実行し、失敗したらマージできないようにする'],
+  ],
+  tabs: TABS,
+});
+</script>
+</body>
+</html>

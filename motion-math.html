@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>動きの計算辞典 | Vibe Coding 辞典</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700;800;900&display=swap">
+<link rel="stylesheet" href="assets/dict.css">
+<link rel="stylesheet" href="assets/kit.css">
+<link rel="stylesheet" href="data/mm.css">
+</head>
+<body>
+<script src="assets/dict.js"></script>
+<script src="assets/kit.js"></script>
+<script>window.TABS = [];</script>
+<script src="data/mm-a.js"></script>
+<script src="data/mm-b.js"></script>
+<script>
+VD.render({
+  id: 'motion-math',
+  icon: '∿',
+  en: 'Math & Physics for Motion',
+  title: '動きの計算辞典（数学・物理）',
+  accent: '#65a30d',
+  lead: 'アニメーション・ゲーム・インタラクションの裏にある<b>計算</b>を、触って分かるようにまとめた辞典です。座標とベクトル、補間とイージング、重力と積分、ばね、波とノイズ、当たり判定、ベジェ曲線、スクロールや並べ替えなどUIの計算まで。式は<b>JavaScriptでそのまま使える形</b>で載せ、「AIにどう頼むか」も各項目に付けています。',
+  howto: [
+    ['触る', 'デモの点をドラッグ・スライダーを動かして、式と見た目の関係をつかむ'],
+    ['式を拾う', '項目のコードと「UIで使う計算」の早見表から、必要な1行を持っていく'],
+    ['AIに頼む', '「dt を使って」「ばねで」「最短回転で」など、用語を入れて指示する'],
+  ],
+  tabs: TABS,
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>エラー・トラブル辞典 | Vibe Coding 辞典</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Noto+Sans+JP:wght@400;500;700;900&display=swap">
+<link rel="stylesheet" href="assets/dict.css">
+<style>
+  code.err{ white-space:normal; word-break:break-word; font-size:12.5px; color:var(--bad); background:color-mix(in srgb, var(--bad) 7%, var(--surface)); border-color:color-mix(in srgb, var(--bad) 25%, var(--border)); display:inline; line-height:1.6; }
+  .item.row .term{ width:330px; }
+  @media (max-width:720px){ .item.row .term{ width:auto; } }
+</style>
+</head>
+<body>
+<script src="assets/dict.js"></script>
+<script>window.TABS = [];</script>
+<script src="data/errors.js"></script>
+<script>
+VD.render({
+  id: 'errors',
+  icon: '⚠',
+  en: 'Errors & Troubleshooting',
+  title: 'エラー・トラブル辞典',
+  accent: '#dc2626',
+  lead: 'バイブコーディングで出会いやすいエラーの<b>意味・よくある原因・対処・AIへの伝え方</b>をまとめた辞典です。エラー文の一部を上の検索欄に貼り付けて探せます。',
+  searchPlaceholder: 'エラー文の一部を貼り付けて検索（/ キー）',
+  howto: [
+    ['探す', 'エラーメッセージの特徴的な部分（例：is not defined、EADDRINUSE）で検索'],
+    ['伝える', 'エラーは要約せず全文を、操作手順・期待した結果・環境と一緒にAIへ'],
+    ['焦らない', '削除・強制push・セキュリティ無効化など、取り返しのつかない対処はしない'],
+  ],
+  tabs: TABS,
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>技術スタック・ライブラリ辞典 | Vibe Coding 辞典</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Noto+Sans+JP:wght@400;500;700;900&display=swap">
+<link rel="stylesheet" href="assets/dict.css">
+</head>
+<body>
+<script src="assets/dict.js"></script>
+<script>window.TABS = [];</script>
+<script src="data/tech.js"></script>
+<script>
+VD.render({
+  id: 'tech-stack',
+  icon: '⚙',
+  en: 'Tech Stack & Libraries',
+  title: '技術スタック・ライブラリ辞典',
+  accent: '#475569',
+  lead: '「何で作るか」を決めるための辞典です。作りたいもの別の<b>定番構成</b>から、フロントエンド・バックエンド・DB・ホスティング・便利ライブラリまで、用途と導入コマンドをまとめました。',
+  howto: [
+    ['構成を決める', '「おすすめ構成」の表から、作りたいものに近い行を選んでAIに伝える'],
+    ['定番を選ぶ', 'AIは情報の多い技術ほど正確に書ける。迷ったら定番タグの付いたものを'],
+    ['バージョンを伝える', '「Next.js App Router」「Tailwind v4」など世代を指定すると古い書き方を防げる'],
+  ],
+  tabs: TABS,
+});
+</script>
+</body>
+</html>

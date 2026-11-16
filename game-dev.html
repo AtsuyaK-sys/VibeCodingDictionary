@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ゲーム制作辞典 | Vibe Coding 辞典</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap">
+<link rel="stylesheet" href="assets/dict.css">
+<style>
+  .stage canvas{ cursor:crosshair; }
+  .snd-btn{ border:0; background:var(--accent); color:#fff; font:700 12.5px var(--font); padding:7px 14px; border-radius:9px; cursor:pointer; }
+  .snd-btn.ghost{ background:var(--surface); color:var(--text); border:1px solid var(--border); font-weight:500; }
+  .gm-juice{ position:absolute; inset:0; display:grid; grid-template-columns:1fr 150px; }
+  .gm-juice .cv{ position:relative; min-width:0; }
+  .gm-juice .opts{ background:var(--surface); border-left:1px solid var(--border); padding:10px 12px; display:flex; flex-direction:column; gap:5px; font-size:12.5px; overflow:auto; }
+  .gm-juice .opts label{ display:flex; gap:6px; align-items:center; cursor:pointer; }
+  .gm-juice .opts input{ accent-color:var(--accent); }
+  .gm-juice .all{ margin-top:auto; border:1px solid var(--border); background:var(--surface-2); border-radius:8px; padding:4px 8px; font:12px var(--font); cursor:pointer; color:var(--text); }
+  @media (max-width:640px){ .gm-juice{ grid-template-columns:1fr; grid-template-rows:1fr auto; } .gm-juice .opts{ border-left:0; border-top:1px solid var(--border); flex-direction:row; flex-wrap:wrap; } .gm-juice .all{ margin-top:0; } }
+  .gm-hp{ position:absolute; inset:0; display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:center; align-content:center; }
+  .gm-hp .bar{ position:relative; width:80%; height:18px; border-radius:9px; background:#2a2f45; overflow:hidden; border:2px solid #111; }
+  .gm-hp .bar i{ position:absolute; left:0; top:0; bottom:0; width:100%; }
+  .gm-hp .lag{ background:#fff; transition:width .5s ease-out; }
+  .gm-hp .cur{ background:linear-gradient(#4ade80, #16a34a); transition:width .08s; }
+  .gm-hp .bar.hit{ animation:gmShake .3s; }
+  @keyframes gmShake{ 20%{ transform:translateX(-5px); } 40%{ transform:translateX(5px); } 60%{ transform:translateX(-3px); } 80%{ transform:translateX(2px); } }
+  .gm-score{ position:absolute; inset:0; display:flex; gap:16px; align-items:center; justify-content:center; }
+  .gm-score b{ font:900 34px var(--mono); min-width:120px; text-align:right; display:inline-block; }
+  .gm-score b.pop{ animation:gmPop .35s cubic-bezier(.34,1.56,.64,1); }
+  @keyframes gmPop{ 0%{ transform:scale(1.4); color:var(--accent); } 100%{ transform:scale(1); } }
+</style>
+</head>
+<body>
+<script src="assets/dict.js"></script>
+<script>window.TABS = [];</script>
+<script src="data/game.js"></script>
+<script>
+VD.render({
+  id: 'game-dev',
+  icon: '◆',
+  en: 'Game Development',
+  title: 'ゲーム制作辞典',
+  accent: '#2f9e44',
+  lead: 'ゲームのジャンル、動かすための仕組み（メカニクス）、気持ちよさを生む演出（ジュース）、設計の考え方、エンジンまで。<b>Canvasで実際に動く見本</b>付きで、触りながら名前と仕組みを覚えられます。',
+  howto: [
+    ['まずジャンルから', '「ジャンル」タブの指示例は、そのまま遊べるゲームが出てくるように具体的に書いています'],
+    ['仕組みを足す', '「メカニクス」の見本はマウス・クリックで操作できます'],
+    ['手触りを磨く', '「手触り演出」でチェックを切り替え、演出の効果を体感'],
+  ],
+  tabs: TABS,
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+/* =========================================================
+   動きの計算辞典（mm- 接頭辞）
+   ========================================================= */
+.mm-cv{ position:relative; flex:1; min-height:0; border-radius:10px; background:var(--surface); border:1px solid var(--border); overflow:hidden; touch-action:none; }
+.mm-cv canvas{ display:block; }
+.mm-cv .tip{ position:absolute; right:8px; top:6px; font-size:10.5px; color:var(--muted); pointer-events:none; }
+.kt > .mm-cv:first-child .tip, .kt > .mm-two:first-child .tip{ right:36px; }
+.mm-ctl{ display:grid; grid-template-columns:auto 1fr auto; gap:3px 8px; align-items:center; font-size:11.5px; }
+.mm-ctl b{ font-size:11px; color:var(--muted); white-space:nowrap; }
+.mm-ctl output{ font:700 11px var(--mono); min-width:44px; text-align:right; }
+.mm-ctl input[type=range]{ width:100%; accent-color:var(--accent); }
+.mm-f{ font:12px/1.6 var(--mono); background:var(--code-bg); border:1px solid var(--border); border-radius:8px; padding:6px 10px; white-space:pre-wrap; overflow-wrap:anywhere; }
+.mm-f b{ color:var(--accent); }
+.mm-two{ display:grid; grid-template-columns:1fr 1fr; gap:8px; flex:1; min-height:0; }
+.mm-two > *{ min-width:0; min-height:0; display:flex; flex-direction:column; gap:4px; }
+@media (max-width:520px){ .mm-two{ grid-template-columns:1fr; grid-template-rows:minmax(150px, 1fr) auto; } }
+.mm-box{ width:44px; height:44px; border-radius:10px; background:var(--accent); }
+.mm-cards{ display:grid; grid-template-columns:repeat(4, 1fr); gap:6px; width:100%; max-width:340px; margin:0 auto; }
+.mm-bar{ position:sticky; top:0; height:6px; background:var(--surface-2); z-index:2; }
+.mm-bar i{ display:block; height:100%; width:0; background:var(--accent); }
+.mm-sp{ padding:10px 14px 30px; }
+.mm-sp p{ margin:6px 0 110px; color:var(--muted); font-size:12px; }
+.mm-sp p:last-child{ margin-bottom:0; }
+.mm-rv{ height:100px; border-radius:12px; margin:0 0 60px; display:grid; place-items:center; color:#fff; font-weight:800; }
+.mm-off{ position:absolute; left:0; top:0; width:32px; height:32px; display:grid; place-items:center; font-size:17px; color:#fff; background:var(--accent); border-radius:8px; offset-anchor:center; animation:mm-fly 3s ease-in-out infinite alternate; }
+@keyframes mm-fly{ from{ offset-distance:0%; } to{ offset-distance:100%; } }
+@media (prefers-reduced-motion:reduce){ .mm-off{ animation-duration:12s; } }
+.mm-cards div{ aspect-ratio:1; border-radius:10px; display:grid; place-items:center; color:#fff; font:800 15px var(--mono); }
+.mm-scroll{ overflow-y:auto; flex:1; min-height:0; border-radius:10px; border:1px solid var(--border); background:var(--surface); position:relative; }
+.mm-dial{ position:relative; width:150px; height:150px; border-radius:50%; border:2px solid var(--border-strong); margin:auto; }
+.mm-dial i{ position:absolute; left:50%; top:50%; width:4px; height:64px; margin-left:-2px; margin-top:-64px; background:var(--accent); border-radius:2px; transform-origin:50% 100%; }
+.mm-dial span{ position:absolute; font:700 10px var(--mono); color:var(--muted); transform:translate(-50%, -50%); }

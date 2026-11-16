@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>要件定義・AI開発の進め方辞典 | Vibe Coding 辞典</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700;800;900&display=swap">
+<link rel="stylesheet" href="assets/dict.css">
+<link rel="stylesheet" href="assets/kit.css">
+<link rel="stylesheet" href="data/wf.css">
+</head>
+<body>
+<script src="assets/dict.js"></script>
+<script src="assets/kit.js"></script>
+<script>window.TABS = [];</script>
+<script src="data/wf-a.js"></script>
+<script src="data/wf-b.js"></script>
+<script>
+VD.render({
+  id: 'ai-workflow',
+  icon: '▤',
+  en: 'Requirements & AI Development Workflow',
+  title: '要件定義・AI開発の進め方辞典',
+  accent: '#0d9488',
+  lead: 'AIは「作り方」が得意でも、「何を作るか」「どこまで作るか」「本当にできたか」は人が決める必要があります。企画の1枚紙から、要件・画面設計・タスク分解、AIとの開発サイクル、AIエージェント（Claude Code など）の使いこなし、テストとレビュー、<b>そのまま使えるテンプレート</b>まで。入力すると文書や依頼文がその場でできあがるデモ付きです。',
+  howto: [
+    ['まず1枚紙', '「作るものを決める」の企画書ジェネレーターから始めると、AIへの最初の依頼がそのまま作れます'],
+    ['AIとの進め方', '「AIとの開発サイクル」の依頼文ビルダーとコンテキストの仕組みを押さえる'],
+    ['困ったら', '「テンプレート集」からコピーして、docs/ フォルダや Issue に貼って使う'],
+  ],
+  tabs: TABS,
+});
+</script>
+</body>
+</html>

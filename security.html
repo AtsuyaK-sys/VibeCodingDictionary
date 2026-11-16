@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>セキュリティ・認証辞典 | Vibe Coding 辞典</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700;800;900&display=swap">
+<link rel="stylesheet" href="assets/dict.css">
+<link rel="stylesheet" href="assets/kit.css">
+<link rel="stylesheet" href="data/security.css">
+</head>
+<body>
+<script src="assets/dict.js"></script>
+<script src="assets/kit.js"></script>
+<script>window.TABS = [];</script>
+<script src="data/security-a.js"></script>
+<script src="data/security-b.js"></script>
+<script src="data/security-c.js"></script>
+<script>
+VD.render({
+  id: 'security',
+  icon: '⚿',
+  en: 'Security & Authentication',
+  title: 'セキュリティ・認証辞典',
+  accent: '#be123c',
+  lead: 'AIが書いたコードは「動くけど危ない」ことがあります。APIキーの置き場所、ログインの仕組み、他人のデータが見えてしまう原因、代表的な攻撃と対策を、<b>このページの中で安全に再現しながら</b>まとめました。後半には、AIコードによくある危険な書き方と、公開前のチェックリストがあります。',
+  howto: [
+    ['まず体験', '「基本の考え方」と「秘密情報・APIキー」のデモを触ると、守るべきポイントがつかめます'],
+    ['AIにレビューを頼む', '「AIコードの危険パターン」の依頼文を、そのまま使えます'],
+    ['公開前に', '「公開・運用チェック」で1つずつ確認（チェックはブラウザに保存）'],
+  ],
+  tabs: TABS,
+});
+</script>
+</body>
+</html>

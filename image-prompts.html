@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>画像・イラスト表現辞典 | Vibe Coding 辞典</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700;800;900&display=swap">
+<link rel="stylesheet" href="assets/dict.css">
+<link rel="stylesheet" href="assets/kit.css">
+<link rel="stylesheet" href="data/ig.css">
+</head>
+<body>
+<script src="assets/dict.js"></script>
+<script src="assets/kit.js"></script>
+<script>window.TABS = [];</script>
+<script src="data/ig-vocab.js"></script>
+<script src="data/ig-a.js"></script>
+<script src="data/ig-b.js"></script>
+<script>
+VD.render({
+  id: 'image-prompts',
+  icon: '◩',
+  en: 'Image Generation & Illustration',
+  title: '画像・イラスト表現辞典（画像生成プロンプト語彙）',
+  accent: '#0ea5e9',
+  lead: '以前PDFで作った「Qwen-Image-2.1 画像生成プロンプト完全語彙辞典」を、<b>検索できるHTML</b>にしました。人物・背景・光・カメラ・画風・雰囲気・文字・編集・品質・テンプレートの<b>約1,400語の英語表現</b>を、段階ごとのタブにそのまま収録しています。さらに、プロンプトの組み立て機、ライティング・ショットサイズ・構図・画風の見本、テンプレートの穴埋め、Webで使うときの注意を追加しました。<b>表の英語はクリックでコピー</b>できます。',
+  howto: [
+    ['まず組み立てる', '「基本と組み立て方」の組み立て機で、10の要素を順に選んで英文を作る'],
+    ['1語ずつ差し替える', 'シードを固定し、各タブの語彙表の語を1つずつ入れ替えて違いを比べる'],
+    ['検索で引く', '上の検索欄に日本語（例：逆光、ボブ、水彩）を入れると、全タブから語彙を探せる'],
+  ],
+  tabs: TABS,
+});
+</script>
+</body>
+</html>

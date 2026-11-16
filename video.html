@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>動画制作辞典 | Vibe Coding 辞典</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=JetBrains+Mono:wght@400;600;700&family=Klee+One:wght@600&family=M+PLUS+Rounded+1c:wght@800;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap">
+<link rel="stylesheet" href="assets/dict.css">
+<link rel="stylesheet" href="data/video.css">
+</head>
+<body>
+<script src="assets/dict.js"></script>
+<script>window.TABS = [];</script>
+<script src="data/video-a.js"></script>
+<script src="data/video-b.js"></script>
+<script src="data/video-c.js"></script>
+<script>
+// 映像フレーム系の見本は 16:9 の枠で表示する（横長カードで上下が切れないように）
+TABS.forEach(t => (t.sections || []).forEach(s => (s.items || []).forEach(it => {
+  if (it.demo && !it.h && /class="(vd-frame|cam |tr |mg|cg|ed-|lt |tl)/.test(it.demo)) it.stage = ((it.stage || '') + ' r169').trim();
+})));
+VD.render({
+  id: 'video',
+  icon: '▶',
+  en: 'Video Production',
+  title: '動画制作辞典',
+  accent: '#e0364f',
+  lead: '撮影・編集・演出・仕様・AI動画生成に必要な用語を、<b>動く見本</b>で確認できる辞典です。ショットサイズやカメラワークの指示例は日本語のまま Sora・Veo・Kling などのAI動画生成に使え、FFmpeg・Remotion のコードはバイブコーディングでの動画自動化にそのまま使えます。',
+  howto: [
+    ['撮る前に', 'ショットサイズ・アングル・カメラワーク・構図・照明で「どう撮るか」を決める'],
+    ['編集で', 'トランジション・編集技法・カラー・テロップ・音で仕上げる'],
+    ['書き出し・自動化', '仕様・規格で投稿先に合わせ、FFmpegやRemotionで処理を自動化'],
+  ],
+  tabs: TABS,
+});
+</script>
+</body>
+</html>

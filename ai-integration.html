@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI組み込み辞典 | Vibe Coding 辞典</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700;800;900&display=swap">
+<link rel="stylesheet" href="assets/dict.css">
+<link rel="stylesheet" href="assets/kit.css">
+<link rel="stylesheet" href="data/llm.css">
+</head>
+<body>
+<script src="assets/dict.js"></script>
+<script src="assets/kit.js"></script>
+<script>window.TABS = [];</script>
+<script src="data/llm-a.js"></script>
+<script src="data/llm-b.js"></script>
+<script>
+VD.render({
+  id: 'ai-integration',
+  icon: '◈',
+  en: 'Building AI Features (LLM Apps)',
+  title: 'AI組み込み辞典（LLMアプリ開発）',
+  accent: '#0891b2',
+  lead: '自分のアプリにAIの機能（要約・分類・チャット・資料検索・エージェント）を組み込むための辞典です。トークンと次の言葉の予測、APIの呼び方、決まった形で受け取る構造化出力、ツールとエージェント、<b>RAG（資料を検索して答える）</b>、料金計算とプロンプトキャッシュ、評価と安全、AI機能の画面づくりまで。コード例は Anthropic の公式SDK（TypeScript）です。',
+  howto: [
+    ['まず仕組み', '「LLMの基本」でトークンと料金の考え方をつかむ'],
+    ['作る前に試算', '「速さ・コスト・キャッシュ」の料金計算機で月額を見積もる'],
+    ['品質を測る', '「品質・評価・安全」の評価（eval）で、改善を数字で確かめる'],
+  ],
+  tabs: TABS,
+});
+</script>
+</body>
+</html>

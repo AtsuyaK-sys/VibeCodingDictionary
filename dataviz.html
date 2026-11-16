@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>グラフ・データ可視化辞典 | Vibe Coding 辞典</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700;800;900&display=swap">
+<link rel="stylesheet" href="assets/dict.css">
+<link rel="stylesheet" href="assets/kit.css">
+<link rel="stylesheet" href="data/dv.css">
+</head>
+<body>
+<script src="assets/dict.js"></script>
+<script src="assets/kit.js"></script>
+<script>window.TABS = [];</script>
+<script src="data/dv-a.js"></script>
+<script src="data/dv-b.js"></script>
+<script>
+VD.render({
+  id: 'dataviz',
+  icon: '▥',
+  en: 'Charts & Data Visualization',
+  title: 'グラフ・データ可視化辞典',
+  accent: '#2a78d6',
+  lead: '数字を「伝わる絵」にするための辞典です。目的に合ったグラフの選び方、棒・折れ線・散布図などの基本、<b>2軸・虹色・0から始まらない軸</b>などのよくある失敗と直し方、操作できるグラフ、ダッシュボードとKPI、データの準備、ライブラリ、地図まで。グラフはすべて<b>色覚の多様性とダークモードまで検証した配色</b>で、マウスを乗せると値が出ます。',
+  howto: [
+    ['目的から選ぶ', '「グラフの選び方」のナビで、伝えたいことに合うグラフを確かめる'],
+    ['失敗を知る', '「見やすくするルール」で、悪い例と良い例を切り替えて見比べる'],
+    ['AIに頼む', '各項目の「AIへの指示例」をコピーして、目的・色・操作まで指定する'],
+  ],
+  tabs: TABS,
+});
+</script>
+</body>
+</html>

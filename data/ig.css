@@ -1,0 +1,49 @@
+/* =========================================================
+   画像・イラスト表現辞典（ig- 接頭辞）
+   ========================================================= */
+/* 語彙表：英語をクリックでコピー */
+.ig-en{ font:600 12.5px/1.45 var(--mono); color:var(--text); cursor:copy; border-radius:4px; padding:0 2px; }
+.ig-en:hover{ background:var(--accent-soft); color:var(--accent); }
+.panel .sec:not(:has(.sec-title)){ margin-top:-14px; }
+.ig-ex{ border:1px solid var(--border); background:var(--surface); border-radius:12px; padding:10px 12px; margin:6px 0; }
+.ig-ex .hd{ display:flex; align-items:center; justify-content:space-between; gap:8px; font:800 11.5px var(--font); color:var(--accent); margin-bottom:4px; }
+.ig-ex pre{ margin:0; font:12px/1.65 var(--mono); white-space:pre-wrap; overflow-wrap:anywhere; background:var(--code-bg); border-radius:8px; padding:8px 10px; }
+.ig-ex p{ margin:6px 0 0; font-size:12.5px; color:var(--muted); }
+.ig-p{ margin:6px 0; font-size:13.5px; line-height:1.8; color:var(--text); }
+/* 組み立てた英文 */
+.ig-out{ font:12px/1.65 var(--mono); background:var(--code-bg); border:1px solid var(--border); border-radius:8px; padding:8px 10px; overflow:auto; min-height:0; white-space:pre-wrap; overflow-wrap:anywhere; }
+.ig-out b{ color:var(--accent); font-weight:700; }
+.ig-sel{ display:grid; grid-template-columns:auto 1fr; gap:4px 8px; align-items:center; font-size:11.5px; overflow:auto; min-height:0; }
+.ig-sel select, .ig-sel input{ font:12px var(--font); padding:4px 6px; border-radius:7px; border:1px solid var(--border-strong); background:var(--surface); color:var(--text); min-width:0; width:100%; }
+.ig-sel b{ color:var(--muted); font-size:11px; white-space:nowrap; }
+/* 絵の見本（SVG） */
+.ig-art{ position:relative; flex:1; min-height:0; border-radius:10px; overflow:hidden; background:#1f2937; display:grid; place-items:center; }
+.ig-art svg{ width:100%; height:100%; display:block; }
+.ig-art .cap{ position:absolute; left:8px; bottom:8px; font:700 11px var(--mono); color:#fff; background:rgb(0 0 0 / .45); padding:2px 8px; border-radius:6px; }
+.ig-frame{ position:relative; height:100%; max-width:100%; border-radius:6px; overflow:hidden; box-shadow:0 0 0 2px #fff; }
+/* ライティングの顔 */
+.ig-face{ position:relative; width:min(170px, 60%); aspect-ratio:3 / 4; }
+.ig-face .head{ position:absolute; left:15%; right:15%; top:6%; bottom:22%; border-radius:46% 46% 42% 42%; background:#c99a7a; transition:background .4s, box-shadow .4s; }
+.ig-face .neck{ position:absolute; left:38%; right:38%; top:70%; bottom:8%; background:#a87c60; border-radius:0 0 8px 8px; }
+.ig-face .body{ position:absolute; left:0; right:0; bottom:-6%; height:18%; border-radius:50% 50% 0 0; background:#3f3f46; }
+.ig-face .eye{ position:absolute; top:42%; width:12%; height:5%; border-radius:50%; background:#2b211c; }
+.ig-face .nose{ position:absolute; left:47%; top:50%; width:6%; height:14%; border-radius:40%; background:rgb(0 0 0 / .12); }
+.ig-face .lamp{ position:absolute; width:22px; height:22px; border-radius:50%; background:radial-gradient(circle, #fff7d6, #fbbf24); box-shadow:0 0 18px 6px rgb(251 191 36 / .6); transform:translate(-50%, -50%); transition:left .4s, top .4s; z-index:2; }
+/* 構図の補助線 */
+.ig-guides{ position:absolute; inset:0; pointer-events:none; }
+/* パレット */
+.ig-pal{ display:flex; border-radius:10px; overflow:hidden; height:46px; }
+.ig-pal i{ flex:1; display:grid; place-items:end center; font:700 9.5px var(--mono); padding-bottom:3px; color:rgb(255 255 255 / .9); text-shadow:0 1px 2px rgb(0 0 0 / .5); }
+.ig-words{ display:flex; flex-wrap:wrap; gap:4px; }
+.ig-words span{ font:600 11.5px var(--mono); padding:2px 8px; border-radius:999px; background:var(--surface); border:1px solid var(--border); cursor:copy; }
+/* 透明（市松模様） */
+.ig-checker{ background-color:#fff; background-image:linear-gradient(45deg, #d4d4d8 25%, transparent 25%), linear-gradient(-45deg, #d4d4d8 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #d4d4d8 75%), linear-gradient(-45deg, transparent 75%, #d4d4d8 75%); background-size:16px 16px; background-position:0 0, 0 8px, 8px -8px, -8px 0; }
+/* ポスターの見本 */
+.ig-poster{ position:relative; height:100%; aspect-ratio:2 / 3; max-width:100%; border-radius:6px; overflow:hidden; background:linear-gradient(180deg, #7dd3fc, #fde68a); box-shadow:0 6px 18px rgb(0 0 0 / .2); display:flex; flex-direction:column; padding:10px; }
+.ig-poster .tx{ font-weight:900; line-height:1.05; overflow-wrap:anywhere; }
+.ig-canvas{ flex:1; min-height:0; display:flex; gap:8px; }
+.ig-canvas > div{ flex:1; min-width:0; display:flex; flex-direction:column; gap:3px; font-size:10.5px; color:var(--muted); align-items:center; }
+.ig-canvas canvas{ width:100%; flex:1; min-height:0; border-radius:8px; image-rendering:pixelated; object-fit:contain; }
+.ig-two{ display:grid; grid-template-columns:1fr 1fr; gap:8px; flex:1; min-height:0; }
+.ig-two > *{ min-width:0; min-height:0; display:flex; flex-direction:column; gap:4px; }
+@media (max-width:540px){ .ig-two{ grid-template-columns:1fr; } }

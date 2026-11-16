@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>アプリ・配布形態辞典 | Vibe Coding 辞典</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700;800;900&display=swap">
+<link rel="stylesheet" href="assets/dict.css">
+<link rel="stylesheet" href="assets/kit.css">
+<link rel="stylesheet" href="data/ap.css">
+</head>
+<body>
+<script src="assets/dict.js"></script>
+<script src="assets/kit.js"></script>
+<script>window.TABS = [];</script>
+<script src="data/ap-a.js"></script>
+<script src="data/ap-b.js"></script>
+<script>
+VD.render({
+  id: 'app-distribution',
+  icon: '▯',
+  en: 'Apps & Distribution',
+  title: 'スマホアプリ・配布形態辞典',
+  accent: '#0284c7',
+  lead: '作ったものを<b>どんな形で届けるか</b>の辞典です。Webサイト・PWA・スマホアプリ（Expo・Flutter）・デスクトップアプリ（Electron・Tauri）・ブラウザ拡張・LINEミニアプリの選び方と作法、<b>App Store・Google Play の審査と手数料（日本のスマホ新法後）</b>、段階的公開や更新のお願いまで。',
+  howto: [
+    ['形を決める', '「形の選び方」の診断で、まずWeb（PWA）で十分かを確かめる'],
+    ['作法を知る', '許可の聞き方・セーフエリア・権限の最小化など、それぞれの決まりごとを押さえる'],
+    ['出してから', '「配布と更新」で、段階的公開・更新のお願い・ディープリンクを準備する'],
+  ],
+  tabs: TABS,
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>自動化・Bot辞典 | Vibe Coding 辞典</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700;800;900&display=swap">
+<link rel="stylesheet" href="assets/dict.css">
+<link rel="stylesheet" href="assets/kit.css">
+<link rel="stylesheet" href="data/au.css">
+</head>
+<body>
+<script src="assets/dict.js"></script>
+<script src="assets/kit.js"></script>
+<script>window.TABS = [];</script>
+<script src="data/au-a.js"></script>
+<script src="data/au-b.js"></script>
+<script>
+VD.render({
+  id: 'automation',
+  icon: '⟳',
+  en: 'Automation & Bots',
+  title: '自動化・Bot辞典',
+  accent: '#059669',
+  lead: 'くり返しの作業を仕組みに任せるための辞典です。トリガーとアクションの考え方、<b>Google Apps Script</b>、Zapier・Make・n8n などのノーコード自動化、<b>Webhook</b> の安全な受け取り方、cron とタイムゾーンの落とし穴、LINE・Slack・Discord の Bot、スクレイピングのルール、そして AI を組み込むときの注意まで。',
+  howto: [
+    ['まず組み立てる', '「自動化の基本」でトリガーとアクションを選ぶと、AIへの頼み方が文章になる'],
+    ['失敗に備える', '再試行・通知・二重処理の防止は、どの自動化でも必ず入れる'],
+    ['時刻に注意', '「定期実行」で日本時間と UTC のずれを確かめてから cron を書く'],
+  ],
+  tabs: TABS,
+});
+</script>
+</body>
+</html>

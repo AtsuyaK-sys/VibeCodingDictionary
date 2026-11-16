@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UXライティング辞典 | Vibe Coding 辞典</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700;800;900&display=swap">
+<link rel="stylesheet" href="assets/dict.css">
+<link rel="stylesheet" href="assets/kit.css">
+<link rel="stylesheet" href="data/ux.css">
+</head>
+<body>
+<script src="assets/dict.js"></script>
+<script src="assets/kit.js"></script>
+<script>window.TABS = [];</script>
+<script src="data/ux-a.js"></script>
+<script src="data/ux-b.js"></script>
+<script>
+VD.render({
+  id: 'ux-writing',
+  icon: '✎',
+  en: 'UX Writing & Microcopy',
+  title: 'UXライティング辞典',
+  accent: '#db2777',
+  lead: 'ボタン・ラベル・エラー・空の画面・通知など、<b>画面の中の言葉</b>を設計するための辞典です。読みやすさと敬語のチェッカー、<b>表記ゆれを見つけて直すツール</b>、確認ダイアログやフォームのエラーの良い例・悪い例、トーンの地図、多言語化での注意まで。AIが書いた文言の直し方と、AIへの頼み方も載せています。',
+  howto: [
+    ['まず診断', '「基本」の読みやすさチェッカーに、今の画面の文章を貼って印を見る'],
+    ['型で直す', 'ボタンは動詞、エラーは「何が・なぜ・どうする」、リンクは行き先'],
+    ['ルールにする', '表記ルールとトーンを決めて CLAUDE.md に書き、AIにも守らせる'],
+  ],
+  tabs: TABS,
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>3D・WebGL・シェーダー辞典 | Vibe Coding 辞典</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700;800;900&display=swap">
+<link rel="stylesheet" href="assets/dict.css">
+<link rel="stylesheet" href="assets/kit.css">
+<link rel="stylesheet" href="data/threed.css">
+<!-- three.js は必要になったときに読み込む（import map で場所を指定） -->
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+} }
+</script>
+</head>
+<body>
+<script src="assets/dict.js"></script>
+<script src="assets/kit.js"></script>
+<script>window.TABS = [];</script>
+<script src="data/threed-a.js"></script>
+<script src="data/threed-b.js"></script>
+<script>
+VD.render({
+  id: '3d',
+  icon: '⬢',
+  en: '3D / WebGL / Shaders',
+  title: '3D・WebGL・シェーダー辞典',
+  accent: '#7c3aed',
+  lead: 'Webで3Dを動かすための辞典です。シーン・カメラ・ライトの基本から、質感（PBR）、光と影、カメラ操作やクリック判定、<b>シェーダー（GPUで色を計算するプログラム）</b>、3Dモデルの作り方と軽量化、性能の考え方、商品ビューアやLP演出などの使いどころまで。デモはすべて <b>three.js</b> で実際に動いていて、ドラッグで回せます。',
+  howto: [
+    ['まず触る', '「3Dの基本」でシーン・カメラ・ライト・メッシュの役割を確かめる'],
+    ['書き換えて遊ぶ', '「シェーダー」の遊び場でコードを変えて、画面がどう変わるか見る'],
+    ['重さに注意', '「ライブラリと性能」でスマホでも軽く動かすコツを押さえる'],
+  ],
+  tabs: TABS,
+});
+</script>
+</body>
+</html>

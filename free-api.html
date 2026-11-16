@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>無料API辞典 | Vibe Coding 辞典</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Noto+Sans+JP:wght@400;500;700;900&display=swap">
+<link rel="stylesheet" href="assets/dict.css">
+<style>
+  /* ブラウザ内蔵APIのライブデモ */
+  .ba{ position:absolute; inset:0; padding:12px 14px; display:flex; flex-direction:column; gap:8px; justify-content:center; background:var(--stage); }
+  .ba-row{ display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
+  .ba-btn{ border:0; background:var(--accent); color:#fff; font:600 12.5px var(--font); padding:7px 12px; border-radius:8px; cursor:pointer; }
+  .ba-btn.ghost{ background:var(--surface); color:var(--text); border:1px solid var(--border); }
+  .ba-in{ flex:1; min-width:0; font:13px var(--font); padding:6px 9px; border-radius:8px; border:1px solid var(--border); background:var(--surface); color:var(--text); resize:none; width:100%; }
+  .ba-row .ba-in{ width:auto; }
+  .ba-out{ font:12px/1.5 var(--mono); color:var(--muted); min-height:1.5em; word-break:break-all; }
+  .ba-mini{ font-size:11.5px; color:var(--muted); display:flex; align-items:center; gap:6px; }
+  .ba-video{ width:100%; height:110px; background:#000; border-radius:8px; object-fit:cover; }
+  .ba-swatch{ width:30px; height:30px; border-radius:8px; border:1px solid var(--border); background:repeating-conic-gradient(#ccc 0 25%, #fff 0 50%) 0 0/10px 10px; }
+  .ba-tbl{ width:100%; font-size:12px; border-collapse:collapse; }
+  .ba-tbl th{ text-align:left; color:var(--muted); font-weight:500; padding:3px 8px 3px 0; white-space:nowrap; vertical-align:top; }
+  .ba-tbl td{ padding:3px 0; color:var(--text); }
+  .ba-drop{ border:2px dashed var(--border-strong); border-radius:10px; padding:16px; text-align:center; font-size:12.5px; color:var(--muted); cursor:pointer; background:var(--surface); }
+  .ba-drop.on{ border-color:var(--accent); color:var(--accent); }
+  .ba-canvas{ width:100%; flex:1; min-height:0; background:var(--surface); border-radius:8px; border:1px solid var(--border); touch-action:none; cursor:crosshair; }
+</style>
+</head>
+<body>
+<script src="assets/dict.js"></script>
+<script>window.TABS = [];</script>
+<script src="data/free-api-a.js"></script>
+<script src="data/free-api-b.js"></script>
+<script src="data/free-api-c.js"></script>
+<script>
+VD.render({
+  id: 'free-api',
+  icon: '⇄',
+  en: 'Free APIs',
+  title: '無料API辞典',
+  accent: '#1d6fe0',
+  lead: 'アプリ開発に使える<b>無料（または無料枠のある）API</b>と、ブラウザに最初から入っている機能をまとめた辞典です。キー不要でブラウザから直接呼べるものは「<b>▶ 実際に呼び出す</b>」でその場でレスポンスを確認できます。',
+  stats: ['<b>▶</b> その場で試せるAPIあり'],
+  howto: [
+    ['タグの見方', '<b>キー不要</b>＝登録なしで使える／<b>要登録・キー</b>＝無料登録でキーを発行／<b>ブラウザから直接OK</b>＝フロントのJSから呼べる'],
+    ['キーの扱い', 'APIキーはHTMLやGitHubに置かない。サーバーやサーバーレス関数から呼ぶ（「APIの基本」タブ参照）'],
+    ['情報の鮮度', '無料枠・仕様・提供状況は変わります。2026年10月時点の情報をもとにしているので、使う前に公式ページで確認を'],
+  ],
+  tabs: TABS,
+});
+</script>
+</body>
+</html>

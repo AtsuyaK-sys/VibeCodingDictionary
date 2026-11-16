@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>バイブコーディング指示文辞典 | Vibe Coding 辞典</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Noto+Sans+JP:wght@400;500;700;900&display=swap">
+<link rel="stylesheet" href="assets/dict.css">
+</head>
+<body>
+<script src="assets/dict.js"></script>
+<script>window.TABS = [];</script>
+<script src="data/prompts.js"></script>
+<script>
+VD.render({
+  id: 'prompts',
+  icon: '❝',
+  en: 'Prompt Templates',
+  title: 'バイブコーディング指示文辞典',
+  accent: '#d97706',
+  lead: 'AIに<b>作ってもらう・直してもらう・原因を探してもらう</b>ときの頼み方のテンプレート集です。「AIへの指示例」はコピーして【 】の部分を書き換えるだけで使えます。',
+  howto: [
+    ['型を使う', '「指示の基本」の万能テンプレート（目的・背景・要件・制約・完了条件）から始める'],
+    ['具体値で伝える', '雰囲気の言葉は「デザイン指示の語彙」で色・フォント・余白の数値に変換'],
+    ['困ったら', 'エラーは全文を貼る。直らないときは「デバッグ」タブのリセットの頼み方を'],
+  ],
+  tabs: TABS,
+});
+</script>
+</body>
+</html>

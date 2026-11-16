@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Webデザイン・アニメーション辞典 | Vibe Coding 辞典</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=JetBrains+Mono:wght@400;600&family=Klee+One:wght@400;600&family=M+PLUS+Rounded+1c:wght@500;800&family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@400;800&family=Roboto:wght@400;500&family=Shippori+Mincho:wght@400;600&family=Space+Grotesk:wght@500;700&display=swap">
+<link rel="stylesheet" href="assets/dict.css">
+<link rel="stylesheet" href="data/web-design-skins.css">
+<link rel="stylesheet" href="data/web-design-demos.css">
+</head>
+<body>
+<script src="assets/dict.js"></script>
+<script>window.TABS = [];</script>
+<script src="data/web-design-a.js"></script>
+<script src="data/web-design-b.js"></script>
+<script src="data/web-design-c.js"></script>
+<script>
+VD.render({
+  id: 'web-design',
+  icon: '✦',
+  en: 'Web Design & Animation',
+  title: 'Webデザイン・アニメーション辞典',
+  accent: '#6d4cff',
+  lead: 'Web画面のデザインスタイル、アニメーション、ホバー、スクロール演出、文字・背景のエフェクトを<b>実際に動く見本</b>で確認できる辞典です。気に入った表現の「AIへの指示例」をコピーして、Claude CodeやCursorにそのまま渡せます。',
+  howto: [
+    ['① 見て選ぶ', 'タブでカテゴリを切り替え、動く見本から使いたい表現を探す'],
+    ['② 指示をコピー', '「AIへの指示例」の［コピー］でプロンプトを取得'],
+    ['③ 名前で伝える', '英語名（fade-in-up など）や CSS のコードを添えると精度が上がる'],
+  ],
+  tabs: TABS,
+});
+</script>
+</body>
+</html>

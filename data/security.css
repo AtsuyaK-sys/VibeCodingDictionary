@@ -1,0 +1,118 @@
+/* =========================================================
+   セキュリティ・認証辞典（sc- 接頭辞）
+   ========================================================= */
+.sc-card{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:9px 11px; }
+.sc-price{ display:flex; justify-content:space-between; align-items:center; font-weight:800; }
+.sc-price .p{ font:900 18px var(--mono); color:var(--accent); transition:color .2s; }
+.sc-price .p.x{ color:var(--bad); text-decoration:line-through wavy; }
+.sc-kv{ display:grid; grid-template-columns:88px 1fr; gap:4px 8px; align-items:center; font-size:11.5px; }
+.sc-kv > b{ font-size:10.5px; color:var(--muted); }
+.sc-kv > span{ font:11.5px var(--mono); overflow:hidden; text-overflow:ellipsis; white-space:nowrap; background:var(--surface); border:1px solid var(--border); border-radius:6px; padding:3px 7px; min-width:0; }
+.sc-kv > span.hl{ border-color:var(--accent); background:var(--accent-soft); }
+
+/* 誰に見える？ */
+.sc-viewers{ display:grid; grid-template-columns:repeat(3, 1fr); gap:6px; }
+.sc-viewers div{ text-align:center; padding:8px 4px; border-radius:10px; background:var(--surface); border:1.5px solid var(--border); font-size:11px; font-weight:700; line-height:1.35; transition:.25s; }
+.sc-viewers div i{ display:block; font-style:normal; font-size:20px; margin-bottom:2px; }
+.sc-viewers div.see{ border-color:var(--bad); background:color-mix(in srgb, var(--bad) 9%, var(--surface)); color:var(--bad); }
+.sc-viewers div.see::after{ content:"見える"; display:block; font-size:10px; }
+.sc-viewers div.safe::after{ content:"見えない"; display:block; font-size:10px; color:var(--ok); }
+.sc-viewers div.own{ border-color:var(--ok); }
+.sc-viewers div.own::after{ content:"使える"; display:block; font-size:10px; color:var(--ok); }
+
+/* ファイルツリー */
+.sc-tree{ font:12px/1.75 var(--mono); background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:6px 10px; }
+.sc-tree div{ display:flex; align-items:center; gap:6px; border-radius:5px; padding:0 4px; transition:background .3s; }
+.sc-tree div .st{ margin-left:auto; font:700 10.5px var(--font); }
+.sc-tree div.ign{ color:var(--faint); }
+.sc-tree div.up{ background:color-mix(in srgb, var(--ok) 12%, transparent); }
+.sc-tree div.leak{ background:color-mix(in srgb, var(--bad) 16%, transparent); color:var(--bad); font-weight:700; }
+
+/* 秘密情報スキャン */
+.sc-scan{ font:11.5px/1.6 var(--mono); background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:8px 10px; white-space:pre-wrap; overflow-wrap:anywhere; overflow:auto; min-height:0; }
+.sc-scan mark{ background:color-mix(in srgb, var(--bad) 22%, transparent); color:var(--bad); border-radius:3px; padding:0 1px; font-weight:700; }
+.sc-hits{ display:flex; flex-wrap:wrap; gap:4px; }
+
+/* ハッシュ・暗号 */
+.sc-out{ display:grid; grid-template-columns:auto 1fr; gap:6px 8px; align-items:start; }
+.sc-out .t{ padding-top:3px; }
+.sc-out .v{ font:11px/1.5 var(--mono); background:var(--surface); border:1px solid var(--border); border-radius:7px; padding:4px 7px; overflow-wrap:anywhere; min-width:0; max-height:52px; overflow:auto; }
+.sc-out .v.same{ border-color:var(--bad); background:color-mix(in srgb, var(--bad) 8%, var(--surface)); }
+.sc-out .v small{ display:block; font-family:var(--font); color:var(--muted); font-size:10.5px; }
+
+/* 強度メーター */
+.sc-meter{ display:grid; grid-template-columns:repeat(5, 1fr); gap:4px; }
+.sc-meter i{ height:8px; border-radius:4px; background:color-mix(in srgb, var(--stage-ink) 12%, transparent); transition:background .25s; }
+.sc-checks{ display:grid; grid-template-columns:1fr 1fr; gap:2px 10px; font-size:11.5px; }
+.sc-checks span::before{ content:"○ "; color:var(--faint); }
+.sc-checks span.on::before{ content:"● "; color:var(--ok); }
+
+/* JWT */
+.sc-jwt{ font:11px/1.5 var(--mono); background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:6px 8px; overflow-wrap:anywhere; }
+.sc-jwt .h{ color:#e11d48; } .sc-jwt .p{ color:#7c3aed; } .sc-jwt .s{ color:#0284c7; } .sc-jwt .d{ color:var(--muted); }
+.sc-jwtcols{ display:grid; grid-template-columns:1fr 1fr; gap:6px; min-height:0; }
+.sc-jwtcols textarea{ font:11px/1.45 var(--mono); height:100%; min-height:74px; }
+
+/* TOTP */
+.sc-totp{ display:flex; align-items:center; gap:14px; justify-content:center; }
+.sc-totp .code{ font:900 30px var(--mono); letter-spacing:.12em; color:var(--text); }
+.sc-totp .ring{ --p:0; width:44px; height:44px; border-radius:50%; background:conic-gradient(var(--accent) calc(var(--p) * 1%), color-mix(in srgb, var(--stage-ink) 12%, transparent) 0); display:grid; place-items:center; }
+.sc-totp .ring b{ width:34px; height:34px; border-radius:50%; background:var(--stage); display:grid; place-items:center; font:800 12px var(--mono); }
+
+/* URLバーとレスポンス */
+.sc-url{ display:flex; align-items:center; gap:6px; background:var(--surface); border:1px solid var(--border-strong); border-radius:999px; padding:4px 6px 4px 12px; font:12px var(--mono); }
+.sc-url .u{ flex:1; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.sc-url .u b{ color:var(--accent); }
+.sc-json{ font:11px/1.55 var(--mono); background:var(--code-bg); border:1px solid var(--border); border-radius:8px; padding:6px 9px; white-space:pre-wrap; overflow:auto; min-height:0; }
+.sc-json.bad{ border-color:var(--bad); }
+.sc-json.ok{ border-color:var(--ok); }
+
+/* 表示の比較（サンドボックスiframe） */
+.sc-frame{ width:100%; height:64px; border:1px solid var(--border); border-radius:8px; background:#fff; }
+.sc-escaped{ font:11.5px var(--mono); background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:6px 9px; overflow-wrap:anywhere; height:64px; overflow:auto; }
+
+/* クリックジャッキング */
+.sc-cj{ position:relative; height:120px; border-radius:12px; overflow:hidden; background:linear-gradient(135deg, #fde68a, #fca5a5); display:grid; place-items:center; }
+.sc-cj .bait{ text-align:center; font-weight:900; color:#7c2d12; }
+.sc-cj .bait button{ margin-top:6px; padding:8px 18px; border-radius:999px; border:0; background:#ea580c; color:#fff; font:900 13px var(--font); }
+.sc-cj .evil{ position:absolute; inset:0; background:#fff; display:grid; place-items:center; opacity:var(--o, 0); transition:opacity .2s; }
+.sc-cj .evil .bar{ position:absolute; top:0; left:0; right:0; padding:4px 8px; font:10.5px var(--mono); background:#e5e7eb; color:#374151; }
+.sc-cj .evil button{ margin-top:32px; padding:8px 18px; border-radius:999px; border:0; background:#dc2626; color:#fff; font:900 13px var(--font); cursor:pointer; }
+.sc-cj .evil.blocked{ background:repeating-linear-gradient(45deg, #f3f4f6 0 10px, #e5e7eb 10px 20px); }
+
+/* レート制限 */
+.sc-bucket{ display:flex; gap:5px; }
+.sc-bucket i{ width:18px; height:18px; border-radius:50%; background:var(--accent); transition:transform .2s, background .2s; }
+.sc-bucket i.empty{ background:color-mix(in srgb, var(--stage-ink) 12%, transparent); transform:scale(.7); }
+.sc-log{ font:11px/1.5 var(--mono); background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:5px 8px; overflow:auto; min-height:0; flex:1; }
+.sc-log div.bad{ color:var(--bad); } .sc-log div.ok{ color:var(--ok); } .sc-log div.warn{ color:var(--warn); }
+
+/* プロンプト（AIへの入力）の表示 */
+.sc-prompt{ font:11px/1.55 var(--mono); background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:6px 9px; white-space:pre-wrap; overflow:auto; min-height:0; }
+.sc-prompt .sys{ color:#7c3aed; } .sc-prompt .usr{ color:#0369a1; } .sc-prompt .inj{ background:color-mix(in srgb, var(--bad) 18%, transparent); color:var(--bad); } .sc-prompt .wrap{ color:var(--ok); font-weight:700; }
+
+/* HTTPS（盗聴） */
+.sc-wire{ position:relative; height:66px; border-radius:10px; background:var(--surface); border:1px solid var(--border); }
+.sc-wire .node{ position:absolute; top:12px; width:54px; text-align:center; font-size:10.5px; font-weight:700; }
+.sc-wire .node i{ display:block; font-style:normal; font-size:20px; }
+.sc-wire .node.a{ left:6px; } .sc-wire .node.b{ right:6px; } .sc-wire .node.e{ left:calc(50% - 27px); top:auto; bottom:-2px; }
+.sc-wire .line{ position:absolute; left:60px; right:60px; top:26px; height:2px; background:color-mix(in srgb, var(--stage-ink) 25%, transparent); }
+.sc-wire .pk{ position:absolute; left:60px; top:16px; padding:2px 6px; border-radius:6px; font:700 10.5px var(--mono); background:var(--accent); color:#fff; white-space:nowrap; animation:scPacket 2.6s linear infinite; }
+.sc-wire .pk.plain{ background:var(--bad); }
+@keyframes scPacket{ from{ left:60px; } to{ left:calc(100% - 150px); } }
+.sc-sniff{ font:11px var(--mono); padding:5px 8px; border-radius:8px; border:1px dashed var(--border-strong); background:var(--surface); overflow-wrap:anywhere; }
+
+/* 判定リスト（CSP・CORSなど） */
+.sc-res{ display:flex; flex-direction:column; gap:3px; overflow:auto; min-height:0; }
+.sc-res div{ display:flex; gap:8px; align-items:center; font-size:11.5px; padding:3px 7px; border-radius:7px; background:var(--surface); border:1px solid var(--border); }
+.sc-res div .kt-badge{ margin-left:auto; }
+.sc-checksrow{ display:flex; flex-wrap:wrap; gap:4px 10px; font-size:11.5px; }
+.sc-checksrow label{ display:flex; align-items:center; gap:4px; cursor:pointer; font-family:var(--mono); }
+.sc-checksrow input{ accent-color:var(--accent); }
+
+/* 管理画面の見本（RBAC） */
+.sc-admin{ display:grid; grid-template-columns:repeat(auto-fill, minmax(118px, 1fr)); gap:5px; }
+.sc-admin button{ border:1px solid var(--border-strong); background:var(--surface); color:var(--text); border-radius:8px; padding:6px; font:700 11.5px var(--font); cursor:pointer; }
+.sc-admin button.no{ opacity:.35; text-decoration:line-through; }
+.sc-admin button.hid{ visibility:hidden; }
+@media (max-width:360px){ .sc-kv{ grid-template-columns:70px 1fr; } .sc-totp .code{ font-size:24px; } .sc-checks{ grid-template-columns:1fr; } .sc-jwtcols{ grid-template-columns:1fr; } }

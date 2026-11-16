@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AIツール・モデル辞典 | Vibe Coding 辞典</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Noto+Sans+JP:wght@400;500;700;900&display=swap">
+<link rel="stylesheet" href="assets/dict.css">
+</head>
+<body>
+<script src="assets/dict.js"></script>
+<script>window.TABS = [];</script>
+<script src="data/ai.js"></script>
+<script>
+VD.render({
+  id: 'ai-tools',
+  icon: '✧',
+  en: 'AI Tools & Models',
+  title: 'AIツール・モデル辞典',
+  accent: '#9333ea',
+  lead: 'バイブコーディングで使うAIツールを<b>用途別</b>に整理した辞典です。コーディングAI、アプリ生成サービス、対話AI、画像・動画・音声の生成AI、ローカルAI、そして自分のアプリにAIを組み込む仕組みまで。',
+  howto: [
+    ['用途で選ぶ', '「コーディングAI」の使い分け表から、自分の状況に合うツールを選ぶ'],
+    ['規約を確認', '商用利用・データの学習利用・クレジット表記は、サービスとプランごとに違います'],
+    ['組み込む', '自分のアプリにAIを入れるなら「AIを組み込む」タブと無料API辞典へ'],
+  ],
+  tabs: TABS,
+});
+</script>
+</body>
+</html>

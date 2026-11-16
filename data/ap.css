@@ -1,0 +1,72 @@
+/* =========================================================
+   アプリ・配布形態辞典（ap- 接頭辞）
+   ========================================================= */
+/* スマホの枠 */
+.ap-wrap{ flex:1; min-height:0; display:flex; justify-content:center; align-items:center; gap:12px; }
+.ap-phone{ position:relative; height:100%; max-height:100%; aspect-ratio:9 / 18.5; max-width:100%; border:6px solid var(--stage-ink); border-radius:26px; overflow:hidden; background:var(--surface); flex:none; box-shadow:0 6px 18px rgb(0 0 0 / .15); }
+.ap-phone .notch{ position:absolute; top:4px; left:50%; transform:translateX(-50%); width:36%; height:14px; background:var(--stage-ink); border-radius:10px; z-index:5; }
+.ap-phone .homebar{ position:absolute; bottom:4px; left:50%; width:34%; height:4px; border-radius:3px; background:var(--stage-ink); opacity:.7; transform:translateX(-50%); z-index:5; }
+.ap-scr{ position:absolute; inset:0; display:flex; flex-direction:column; font-size:11px; overflow:hidden; }
+.ap-bar{ display:flex; align-items:center; gap:6px; padding:6px 8px; font-weight:800; font-size:11px; background:var(--surface-2); border-bottom:1px solid var(--border); }
+.ap-home{ display:grid; grid-template-columns:repeat(4, 1fr); gap:10px 6px; padding:26px 10px 10px; align-content:start; background:linear-gradient(160deg, #4f46e5, #0ea5e9); flex:1; }
+.ap-ic{ display:flex; flex-direction:column; align-items:center; gap:3px; font-size:8.5px; color:#fff; text-align:center; min-width:0; }
+.ap-ic i{ width:100%; max-width:34px; aspect-ratio:1; border-radius:24%; display:grid; place-items:center; font-style:normal; font-size:16px; background:rgb(255 255 255 / .25); box-shadow:0 1px 3px rgb(0 0 0 / .2); }
+.ap-ic span{ white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:100%; }
+.ap-ic.me i{ outline:2px solid #fff; outline-offset:2px; }
+.ap-splash{ flex:1; display:grid; place-items:center; align-content:center; gap:8px; font-weight:800; font-size:12px; }
+.ap-splash i{ width:46px; height:46px; border-radius:24%; display:grid; place-items:center; font-style:normal; font-size:24px; }
+/* ダイアログ */
+.ap-dlg{ position:absolute; left:8%; right:8%; top:34%; z-index:6; background:var(--surface); border-radius:12px; box-shadow:0 10px 30px rgb(0 0 0 / .35); padding:10px; font-size:10.5px; text-align:center; line-height:1.45; }
+.ap-dlg b{ display:block; font-size:11.5px; margin-bottom:3px; }
+.ap-dlg .bts{ display:flex; border-top:1px solid var(--border); margin:8px -10px -10px; }
+.ap-dlg .bts span{ flex:1; padding:6px; color:#0a84ff; font-weight:700; }
+.ap-dlg .bts span + span{ border-left:1px solid var(--border); }
+.ap-dim{ position:absolute; inset:0; background:rgb(0 0 0 / .35); z-index:5; }
+/* セーフエリア */
+.ap-safe{ position:absolute; z-index:4; pointer-events:none; background:repeating-linear-gradient(45deg, color-mix(in srgb, var(--bad) 22%, transparent) 0 4px, transparent 4px 8px); }
+/* 比較の棒 */
+.ap-bars{ display:grid; grid-template-columns:auto 1fr auto; gap:5px 8px; align-items:center; font-size:11.5px; }
+.ap-bars i{ display:block; height:14px; border-radius:0 4px 4px 0; background:var(--accent); min-width:2px; transition:width .3s; }
+.ap-bars output{ font:700 11px var(--mono); text-align:right; white-space:nowrap; }
+/* スコアの順位 */
+.ap-rank{ display:flex; flex-direction:column; gap:4px; overflow:auto; min-height:0; }
+.ap-rank div{ display:grid; grid-template-columns:minmax(0, 150px) 1fr 30px; gap:6px; align-items:center; font-size:11.5px; }
+.ap-rank div span{ white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.ap-rank div.top span{ font-weight:800; }
+.ap-rank i{ display:block; height:12px; border-radius:0 4px 4px 0; background:color-mix(in srgb, var(--accent) 45%, var(--surface)); transition:width .3s; }
+.ap-rank div.top i{ background:var(--accent); }
+.ap-q{ display:flex; align-items:center; gap:6px; font-size:11.5px; flex-wrap:wrap; }
+.ap-q span{ flex:1; min-width:140px; }
+/* OSの警告画面 */
+.ap-warn{ border-radius:10px; padding:10px 12px; font-size:11.5px; line-height:1.55; border:1px solid var(--border); background:var(--surface); }
+.ap-warn.win{ background:#0b5cad; color:#fff; border:0; }
+.ap-warn.win b{ font-size:15px; display:block; margin-bottom:4px; }
+.ap-warn.ok{ border-color:color-mix(in srgb, var(--ok) 45%, var(--border)); }
+/* 拡張機能のブラウザ */
+.ap-br{ border:1px solid var(--border-strong); border-radius:10px; overflow:hidden; display:flex; flex-direction:column; background:var(--surface); flex:1; min-height:0; position:relative; }
+.ap-br .tb{ display:flex; align-items:center; gap:6px; padding:5px 8px; background:var(--surface-2); border-bottom:1px solid var(--border); font-size:11px; }
+.ap-br .url{ flex:1; background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:2px 8px; font-family:var(--mono); font-size:10.5px; color:var(--muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; min-width:0; }
+.ap-br .ext{ width:22px; height:22px; border-radius:6px; display:grid; place-items:center; background:var(--accent); color:#fff; font-size:12px; cursor:pointer; flex:none; }
+.ap-br .pg{ flex:1; padding:10px 12px; font-size:12px; line-height:1.7; overflow:auto; min-height:0; }
+.ap-br .pop{ position:absolute; right:6px; top:34px; z-index:3; width:min(180px, 70%); background:var(--surface); border:1px solid var(--border-strong); border-radius:10px; box-shadow:0 8px 22px rgb(0 0 0 / .2); padding:8px; font-size:11px; display:flex; flex-direction:column; gap:6px; }
+mark.ap-mk{ background:#fde047; color:#111; border-radius:3px; padding:0 2px; transition:background .3s; }
+.ap-perm{ border-radius:12px; border:1px solid var(--border); background:var(--surface); padding:10px 12px; font-size:11.5px; line-height:1.6; box-shadow:0 6px 18px rgb(0 0 0 / .12); }
+.ap-perm b{ font-size:12.5px; } .ap-perm li{ margin-left:14px; }
+.ap-perm .hi{ color:var(--bad); font-weight:700; }
+/* LINE の中のアプリ */
+.ap-lhead{ display:flex; align-items:center; gap:6px; padding:16px 8px 6px; background:#06c755; color:#fff; font-weight:800; font-size:11px; }
+.ap-card{ margin:8px; border-radius:12px; padding:10px; color:#fff; background:linear-gradient(135deg, #059669, #0ea5e9); display:flex; flex-direction:column; gap:4px; }
+.ap-barcode{ height:34px; border-radius:4px; background:#fff repeating-linear-gradient(90deg, #111 0 2px, #fff 2px 3px, #111 3px 4px, #fff 4px 7px); }
+.ap-mini{ padding:6px 8px; display:flex; flex-direction:column; gap:6px; font-size:10.5px; overflow:auto; }
+.ap-btn{ display:block; text-align:center; padding:6px; border-radius:8px; background:#06c755; color:#fff; font-weight:800; cursor:pointer; border:0; font:800 10.5px var(--font); }
+.ap-btn.sub{ background:var(--surface-2); color:var(--text); border:1px solid var(--border); }
+/* 段階的リリース */
+.ap-users{ display:grid; grid-template-columns:repeat(20, 1fr); gap:2px; }
+.ap-users i{ aspect-ratio:1; border-radius:3px; background:color-mix(in srgb, var(--stage-ink) 12%, transparent); transition:background .3s; }
+.ap-users i.new{ background:var(--accent); } .ap-users i.crash{ background:var(--bad); }
+/* 狭い画面では、スマホの絵と操作部分を縦に並べる */
+@media (max-width:520px){
+  .ap-wrap.st{ flex-direction:column; align-items:stretch; }
+  .ap-wrap.st > .ph{ height:58% !important; flex:none; justify-content:center; }
+  .ap-wrap.st > .side{ max-width:none !important; flex:1; min-height:0; height:auto !important; overflow:auto; }
+}

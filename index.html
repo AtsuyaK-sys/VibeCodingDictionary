@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vibe Coding 辞典</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Noto+Sans+JP:wght@400;500;700;900&display=swap">
+<link rel="stylesheet" href="assets/dict.css">
+<style>
+  .p-hero{ padding:56px 0 30px; position:relative; overflow:hidden; }
+  .p-hero h1{ font-size:clamp(30px, 5.5vw, 52px); line-height:1.15; margin:0 0 14px; font-weight:900; letter-spacing:-.02em; }
+  .p-hero h1 span{ background:linear-gradient(90deg, #6d4cff, #e0364f, #1d6fe0); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .p-hero .lead{ color:var(--muted); max-width:760px; margin:0 0 20px; font-size:15.5px; }
+  .p-hero .glow{ position:absolute; right:-120px; top:-120px; width:420px; height:420px; border-radius:50%; background:radial-gradient(circle, color-mix(in srgb, #6d4cff 22%, transparent), transparent 65%); pointer-events:none; }
+  .p-filter{ display:flex; gap:8px; flex-wrap:wrap; align-items:center; margin:6px 0 18px; }
+  .p-filter button{ border:1px solid var(--border); background:var(--surface); border-radius:999px; padding:6px 14px; font:500 13px var(--font); color:var(--muted); cursor:pointer; }
+  .p-filter button[aria-selected="true"]{ background:var(--text); color:var(--bg); border-color:var(--text); font-weight:700; }
+  .p-filter input{ margin-left:auto; min-width:220px; border:1px solid var(--border); background:var(--surface); border-radius:999px; padding:7px 14px; font:13.5px var(--font); color:var(--text); }
+  .p-grid{ display:grid; grid-template-columns:repeat(auto-fill, minmax(300px, 1fr)); gap:14px; }
+  @media (max-width:640px){ .p-grid{ grid-template-columns:1fr; } .p-filter input{ margin-left:0; width:100%; } }
+  .p-card{ position:relative; display:flex; flex-direction:column; gap:10px; padding:18px 18px 16px; border-radius:16px; background:var(--surface); border:1px solid var(--border); color:var(--text); transition:transform .2s cubic-bezier(.22,1,.36,1), box-shadow .2s, border-color .2s; overflow:hidden; }
+  .p-card[hidden]{ display:none; }
+  .p-card:hover{ text-decoration:none; transform:translateY(-3px); box-shadow:0 14px 34px rgb(0 0 0 / .1); border-color:color-mix(in srgb, var(--c) 45%, var(--border)); }
+  .p-card::before{ content:""; position:absolute; left:0; top:0; right:0; height:4px; background:var(--c); }
+  .p-card .top{ display:flex; align-items:center; gap:12px; }
+  .p-card .ic{ width:42px; height:42px; border-radius:12px; display:grid; place-items:center; font-size:19px; color:#fff; background:var(--c); flex:none; box-shadow:0 6px 16px color-mix(in srgb, var(--c) 35%, transparent); }
+  .p-card h2{ margin:0; font-size:16.5px; line-height:1.35; }
+  .p-card .grp{ font:600 11px var(--mono); color:var(--c); letter-spacing:.06em; }
+  .p-card p{ margin:0; font-size:13px; color:var(--muted); }
+  .p-card .tabs-mini{ display:flex; flex-wrap:wrap; gap:4px; margin-top:auto; }
+  .p-card .tabs-mini span{ font-size:11px; padding:1px 8px; border-radius:999px; background:var(--surface-2); border:1px solid var(--border); color:var(--muted); }
+  .p-card .live{ position:absolute; right:14px; top:16px; font:700 10px var(--mono); color:var(--c); border:1px solid color-mix(in srgb, var(--c) 40%, var(--border)); border-radius:999px; padding:1px 8px; }
+  .p-sec{ margin:44px 0 12px; }
+  .p-sec h3{ font-size:19px; margin:0 0 4px; font-weight:900; }
+  .p-sec p{ color:var(--muted); margin:0 0 14px; font-size:13.5px; }
+  .p-steps{ display:grid; grid-template-columns:repeat(auto-fit, minmax(230px, 1fr)); gap:12px; }
+  .p-steps div{ background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:14px 16px; font-size:13px; color:var(--muted); }
+  .p-steps b{ display:block; color:var(--text); font-size:14px; margin-bottom:4px; }
+  .p-steps i{ font-style:normal; font:700 12px var(--mono); color:var(--accent); display:block; margin-bottom:2px; }
+  .p-tree{ background:var(--code-bg); border:1px solid var(--border); border-radius:14px; padding:14px 18px; font:12.5px/1.7 var(--mono); overflow:auto; white-space:pre; }
+  .p-empty{ display:none; color:var(--muted); padding:30px 0; text-align:center; }
+</style>
+</head>
+<body>
+<script src="assets/dict.js"></script>
+<header class="topbar"><div class="wrap">
+  <a class="brand" href="index.html"><span class="brand-mark">VC</span><span class="brand-text">Vibe Coding 辞典</span></a>
+  <div style="flex:1"></div>
+  <button class="icon-btn" type="button" title="ライト／ダーク切替" aria-label="ライト／ダーク切替" onclick="VD.toggleTheme()">◐</button>
+</div></header>
+
+<section class="p-hero"><div class="wrap">
+  <div class="glow"></div>
+  <p class="eyebrow">✦ Vibe Coding Dictionary</p>
+  <h1>AIと作るための、<br><span>名前と見本の辞典。</span></h1>
+  <p class="lead">バイブコーディングでは「何と呼ぶか」を知っているだけで、AIへの指示が一気に正確になります。デザイン・アニメーション・動画・音・ゲーム・API・技術選び・エラー対処まで、<b>実際に動く見本</b>と<b>そのまま使える指示文</b>を用途ごとにまとめました。</p>
+  <div class="stats" id="stats"></div>
+</div></section>
+
+<main><div class="wrap">
+  <div class="p-filter" role="tablist" aria-label="分類" id="filter"></div>
+  <div class="p-grid" id="grid"></div>
+  <div class="p-empty" id="empty">該当する辞典がありません。</div>
+
+  <section class="p-sec">
+    <h3>使い方</h3>
+    <p>どの辞典も同じ操作で使えます。</p>
+    <div class="p-steps">
+      <div><i>01</i><b>タブで切り替える</b>各辞典は上部のタブでカテゴリを切り替え。デザインスタイル・パレット・カラグレなどは、タブで見本の見た目そのものが切り替わります。</div>
+      <div><i>02</i><b>動かして選ぶ</b>アニメーション・カメラワーク・効果音・ゲームの仕組みは、その場で動きます。↻ でもう一度再生。</div>
+      <div><i>03</i><b>指示文をコピー</b>「AIへの指示例」の［コピー］で、Claude Code・Cursorなどにそのまま貼れます。【 】は自分の内容に書き換え。</div>
+      <div><i>04</i><b>検索する</b>各辞典の右上の検索欄（<kbd>/</kbd> キー）で、日本語・英語のどちらでも全カテゴリを横断検索できます。</div>
+    </div>
+  </section>
+
+  <section class="p-sec">
+    <h3>フォルダの構成（辞典を追加するときに）</h3>
+    <p>新しい辞典は「HTMLを1つ」＋「data/ にデータを1つ」追加し、<code>assets/dict.js</code> の一覧（DICTS）に1行足すだけで、このページとメニューに表示されます。</p>
+    <div class="p-tree">VibeCodingDictionary/
+├─ index.html              … このページ（辞典の一覧）
+├─ web-design.html  video.html  free-api.html  ui-components.html …  … 各辞典
+├─ assets/
+│   ├─ dict.css            … 共通デザイン（ライト／ダーク対応）
+│   └─ dict.js             … 共通の仕組み（タブ・検索・コピー・切替プレビュー）＋ 辞典一覧
+└─ data/
+    ├─ web-design-a.js …    … 各辞典の中身（項目・見本・指示文）
+    └─ web-design-demos.css … 見本用のCSS</div>
+  </section>
+</div></main>
+
+<footer class="foot"><div class="wrap"><span>Vibe Coding 辞典 — 2026年10月版</span><span>ファイルをダブルクリックで開けます（インターネット接続時はフォントとAPIの見本も表示）。</span></div></footer>
+
+<script>
+(function(){
+  const h = VD.h;
+  const TOC = {
+    'web-design.html':['デザインスタイル','CSSアニメーション','ホバー','スクロール','テキスト','背景','ローディング','イージング','レイアウト','CSS','ライブラリ'],
+    'motion.html':['ボタンを押す','状態が変わる','出現・退場','スクロール（上級）','話題の演出','遊び心・CSS','遊び心・JS','動きの調整'],
+    'ui-components.html':['ボタン・入力','ナビゲーション','表示','フィードバック','UIライブラリ'],
+    'color-typography.html':['配色の基本','パレット','和色','グラデーション','日本語フォント','欧文フォント','文字組み','トークン'],
+    'video.html':['ショット','アングル','カメラワーク','構図','トランジション','編集','カラグレ','照明','テロップ','音','仕様','企画','AI動画','FFmpeg'],
+    'sound.html':['効果音','音楽の仕組み','BGM語彙','音響用語'],
+    'game-dev.html':['ジャンル','メカニクス','手触り演出','ゲームデザイン','エンジン'],
+    'free-api.html':['APIの基本','AI','天気','地図','日本の公共データ','知識','画像','エンタメ','お金','開発用','DB・認証','通知','音声・画像AI','ブラウザ内蔵API'],
+    'tech-stack.html':['おすすめ構成','フロント','CSS・UI','バックエンド','DB','スマホ・PC','ホスティング','グラフ','便利ライブラリ','開発ツール'],
+    'ai-tools.html':['コーディングAI','アプリ生成','LLM','画像生成','動画生成','音声・音楽','ローカルAI','組み込み'],
+    'security.html':['基本の考え方','APIキー','認証','認可','攻撃と対策','通信・ブラウザ','AIコードの危険','運用チェック'],
+    'database.html':['基本','テーブル設計','SQL（実行可）','インデックス','データを守る','型・日付・お金','サービス','AI・エラー'],
+    'git-terminal.html':['Gitの基本','ブランチ','元に戻す','GitHub','ターミナル','パッケージ','環境変数','ローカル開発'],
+    'ai-workflow.html':['作るものを決める','要件を書く','画面と流れ','作業を分ける','AIとの開発サイクル','エージェント','確認・テスト','テンプレート'],
+    'ai-integration.html':['LLMの基本','APIの呼び方','構造化出力','ツール・エージェント','RAG','コスト・キャッシュ','品質・評価・安全','AI機能のUX'],
+    '3d.html':['3Dの基本','形と質感','光と影','動きと操作','シェーダー','モデルと制作','ライブラリと性能','Webでの使いどころ'],
+    'ux-writing.html':['UXライティングの基本','ボタン・ラベル','エラーメッセージ','空・読み込み・完了','通知・メール・案内','トーン','日本語の表記','AI・多言語'],
+    'motion-math.html':['座標とベクトル','補間とイージング','速度・重力','ばね','波とノイズ','当たり判定','曲線と経路','UIで使う計算'],
+    'image-prompts.html':['基本と組み立て方','人物','背景・舞台','光と色','カメラと構図','画風','雰囲気・物語','人物以外の被写体','文字・透明画像','画像編集','品質・トラブル','テンプレートと作例','Webで使う・他のAI'],
+    'dataviz.html':['グラフの選び方','基本のグラフ','見やすくするルール','動かす・操作する','ダッシュボード','データの準備','ライブラリとツール','地図と応用'],
+    'automation.html':['自動化の基本','Google Apps Script','ノーコード自動化','Webhook・API連携','定期実行（cron）','チャットBot','データ収集・RPA','AI × 自動化'],
+    'app-distribution.html':['形の選び方','PWA','スマホアプリ','ストア公開','デスクトップアプリ','ブラウザ拡張','LINEミニアプリ','配布と更新'],
+    'payments.html':['収益モデル','価格の決め方','決済の仕組み','サブスクの管理','日本の法律とルール','支払い方法','決済のセキュリティ','広告・その他'],
+    'testing.html':['テストの基本','単体テスト','E2Eテスト','アクセシビリティ','表示速度','見た目のテスト','CIと自動化','AIとテスト'],
+    'prompts.html':['指示の基本','作成依頼','修正・改善','デバッグ','デザイン語彙','ツールの使いこなし'],
+    'errors.html':['向き合い方','JavaScript','HTTP','React・Next.js','Node・npm','Python','Git','公開・連携'],
+    'glossary.html':['Webの仕組み','フロント','バックエンド','開発の流れ','インフラ','AI・LLM','セキュリティ'],
+    'release.html':['SEO','SNS共有','表示速度','セキュリティ','アクセシビリティ','法務','直前チェック'],
+    'resources.html':['アイコン','イラスト','写真','動画','音','フォント','3D','ゲーム素材','参考サイト','ツール'],
+  };
+  const LIVE = { 'motion-math.html':'LIVE', 'image-prompts.html':'LIVE', 'ux-writing.html':'LIVE','3d.html':'3D', 'dataviz.html':'LIVE', 'automation.html':'LIVE', 'app-distribution.html':'LIVE', 'payments.html':'LIVE', 'testing.html':'TEST', 'ai-workflow.html':'LIVE', 'ai-integration.html':'LIVE', 'security.html':'LIVE', 'database.html':'SQL', 'git-terminal.html':'LIVE', 'motion.html':'LIVE', 'web-design.html':'LIVE', 'ui-components.html':'LIVE', 'color-typography.html':'LIVE', 'video.html':'LIVE', 'sound.html':'SOUND', 'game-dev.html':'LIVE', 'free-api.html':'API', 'release.html':'CHECK' };
+  const all = VD.DICTS.concat(VD.EXTRA);
+  const grid = document.getElementById('grid'), filter = document.getElementById('filter'), empty = document.getElementById('empty');
+  document.getElementById('stats').append(
+    h('span', { class:'stat' }, h('b', null, String(VD.DICTS.length)), ' 冊の辞典'),
+    h('span', { class:'stat' }, h('b', null, String(Object.values(TOC).reduce((a, b) => a + b.length, 0))), ' カテゴリ'),
+    h('span', { class:'stat' }, '動く見本・音・その場で叩けるAPI'));
+  const cards = all.map(d => {
+    const c = VD.DICTS.find(x => x.file === d.file) ? (d.accent || '#6d4cff') : '#64748b';
+    const a = h('a', { class:'p-card', href:d.file, style:'--c:' + c, target: d.external ? '_blank' : null },
+      LIVE[d.file] ? h('span', { class:'live' }, LIVE[d.file]) : (d.external ? h('span', { class:'live' }, 'PDF') : null),
+      h('div', { class:'top' }, h('span', { class:'ic' }, d.icon), h('div', null, h('div', { class:'grp' }, d.group), h('h2', null, d.title))),
+      h('p', null, d.desc),
+      h('div', { class:'tabs-mini' }, (TOC[d.file] || []).map(t => h('span', null, t))));
+    a.dataset.g = d.group; a.dataset.s = (d.title + d.desc + (TOC[d.file] || []).join(' ')).toLowerCase();
+    grid.append(a); return a;
+  });
+  let group = 'すべて', q = '';
+  const apply = () => { let n = 0; cards.forEach(c => { const ok = (group === 'すべて' || c.dataset.g === group) && (!q || c.dataset.s.includes(q)); c.hidden = !ok; if (ok) n++; }); empty.style.display = n ? 'none' : 'block'; };
+  ['すべて'].concat(VD.GROUPS).forEach(g => filter.append(h('button', { type:'button', role:'tab', 'aria-selected': String(g === 'すべて'), onclick:(e) => { group = g; [...filter.querySelectorAll('button')].forEach(b => b.setAttribute('aria-selected', String(b === e.currentTarget))); apply(); } }, g)));
+  const input = h('input', { type:'search', placeholder:'辞典を探す（例：アニメーション、API、エラー）', 'aria-label':'辞典を探す' });
+  input.addEventListener('input', () => { q = input.value.trim().toLowerCase(); apply(); });
+  filter.append(input);
+})();
+</script>
+</body>
+</html>

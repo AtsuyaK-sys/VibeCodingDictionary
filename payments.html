@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>決済・収益化辞典 | Vibe Coding 辞典</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700;800;900&display=swap">
+<link rel="stylesheet" href="assets/dict.css">
+<link rel="stylesheet" href="assets/kit.css">
+<link rel="stylesheet" href="data/py.css">
+</head>
+<body>
+<script src="assets/dict.js"></script>
+<script src="assets/kit.js"></script>
+<script>window.TABS = [];</script>
+<script src="data/py-a.js"></script>
+<script src="data/py-b.js"></script>
+<script>
+VD.render({
+  id: 'payments',
+  icon: '¥',
+  en: 'Payments & Monetization',
+  title: '決済・収益化辞典',
+  accent: '#b45309',
+  lead: 'サービスでお金を受け取るための辞典です。収益モデルとサブスクの数字（MRR・解約率・LTV）、料金表と総額表示、<b>Stripe の決済の流れとWebhook</b>、サブスクの状態管理、<b>特定商取引法・景品表示法・資金決済法・インボイス</b>、支払い方法の選び方、カード情報の非保持化と3Dセキュア、広告・アフィリエイトまで。料金や法律は変わるので、<b>最新は公式で確認</b>してください。',
+  howto: [
+    ['数字で考える', '「収益モデル」のシミュレーターで、解約率が売上に与える影響を見る'],
+    ['安全に作る', '金額はサーバーで決め、注文の確定は Webhook で。カード番号は自分で扱わない'],
+    ['表示を整える', '特商法の表記・最終確認画面・総額表示は、公開前に必ずチェック'],
+  ],
+  tabs: TABS,
+});
+</script>
+</body>
+</html>

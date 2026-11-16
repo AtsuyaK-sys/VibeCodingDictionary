@@ -1,0 +1,115 @@
+/* =========================================================
+   AI組み込み辞典（lm- 接頭辞）
+   ========================================================= */
+/* トークン */
+.lm-tok{ display:flex; flex-wrap:wrap; gap:2px; font:12.5px/1.6 var(--mono); background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:7px 9px; overflow:auto; min-height:0; }
+.lm-tok span{ padding:0 2px; border-radius:4px; white-space:pre; }
+.lm-tok span:nth-child(6n+1){ background:#dbeafe; color:#1e3a8a; } .lm-tok span:nth-child(6n+2){ background:#fce7f3; color:#831843; } .lm-tok span:nth-child(6n+3){ background:#dcfce7; color:#14532d; }
+.lm-tok span:nth-child(6n+4){ background:#fef3c7; color:#78350f; } .lm-tok span:nth-child(6n+5){ background:#ede9fe; color:#4c1d95; } .lm-tok span:nth-child(6n){ background:#cffafe; color:#164e63; }
+.lm-stats{ display:grid; grid-template-columns:repeat(3, 1fr); gap:5px; }
+.lm-stats div{ text-align:center; background:var(--surface); border:1px solid var(--border); border-radius:9px; padding:5px; font-size:10.5px; color:var(--muted); }
+.lm-stats div b{ display:block; font:900 16px var(--mono); color:var(--stage-ink); }
+
+/* 次の言葉の確率 */
+.lm-gen{ font:15px/1.7 var(--font); background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:8px 11px; min-height:44px; }
+.lm-gen .new{ background:var(--accent-soft); color:var(--accent); border-radius:4px; padding:0 2px; animation:lmPop .35s; }
+@keyframes lmPop{ from{ background:var(--accent); color:#fff; } }
+.lm-probs{ display:flex; flex-direction:column; gap:3px; }
+.lm-probs div{ display:grid; grid-template-columns:70px 1fr 44px; gap:6px; align-items:center; font-size:12px; }
+.lm-probs div i{ display:block; height:14px; border-radius:4px; background:var(--accent); opacity:.75; transition:width .3s; }
+.lm-probs div.pick i{ opacity:1; box-shadow:0 0 0 2px var(--accent-soft); }
+.lm-probs b{ font:700 11px var(--mono); text-align:right; }
+
+/* リクエストの部位 */
+.lm-anat{ font:11.5px/1.65 var(--mono); background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:6px 9px; white-space:pre; overflow:auto; min-height:0; }
+.lm-anat .k{ cursor:pointer; border-radius:4px; color:#7c3aed; font-weight:700; }
+.lm-anat .k:hover, .lm-anat .k.on{ background:var(--accent-soft); outline:1.5px solid var(--accent); }
+.lm-anat .s{ color:#0f766e; } .lm-anat .c{ color:var(--faint); }
+
+/* チャットと送られる配列 */
+.lm-chat{ display:flex; flex-direction:column; gap:5px; overflow:auto; min-height:0; }
+.lm-chat .b{ max-width:85%; padding:6px 10px; border-radius:12px; font-size:12px; line-height:1.55; }
+.lm-chat .u{ align-self:flex-end; background:var(--accent); color:#fff; border-bottom-right-radius:4px; }
+.lm-chat .a{ align-self:flex-start; background:var(--surface); border:1px solid var(--border); border-bottom-left-radius:4px; }
+.lm-chat .sys{ align-self:center; font-size:10.5px; color:var(--muted); background:transparent; }
+.lm-req{ font:10.5px/1.5 var(--mono); background:#0f172a; color:#e2e8f0; border-radius:8px; padding:6px 8px; overflow:auto; min-height:0; white-space:pre-wrap; }
+.lm-req .r{ color:#f472b6; } .lm-req .n{ color:#4ade80; }
+
+/* ストリーミング比較 */
+.lm-two{ display:grid; grid-template-columns:1fr 1fr; gap:6px; min-height:0; }
+.lm-pane{ background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:7px 9px; font-size:12px; line-height:1.6; min-height:110px; overflow:auto; }
+.lm-pane > b{ display:block; font-size:10.5px; color:var(--muted); margin-bottom:3px; }
+.lm-spin{ display:inline-block; width:14px; height:14px; border:2px solid var(--border-strong); border-top-color:var(--accent); border-radius:50%; animation:lmSpin .8s linear infinite; vertical-align:-2px; }
+@keyframes lmSpin{ to{ transform:rotate(360deg); } }
+.lm-caret::after{ content:"▍"; color:var(--accent); animation:lmBlink .8s steps(1) infinite; }
+@keyframes lmBlink{ 50%{ opacity:0; } }
+.lm-ev{ font:10.5px/1.5 var(--mono); color:var(--muted); max-height:70px; overflow:auto; }
+.lm-ev div.on{ color:var(--accent); font-weight:700; }
+
+/* RAGのパイプライン */
+.lm-pipe{ display:flex; flex-wrap:wrap; gap:4px; align-items:center; }
+.lm-pipe span{ font:800 11px var(--font); padding:5px 8px; border-radius:8px; background:var(--surface); border:1.5px solid var(--border); color:var(--muted); transition:.25s; }
+.lm-pipe span.on{ background:var(--accent); border-color:var(--accent); color:#fff; transform:scale(1.05); }
+.lm-pipe span.done{ border-color:var(--accent-line); color:var(--stage-ink); }
+.lm-pipe i{ font-style:normal; color:var(--faint); font-weight:900; }
+
+/* チャンク */
+.lm-chunks{ font:12px/1.75 var(--font); background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:7px 10px; overflow:auto; min-height:0; }
+.lm-chunks span{ border-radius:3px; }
+.lm-chunks span.c0{ background:#dbeafe; } .lm-chunks span.c1{ background:#fce7f3; } .lm-chunks span.c2{ background:#dcfce7; } .lm-chunks span.c3{ background:#fef3c7; } .lm-chunks span.ov{ background:#c4b5fd; }
+.lm-chunks mark{ background:var(--accent-soft); color:var(--accent); font-weight:700; border-radius:3px; }
+
+/* 意味の地図 */
+.lm-map{ position:relative; flex:1; min-height:150px; background:var(--surface); border:1px solid var(--border); border-radius:10px; overflow:hidden; }
+.lm-map .d{ position:absolute; transform:translate(-50%, -50%); font:700 10.5px var(--font); padding:2px 7px; border-radius:999px; background:color-mix(in srgb, var(--stage-ink) 9%, transparent); white-space:nowrap; transition:.25s; }
+.lm-map .d.hit{ background:var(--ok); color:#fff; box-shadow:0 0 0 3px color-mix(in srgb, var(--ok) 25%, transparent); }
+.lm-map .d.kw{ outline:2px dashed var(--warn); }
+.lm-map .q{ position:absolute; transform:translate(-50%, -50%); font:800 11px var(--font); padding:3px 8px; border-radius:8px; background:var(--bad); color:#fff; transition:left .35s, top .35s; z-index:2; }
+.lm-map svg{ position:absolute; inset:0; width:100%; height:100%; pointer-events:none; }
+.lm-map svg line{ stroke:var(--ok); stroke-width:1.5; stroke-dasharray:3 3; }
+
+/* キャッシュのブロック */
+.lm-blocks{ display:flex; gap:3px; flex-wrap:wrap; }
+.lm-blocks span{ padding:6px 8px; border-radius:7px; font:800 10.5px var(--font); color:#fff; transition:.25s; position:relative; }
+.lm-blocks span.hit{ background:var(--ok); } .lm-blocks span.miss{ background:var(--warn); } .lm-blocks span.new{ background:#64748b; }
+.lm-blocks span.chg{ outline:2.5px solid var(--bad); outline-offset:1px; }
+
+/* 料金計算 */
+.lm-calc{ display:grid; grid-template-columns:110px 1fr 74px; gap:5px 8px; align-items:center; font-size:11.5px; }
+.lm-calc b{ font-size:11px; color:var(--muted); }
+.lm-calc output{ font:800 12px var(--mono); text-align:right; }
+.lm-calc select{ font:700 12px var(--font); border-radius:8px; border:1px solid var(--border-strong); background:var(--surface); color:var(--text); padding:4px 6px; }
+.lm-total{ display:grid; grid-template-columns:repeat(3, 1fr); gap:5px; }
+.lm-total div{ text-align:center; background:var(--surface); border:1.5px solid var(--border); border-radius:10px; padding:6px 4px; font-size:10.5px; color:var(--muted); }
+.lm-total div b{ display:block; font:900 17px var(--mono); color:var(--stage-ink); }
+.lm-total div.main{ border-color:var(--accent); }
+
+/* 評価表 */
+.lm-eval .kt-tbl td.p{ color:var(--ok); font-weight:800; } .lm-eval .kt-tbl td.f{ color:var(--bad); font-weight:800; }
+
+/* 個人情報のマスク */
+.lm-mask{ font:12px/1.7 var(--font); background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:7px 10px; white-space:pre-wrap; overflow:auto; min-height:0; }
+.lm-mask .pii{ background:color-mix(in srgb, var(--bad) 18%, transparent); color:var(--bad); border-radius:3px; font-weight:700; }
+.lm-mask .msk{ background:color-mix(in srgb, var(--ok) 16%, transparent); color:var(--ok); border-radius:3px; font:700 11px var(--mono); }
+
+/* チャットUIの見本 */
+.lm-ui{ display:flex; flex-direction:column; gap:6px; background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:8px; flex:1; min-height:0; }
+.lm-ui .tools{ display:flex; gap:4px; flex-wrap:wrap; }
+.lm-ui .tools button{ border:1px solid var(--border); background:var(--surface-2); color:var(--muted); border-radius:7px; padding:2px 7px; font:700 10.5px var(--font); cursor:pointer; }
+.lm-ui .tools button:hover{ color:var(--accent); border-color:var(--accent); }
+.lm-ui .in{ display:flex; gap:5px; }
+.lm-ui .in input{ flex:1; min-width:0; }
+.lm-status{ display:flex; flex-direction:column; gap:3px; font-size:12px; }
+.lm-status div{ display:flex; gap:8px; align-items:center; opacity:.35; transition:opacity .25s; }
+.lm-status div.on{ opacity:1; font-weight:700; } .lm-status div.done{ opacity:.8; }
+.lm-status div.done::before{ content:"✓"; color:var(--ok); font-weight:900; }
+.lm-status div.on::before{ content:""; width:12px; height:12px; border:2px solid var(--border-strong); border-top-color:var(--accent); border-radius:50%; animation:lmSpin .8s linear infinite; }
+.lm-status div:not(.on):not(.done)::before{ content:"○"; color:var(--faint); }
+
+/* 3つの作り方（単発・ワークフロー・エージェント） */
+.lm-tier{ display:flex; align-items:center; justify-content:center; gap:5px; flex-wrap:wrap; }
+.lm-tier .n{ padding:6px 9px; border-radius:9px; background:var(--surface); border:1.5px solid var(--border-strong); font:800 11px var(--font); }
+.lm-tier .n.ai{ background:var(--accent); border-color:var(--accent); color:#fff; }
+.lm-tier .n.tool{ border-color:var(--warn); }
+.lm-tier i{ font-style:normal; color:var(--muted); font-weight:900; }
+@media (max-width:420px){ .lm-two{ grid-template-columns:1fr; } .lm-calc{ grid-template-columns:84px 1fr 64px; } .lm-stats div b, .lm-total div b{ font-size:14px; } }

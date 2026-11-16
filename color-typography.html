@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>配色・タイポグラフィ辞典 | Vibe Coding 辞典</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Noto+Sans+JP:wght@100..900&family=Shippori+Mincho:wght@500&display=swap">
+<link rel="stylesheet" href="assets/dict.css">
+<link rel="stylesheet" href="data/color.css">
+</head>
+<body>
+<script src="assets/dict.js"></script>
+<script>window.TABS = [];</script>
+<script src="data/color.js"></script>
+<script>
+VD.render({
+  id: 'color-typography',
+  icon: '◐',
+  en: 'Color & Typography',
+  title: '配色・タイポグラフィ辞典',
+  accent: '#e2562b',
+  lead: '配色の理論、雰囲気別のカラーパレット、和色、グラデーション、日本語・欧文フォント、文字組み、余白や角丸のルールまで。<b>パレットはタブで画面全体の色が切り替わり</b>、フォントは好きな文字で見比べられます。',
+  howto: [
+    ['色を決める', '「配色の基本」で型を選び、「雰囲気別パレット」で5色セットをコピー'],
+    ['文字を決める', '日本語1書体＋欧文1書体が基本。見本の文字を書き換えて比較'],
+    ['ルールにする', '「余白・角丸・トークン」でCSS変数にまとめ、AIに「このトークンだけ使って」と指示'],
+  ],
+  tabs: TABS,
+});
+</script>
+</body>
+</html>

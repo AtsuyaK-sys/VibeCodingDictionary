@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>モーション・インタラクション辞典 | Vibe Coding 辞典</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700;800;900&family=Shippori+Mincho:wght@700;800&display=swap">
+<link rel="stylesheet" href="assets/dict.css">
+<link rel="stylesheet" href="data/motion.css">
+<link rel="stylesheet" href="data/motion-play.css">
+<style>
+  /* テーマ切替の円形リビール用：View Transitions の既定のクロスフェードを止める */
+  ::view-transition-old(root), ::view-transition-new(root){ animation:none; mix-blend-mode:normal; }
+</style>
+</head>
+<body>
+<script src="assets/dict.js"></script>
+<script>window.TABS = [];</script>
+<script src="data/motion-a.js"></script>
+<script src="data/motion-b.js"></script>
+<script src="data/motion-c.js"></script>
+<script src="data/motion-d.js"></script>
+<script src="data/motion-e.js"></script>
+<script>
+  // 「動きの調整・コツ」タブは最後に置く
+  TABS.push(...TABS.splice(TABS.findIndex(t => t.id === 'tune'), 1));
+</script>
+<script>
+VD.render({
+  id: 'motion',
+  icon: '◉',
+  en: 'Motion & Micro-interactions',
+  title: 'モーション・インタラクション辞典',
+  accent: '#c026d3',
+  lead: 'ボタンを押したとき・状態が変わったとき・現れて消えるとき・スクロールしたときの<b>動きの手触り</b>に特化した辞典です。見本はすべて実際に押したり、ドラッグしたり、スクロールしたりできます。X（旧Twitter）などで話題になる定番の演出、CSSだけ／JavaScriptで作る遊び心のある動き、動きを気持ちよくする調整のコツもまとめました。',
+  howto: [
+    ['触って選ぶ', '押す・ドラッグ・ホバー・スクロールで実際の手触りを確かめる'],
+    ['指示をコピー', '「AIへの指示例」には秒数・イージング・作り方まで入れています'],
+    ['遊び心も', '「遊び心・CSS」「遊び心・JS」タブには、触って楽しいおもちゃのような動きを集めました'],
+    ['仕上げに', '「動きの調整・コツ」の見比べで、AIが作った動きを直す言葉が見つかる'],
+  ],
+  tabs: TABS,
+});
+</script>
+</body>
+</html>

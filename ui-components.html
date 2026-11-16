@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UIコンポーネント辞典 | Vibe Coding 辞典</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap">
+<link rel="stylesheet" href="assets/dict.css">
+<link rel="stylesheet" href="data/ui.css">
+</head>
+<body>
+<script src="assets/dict.js"></script>
+<script>window.TABS = [];</script>
+<script src="data/ui.js"></script>
+<script>
+VD.render({
+  id: 'ui-components',
+  icon: '▣',
+  en: 'UI Components',
+  title: 'UIコンポーネント辞典',
+  accent: '#0f8b8d',
+  lead: 'ボタン・フォーム・ナビゲーション・モーダル・トースト…画面を構成する<b>部品の正式名称と、実際に操作できる見本</b>の辞典です。「あの、押すと出てくるやつ」を正しい名前で伝えられるようになります。',
+  howto: [
+    ['名前で伝える', '「ドロワー」「トースト」「コンボボックス」など正式名称で頼むと、AIは定番の挙動まで含めて作る'],
+    ['状態も指定する', 'ホバー・無効・読み込み中・エラー・空の状態まで指定すると完成度が上がる'],
+    ['ライブラリを指定', 'shadcn/ui などを指定すると、キーボード操作や読み上げ対応も自動で入る'],
+  ],
+  tabs: TABS,
+});
+</script>
+</body>
+</html>

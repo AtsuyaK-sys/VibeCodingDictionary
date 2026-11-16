@@ -1,0 +1,60 @@
+/* =========================================================
+   3D・WebGL・シェーダー辞典（t3- 接頭辞）
+   ========================================================= */
+.t3-cv{ position:relative; flex:1; min-height:0; border-radius:12px; overflow:hidden; background:radial-gradient(circle at 50% 30%, color-mix(in srgb, var(--stage-ink) 6%, var(--stage)), var(--stage)); }
+.t3-cv canvas{ position:absolute; inset:0; width:100% !important; height:100% !important; display:block; }
+.t3-cv .ph{ position:absolute; inset:0; display:grid; place-items:center; font-size:12px; color:var(--muted); text-align:center; padding:10px; }
+.t3-cv .tag{ position:absolute; left:8px; top:8px; z-index:2; max-width:calc(100% - 16px); overflow-wrap:anywhere; font:700 10.5px/1.4 var(--mono); padding:3px 7px; border-radius:6px; background:color-mix(in srgb, var(--surface) 85%, transparent); border:1px solid var(--border); pointer-events:none; }
+.t3-cv .tip{ position:absolute; right:8px; bottom:8px; z-index:2; font-size:10.5px; color:var(--muted); background:color-mix(in srgb, var(--surface) 80%, transparent); padding:2px 7px; border-radius:6px; pointer-events:none; }
+.t3-ctl{ display:grid; grid-template-columns:auto 1fr auto; gap:3px 8px; align-items:center; font-size:11.5px; }
+.t3-ctl b{ font-size:11px; color:var(--muted); white-space:nowrap; }
+.t3-ctl output{ font:700 11px var(--mono); min-width:40px; text-align:right; }
+.t3-ctl input[type=range]{ width:100%; accent-color:var(--accent); }
+.t3-checks{ display:flex; flex-wrap:wrap; gap:4px 12px; font-size:11.5px; }
+.t3-checks label{ display:flex; align-items:center; gap:4px; cursor:pointer; }
+.t3-checks input{ accent-color:var(--accent); }
+.t3-sw{ display:flex; gap:5px; }
+.t3-sw button{ width:24px; height:24px; border-radius:50%; border:2px solid var(--surface); box-shadow:0 0 0 1px var(--border-strong); cursor:pointer; }
+.t3-sw button.on{ box-shadow:0 0 0 2px var(--accent); }
+/* シェーダーの編集 */
+.t3-code{ font:11.5px/1.5 var(--mono); tab-size:2; min-height:90px; resize:vertical; }
+.t3-err{ font:11px/1.5 var(--mono); color:var(--bad); white-space:pre-wrap; max-height:56px; overflow:auto; }
+.t3-err:empty{ display:none; }
+.t3-plot{ width:100%; flex:1; min-height:0; display:block; background:var(--surface); border:1px solid var(--border); border-radius:10px; }
+/* スクロール連動 */
+.t3-scroll{ position:absolute; inset:0; overflow-y:auto; z-index:3; }
+.t3-scroll section{ height:100%; display:grid; place-items:end start; padding:12px; }
+.t3-scroll section b{ font:900 15px var(--font); background:color-mix(in srgb, var(--surface) 85%, transparent); padding:6px 10px; border-radius:9px; border:1px solid var(--border); }
+.t3-hero{ position:absolute; inset:0; z-index:3; display:flex; flex-direction:column; justify-content:center; padding:18px; pointer-events:none; }
+.t3-hero h5{ margin:0; font:900 22px/1.25 var(--font); color:var(--stage-ink); }
+.t3-hero p{ margin:6px 0 0; font-size:12px; color:var(--muted); max-width:60%; }
+@media (max-width:420px){ .t3-hero p{ max-width:100%; } }
+.t3-thumb{ position:absolute; right:8px; top:8px; z-index:2; width:84px; height:84px; border-radius:7px; border:1px solid var(--border); box-shadow:0 2px 8px rgb(0 0 0 / .2); }
+/* 3Dに重ねるHTML（ホットスポット） */
+.t3-hot{ position:absolute; z-index:3; width:22px; height:22px; margin:-11px 0 0 -11px; border-radius:50%; border:2px solid #fff; background:var(--accent); color:#fff; font:800 11px var(--font); display:grid; place-items:center; cursor:pointer; box-shadow:0 0 0 4px color-mix(in srgb, var(--accent) 30%, transparent); transition:opacity .2s; }
+.t3-hot.hide{ opacity:0; pointer-events:none; }
+.t3-pop{ position:absolute; z-index:4; left:8px; bottom:8px; right:8px; font-size:11.5px; line-height:1.5; background:var(--surface); border:1px solid var(--border); border-radius:9px; padding:6px 9px; box-shadow:var(--shadow); }
+.t3-pop:empty{ display:none; }
+/* 読み込み中の見せ方 */
+.t3-load{ position:absolute; inset:0; z-index:3; display:grid; place-items:center; align-content:center; gap:8px; background:linear-gradient(135deg, color-mix(in srgb, var(--accent) 22%, var(--stage)), var(--stage)); transition:opacity .6s; font-size:12px; text-align:center; padding:12px; }
+.t3-load.done{ opacity:0; pointer-events:none; }
+.t3-load .bar{ width:min(240px, 80%); height:8px; border-radius:9px; background:color-mix(in srgb, var(--stage-ink) 12%, transparent); overflow:hidden; }
+.t3-load .bar i{ display:block; height:100%; width:0; background:var(--accent); transition:width .25s; }
+/* フレーム予算・画素数 */
+.t3-budget{ position:relative; height:34px; border-radius:9px; background:color-mix(in srgb, var(--stage-ink) 8%, transparent); display:flex; overflow:hidden; border:1px solid var(--border); }
+.t3-budget i{ display:grid; place-items:center; font:700 10.5px var(--font); color:#fff; white-space:nowrap; overflow:hidden; transition:width .2s; }
+.t3-budget .line{ position:absolute; top:-2px; bottom:-2px; width:2px; background:var(--bad); }
+.t3-px{ display:flex; gap:10px; align-items:flex-end; justify-content:center; flex-wrap:wrap; }
+.t3-px > div{ text-align:center; font-size:11px; }
+.t3-px .g{ display:grid; gap:1px; background:var(--border-strong); border:1px solid var(--border-strong); margin:0 auto 4px; }
+.t3-px .g i{ background:var(--surface); }
+.t3-px .on .g i{ background:color-mix(in srgb, var(--accent) 35%, var(--surface)); }
+.t3-bars{ display:grid; grid-template-columns:auto 1fr auto; gap:5px 8px; align-items:center; font-size:11.5px; }
+.t3-bars i{ display:block; height:12px; border-radius:4px; background:var(--accent); min-width:2px; transition:width .25s; }
+.t3-bars i.b{ background:#0ea5e9; }
+.t3-bars output{ font:700 11px var(--mono); text-align:right; }
+/* glTFの中身 */
+.t3-anat{ font:11.5px/1.55 var(--mono); white-space:pre; overflow:auto; background:var(--code-bg); border:1px solid var(--border); border-radius:8px; padding:8px 10px; }
+.t3-anat .k{ color:#7c3aed; font-weight:700; cursor:pointer; border-radius:3px; padding:0 2px; }
+.t3-anat .k:hover, .t3-anat .k.on{ background:color-mix(in srgb, #7c3aed 18%, transparent); }
+.t3-anat .s{ color:#0f766e; }

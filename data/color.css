@@ -1,0 +1,87 @@
+/* 配色・タイポグラフィ辞典 — デモ用CSS */
+.sw{ display:flex; width:88%; height:64px; border-radius:12px; overflow:hidden; box-shadow:0 4px 14px rgba(0,0,0,.08); }
+.sw > div{ flex:1; display:flex; align-items:flex-end; justify-content:center; padding-bottom:5px; font:600 9.5px var(--mono); color:#fff; text-shadow:0 1px 2px rgba(0,0,0,.4); cursor:pointer; transition:flex .2s; }
+.sw > div:hover{ flex:1.6; }
+.sw.tall{ height:100px; }
+.wheel{ width:120px; height:120px; border-radius:50%; background:conic-gradient(hsl(0 85% 55%), hsl(60 85% 55%), hsl(120 85% 45%), hsl(180 85% 45%), hsl(240 85% 60%), hsl(300 85% 55%), hsl(360 85% 55%)); position:relative; }
+.wheel::after{ content:""; position:absolute; inset:28%; border-radius:50%; background:var(--stage); }
+.wheel i{ position:absolute; left:50%; top:50%; width:16px; height:16px; margin:-8px; border-radius:50%; border:3px solid #fff; box-shadow:0 1px 4px rgba(0,0,0,.4); z-index:1; }
+.c-split{ display:grid; grid-template-columns:auto 1fr; gap:16px; align-items:center; width:92%; }
+.rule603010{ width:88%; height:64px; display:flex; border-radius:12px; overflow:hidden; font:700 11px var(--mono); color:#fff; }
+.rule603010 div{ display:grid; place-items:center; }
+.hsl{ width:90%; display:grid; grid-template-columns:76px 1fr; gap:12px; align-items:center; }
+.hsl .chip{ width:76px; height:76px; border-radius:16px; box-shadow:0 4px 14px rgba(0,0,0,.15); }
+.hsl label{ display:grid; grid-template-columns:16px 1fr 34px; gap:6px; align-items:center; font:600 11px var(--mono); }
+.hsl input{ width:100%; accent-color:var(--accent); }
+.hsl .hex{ grid-column:1 / -1; font:700 12px var(--mono); text-align:center; }
+.cc{ width:92%; display:flex; flex-direction:column; gap:8px; }
+.cc .pv{ border-radius:10px; padding:10px 14px; font-weight:700; font-size:15px; }
+.cc .pv small{ display:block; font-weight:400; font-size:11.5px; }
+.cc .ctrl{ display:flex; gap:10px; align-items:center; font-size:12px; flex-wrap:wrap; }
+.cc input[type=color]{ width:34px; height:26px; border:0; padding:0; background:none; cursor:pointer; }
+.cc .ratio{ font:800 15px var(--mono); margin-left:auto; }
+.cc .pass{ font:700 10.5px var(--font); padding:1px 7px; border-radius:999px; margin-left:4px; }
+.cc .pass.y{ background:#dcfce7; color:#166534; } .cc .pass.n{ background:#fee2e2; color:#991b1b; }
+.tones{ display:grid; grid-template-columns:repeat(4, 1fr); gap:6px; width:92%; }
+.tones div{ display:flex; flex-direction:column; gap:3px; font-size:10px; text-align:center; color:var(--muted); }
+.tones span{ height:28px; border-radius:6px; }
+
+/* パレット切替のモック */
+.pal-mock{ position:absolute; inset:0; background:var(--c-bg); color:var(--c-text); padding:16px 18px; display:flex; flex-direction:column; gap:12px; font-size:13px; transition:background .3s, color .3s; }
+.pal-mock *{ transition:background .3s, color .3s, border-color .3s; }
+.pal-nav{ display:flex; align-items:center; gap:12px; }
+.pal-nav b{ color:var(--c-primary); font-size:15px; }
+.pal-nav span{ opacity:.7; font-size:12px; }
+.pal-nav .btn{ margin-left:auto; }
+.pal-mock h5{ margin:6px 0 0; font-size:24px; line-height:1.25; }
+.pal-mock h5 em{ font-style:normal; color:var(--c-primary); }
+.pal-mock p{ margin:0; opacity:.75; }
+.pal-mock .btn{ border:0; border-radius:10px; padding:8px 16px; font:700 12.5px var(--font); cursor:pointer; background:var(--c-primary); color:var(--c-on, #fff); }
+.pal-mock .btn.alt{ background:transparent; color:var(--c-text); box-shadow:inset 0 0 0 1.5px color-mix(in srgb, var(--c-text) 30%, transparent); }
+.pal-cards{ display:grid; grid-template-columns:repeat(3, 1fr); gap:10px; margin-top:auto; }
+.pal-cards div{ background:var(--c-surface); border-radius:12px; padding:10px 12px; box-shadow:0 2px 10px rgba(0,0,0,.06); }
+.pal-cards i{ display:inline-block; font-style:normal; font-size:10.5px; font-weight:700; padding:1px 8px; border-radius:999px; background:color-mix(in srgb, var(--c-accent) 30%, transparent); color:var(--c-text); }
+.pal-cards b{ display:block; margin-top:4px; }
+.pal-chips{ display:flex; gap:6px; }
+.pal-chips span{ flex:1; height:22px; border-radius:6px; font:600 9px var(--mono); display:grid; place-items:center; color:#fff; text-shadow:0 1px 2px rgba(0,0,0,.5); border:1px solid rgba(0,0,0,.08); }
+@container (max-width:460px){ .pal-cards{ grid-template-columns:1fr 1fr; } .pal-cards div:nth-child(3){ display:none; } }
+
+/* 和色 */
+.wa{ display:flex; flex-direction:column; width:100%; height:100%; }
+.wa .c{ flex:1; }
+.wa .n{ padding:7px 10px; display:flex; justify-content:space-between; align-items:baseline; background:var(--surface); }
+.wa .n b{ font-family:"Shippori Mincho", serif; font-size:15px; }
+.wa .n span{ font:11px var(--mono); color:var(--muted); }
+
+/* グラデーション */
+.grad{ position:absolute; inset:0; }
+
+/* フォント */
+.ff{ position:absolute; inset:0; padding:12px 16px; display:flex; flex-direction:column; justify-content:center; gap:6px; overflow:hidden; }
+.ff .big{ font-size:30px; line-height:1.25; color:var(--text); word-break:break-all; }
+.ff .sm{ font-size:13.5px; line-height:1.7; color:var(--muted); }
+.ff-ctl{ display:flex; flex-wrap:wrap; gap:10px; align-items:center; background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:12px 14px; }
+.ff-ctl input[type=text]{ flex:1; min-width:220px; font:15px var(--font); padding:8px 12px; border:1px solid var(--border); border-radius:10px; background:var(--surface-2); color:var(--text); }
+.ff-ctl label{ font-size:12px; color:var(--muted); display:flex; align-items:center; gap:6px; }
+
+/* タイポ用語 */
+.ty{ position:absolute; inset:0; padding:12px 16px; display:flex; flex-direction:column; justify-content:center; gap:4px; overflow:hidden; color:var(--text); }
+.ty .row{ display:flex; align-items:baseline; gap:10px; white-space:nowrap; }
+.ty .row small{ width:56px; flex:none; font:600 10px var(--mono); color:var(--muted); }
+.ty-lh{ display:grid; grid-template-columns:repeat(3, 1fr); gap:10px; font-size:11px; }
+.ty-lh p{ margin:0; background:var(--surface); border-radius:8px; padding:6px 8px; }
+.ty-lh small{ display:block; font:600 10px var(--mono); color:var(--accent); }
+.ty-cmp{ display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+.ty-cmp > div{ background:var(--surface); border-radius:10px; padding:8px 10px; }
+.ty-cmp small{ display:block; font:600 10px var(--mono); color:var(--accent); margin-bottom:2px; }
+
+/* トークン */
+.tk{ position:absolute; inset:0; padding:14px 18px; display:flex; flex-direction:column; justify-content:center; gap:5px; }
+.tk .r{ display:flex; align-items:center; gap:10px; font:600 10.5px var(--mono); color:var(--muted); }
+.tk .r i{ display:block; height:12px; background:var(--accent); border-radius:3px; }
+.tk-rad{ display:flex; gap:10px; flex-wrap:wrap; justify-content:center; align-items:flex-end; }
+.tk-rad div{ display:flex; flex-direction:column; align-items:center; gap:4px; font:600 10px var(--mono); color:var(--muted); }
+.tk-rad span{ width:46px; height:46px; background:color-mix(in srgb, var(--accent) 70%, #fff); border:2px solid var(--accent); }
+.tk-dark{ display:grid; grid-template-columns:1fr 1fr; gap:8px; width:92%; }
+.tk-dark > div{ border-radius:12px; padding:10px 12px; font-size:12px; display:flex; flex-direction:column; gap:6px; }
+.tk-dark .card{ border-radius:8px; padding:6px 8px; }

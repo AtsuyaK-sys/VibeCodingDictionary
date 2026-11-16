@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>開発用語辞典 | Vibe Coding 辞典</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Noto+Sans+JP:wght@400;500;700;900&display=swap">
+<link rel="stylesheet" href="assets/dict.css">
+<style>
+  .ex{ display:inline-block; margin-top:4px; font-size:12px; color:var(--accent); background:var(--accent-soft); border-radius:6px; padding:1px 8px; }
+</style>
+</head>
+<body>
+<script src="assets/dict.js"></script>
+<script>window.TABS = [];</script>
+<script src="data/glossary.js"></script>
+<script>
+VD.render({
+  id: 'glossary',
+  icon: '≡',
+  en: 'Developer Glossary',
+  title: '開発用語辞典',
+  accent: '#0369a1',
+  lead: 'AIとの会話や、AIが出してきた説明に出てくる<b>開発の基本用語</b>を、プログラミング経験がなくても分かる言葉でまとめました。たとえ話付きで、検索から引けます。',
+  howto: [
+    ['分からない言葉が出たら', '上の検索欄に入力。英語・カタカナどちらでも探せます'],
+    ['AIにも聞ける', '「〇〇を中学生にも分かるように説明して」と聞くと理解が深まります'],
+    ['関連辞典', 'エラーは「エラー・トラブル辞典」、技術選びは「技術スタック辞典」へ'],
+  ],
+  tabs: TABS,
+});
+</script>
+</body>
+</html>

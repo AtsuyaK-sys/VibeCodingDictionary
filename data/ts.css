@@ -1,0 +1,69 @@
+/* =========================================================
+   テスト・品質辞典（ts- 接頭辞）
+   ========================================================= */
+.ts-two{ display:grid; grid-template-columns:1fr 1fr; gap:8px; flex:1; min-height:0; }
+.ts-two > *{ min-height:0; min-width:0; display:flex; flex-direction:column; gap:4px; }
+@media (max-width:560px){ .ts-two{ grid-template-columns:1fr; } }
+.ts-code{ font:11.5px/1.5 var(--mono); tab-size:2; resize:none; flex:1; min-height:70px; white-space:pre; }
+/* テストの結果 */
+.ts-res{ display:flex; flex-direction:column; gap:3px; overflow:auto; min-height:0; font-size:11.5px; }
+.ts-res div{ display:flex; gap:6px; align-items:flex-start; padding:3px 6px; border-radius:6px; background:var(--surface); border:1px solid var(--border); }
+.ts-res div.ok{ border-color:color-mix(in srgb, var(--ok) 40%, var(--border)); }
+.ts-res div.bad{ border-color:color-mix(in srgb, var(--bad) 45%, var(--border)); background:color-mix(in srgb, var(--bad) 6%, var(--surface)); }
+.ts-res div.warn{ border-color:color-mix(in srgb, var(--warn) 45%, var(--border)); }
+.ts-res b{ flex:none; }
+.ts-res small{ display:block; color:var(--muted); font-family:var(--mono); font-size:10.5px; overflow-wrap:anywhere; }
+.ts-sum{ font:800 12px var(--font); }
+.ts-sum .p{ color:var(--ok); } .ts-sum .f{ color:var(--bad); }
+/* ピラミッド */
+.ts-pyr{ display:flex; flex-direction:column; align-items:center; gap:3px; flex:1; justify-content:center; }
+.ts-pyr button{ border:0; border-radius:6px; padding:6px 4px; font:800 11.5px var(--font); color:#fff; cursor:pointer; transition:transform .15s, filter .15s; max-width:100%; }
+.ts-pyr button:hover, .ts-pyr button.on{ transform:scale(1.04); filter:brightness(1.08); box-shadow:0 0 0 3px color-mix(in srgb, var(--stage-ink) 25%, transparent); }
+/* コードの行（カバレッジ・AAA） */
+.ts-lines{ font:11.5px/1.55 var(--mono); background:var(--code-bg); border:1px solid var(--border); border-radius:8px; padding:6px 0; overflow:auto; min-height:0; }
+.ts-lines div{ padding:0 10px; white-space:pre; border-left:3px solid transparent; }
+.ts-lines div.hit{ background:color-mix(in srgb, var(--ok) 14%, transparent); border-left-color:var(--ok); }
+.ts-lines div.miss{ background:color-mix(in srgb, var(--bad) 12%, transparent); border-left-color:var(--bad); }
+.ts-lines div.a{ background:color-mix(in srgb, #0ea5e9 14%, transparent); border-left-color:#0ea5e9; }
+.ts-lines div.b{ background:color-mix(in srgb, #a855f7 14%, transparent); border-left-color:#a855f7; }
+.ts-lines div.c{ background:color-mix(in srgb, var(--ok) 14%, transparent); border-left-color:var(--ok); }
+/* 数直線（境界値） */
+.ts-axis{ position:relative; height:60px; margin:0 8px; }
+.ts-axis .seg{ position:absolute; top:18px; height:14px; border-radius:4px; opacity:.35; }
+.ts-axis .seg.cov{ opacity:1; }
+.ts-axis .pt{ position:absolute; top:12px; width:3px; height:26px; background:var(--stage-ink); border-radius:2px; transform:translateX(-50%); }
+.ts-axis .pt.bd{ background:var(--accent); width:4px; }
+.ts-axis .lb{ position:absolute; top:40px; font:10px var(--mono); color:var(--muted); transform:translateX(-50%); white-space:nowrap; }
+/* モックのページ */
+.ts-mock{ position:relative; background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:10px; font-size:12px; overflow:hidden; }
+.ts-mock input{ width:100%; padding:5px 8px; border:1px solid var(--border-strong); border-radius:6px; font:12px var(--font); background:var(--surface); color:var(--text); margin-bottom:6px; }
+.ts-mock button{ padding:5px 12px; border-radius:6px; border:0; background:var(--accent); color:#fff; font:700 12px var(--font); }
+.ts-mock .ring{ outline:3px solid #f59e0b; outline-offset:2px; }
+.ts-mock .ord{ position:absolute; z-index:3; width:18px; height:18px; border-radius:50%; background:#f59e0b; color:#111; font:800 10px var(--mono); display:grid; place-items:center; transform:translate(-60%, -60%); }
+/* 色見本 */
+.ts-sample{ border-radius:10px; padding:12px; border:1px solid var(--border); display:grid; place-items:center; text-align:center; min-height:70px; }
+/* パイプライン */
+.ts-pipe{ display:flex; flex-wrap:wrap; gap:4px; align-items:center; justify-content:center; }
+.ts-pipe span.s{ padding:6px 10px; border-radius:9px; border:1.5px solid var(--border-strong); background:var(--surface); font:700 11.5px var(--font); transition:all .2s; }
+.ts-pipe span.run{ border-color:var(--accent); box-shadow:0 0 0 3px color-mix(in srgb, var(--accent) 25%, transparent); }
+.ts-pipe span.ok{ border-color:var(--ok); background:color-mix(in srgb, var(--ok) 10%, var(--surface)); }
+.ts-pipe span.bad{ border-color:var(--bad); background:color-mix(in srgb, var(--bad) 10%, var(--surface)); }
+.ts-pipe span.skip{ opacity:.35; }
+.ts-pipe i{ color:var(--muted); font-style:normal; font-weight:900; }
+.ts-dots{ display:flex; flex-wrap:wrap; gap:3px; }
+.ts-dots i{ width:14px; height:14px; border-radius:4px; background:var(--ok); }
+.ts-dots i.f{ background:var(--bad); }
+/* 速度のメーター */
+.ts-meter{ display:grid; grid-template-columns:auto 1fr auto; gap:6px 8px; align-items:center; font-size:11.5px; }
+.ts-meter .bar{ position:relative; height:14px; border-radius:7px; background:linear-gradient(90deg, #0ca30c 0 33%, #fab219 33% 66%, #d03b3b 66%); }
+.ts-meter .bar i{ position:absolute; top:-4px; width:4px; height:22px; border-radius:2px; background:var(--stage-ink); transform:translateX(-50%); transition:left .2s; }
+.ts-wf{ display:grid; grid-template-columns:minmax(0, 120px) 1fr; gap:3px 8px; align-items:center; font-size:11px; }
+.ts-wf .b{ position:relative; height:12px; }
+.ts-wf .b i{ position:absolute; top:0; bottom:0; border-radius:3px; background:var(--accent); }
+.ts-wf .b i.blk{ background:var(--bad); }
+.ts-diff{ font:11.5px/1.55 var(--mono); white-space:pre; overflow:auto; background:var(--code-bg); border:1px solid var(--border); border-radius:8px; padding:6px 10px; }
+.ts-diff .add{ background:color-mix(in srgb, var(--ok) 18%, transparent); display:block; }
+.ts-diff .del{ background:color-mix(in srgb, var(--bad) 18%, transparent); display:block; }
+.ts-cv{ position:relative; flex:1; min-height:0; display:flex; gap:6px; }
+.ts-cv > div{ flex:1; min-width:0; display:flex; flex-direction:column; gap:2px; align-items:center; font-size:10.5px; color:var(--muted); }
+.ts-cv canvas{ width:100%; flex:1; min-height:0; border:1px solid var(--border); border-radius:6px; background:#fff; object-fit:contain; }
