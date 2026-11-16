@@ -1,0 +1,35 @@
+/* =========================================================
+   データ分析・統計の基本辞典（da- 接頭辞）
+   ========================================================= */
+.da-cv{ position:relative; flex:1; min-height:0; border-radius:10px; background:var(--surface); border:1px solid var(--border); overflow:hidden; }
+.da-cv canvas{ display:block; }
+.da-ctl{ display:grid; grid-template-columns:auto 1fr auto; gap:3px 8px; align-items:center; font-size:11.5px; }
+.da-ctl b{ font-size:11px; color:var(--muted); white-space:nowrap; }
+.da-ctl output{ font:700 11px var(--mono); min-width:46px; text-align:right; }
+.da-ctl input[type=range]{ width:100%; accent-color:var(--accent); }
+@media (max-width:400px){ .da-ctl{ grid-template-columns:1fr auto; } .da-ctl b{ grid-column:1 / -1; margin-top:2px; } }
+.da-f{ font:12px/1.6 var(--mono); background:var(--code-bg); border:1px solid var(--border); border-radius:8px; padding:6px 10px; white-space:pre-wrap; overflow-wrap:anywhere; }
+.da-f b{ color:var(--accent); }
+.da-kpi{ display:grid; grid-template-columns:repeat(4, 1fr); gap:4px; }
+.da-kpi div{ border-radius:8px; border:1px solid var(--border); background:var(--surface); padding:4px 6px; font-size:10.5px; color:var(--muted); text-align:center; }
+.da-kpi b{ display:block; font:800 14.5px var(--mono); color:var(--text); }
+@media (max-width:420px){ .da-kpi{ grid-template-columns:repeat(2, 1fr); } }
+
+/* 前処理の表 */
+.da-tbl{ flex:1; min-height:0; overflow:auto; border:1px solid var(--border); border-radius:8px; background:var(--surface); }
+.da-tbl table{ width:100%; border-collapse:collapse; font-size:11.5px; }
+.da-tbl th, .da-tbl td{ padding:3px 6px; border-bottom:1px solid var(--border); text-align:left; white-space:nowrap; }
+.da-tbl th{ position:sticky; top:0; background:var(--surface-2); font-size:10.5px; color:var(--muted); }
+.da-tbl td.num{ text-align:right; font-family:var(--mono); }
+.da-tbl .bad{ background:color-mix(in srgb, var(--bad) 16%, transparent); }
+.da-tbl .fixed{ background:color-mix(in srgb, var(--ok) 16%, transparent); }
+.da-tbl tr.gone td{ text-decoration:line-through; opacity:.4; }
+.da-fix{ display:flex; flex-wrap:wrap; gap:4px; }
+.da-fix .kt-btn[aria-pressed="true"]{ background:var(--ok); border-color:var(--ok); color:#fff; }
+
+/* 割合の棒（シンプソン・A/Bテスト） */
+.da-bars{ display:grid; grid-template-columns:auto 1fr auto; gap:4px 8px; align-items:center; font-size:12px; }
+.da-bars .bar{ height:16px; border-radius:6px; background:var(--surface-2); position:relative; overflow:hidden; }
+.da-bars .bar i{ position:absolute; left:0; top:0; bottom:0; border-radius:6px; transition:width .3s; }
+.da-bars .h{ grid-column:1 / -1; font-size:11px; color:var(--muted); font-weight:700; margin-top:4px; }
+.da-bars span:last-child{ font:700 11.5px var(--mono); }

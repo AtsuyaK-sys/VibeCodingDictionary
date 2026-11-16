@@ -135,6 +135,7 @@
     'security.html':['基本の考え方','APIキー','認証','認可','攻撃と対策','通信・ブラウザ','AIコードの危険','運用チェック'],
     'database.html':['基本','テーブル設計','SQL（実行可）','インデックス','データを守る','型・日付・お金','サービス','AI・エラー'],
     'git-terminal.html':['Gitの基本','ブランチ','元に戻す','GitHub','ターミナル','パッケージ','環境変数','ローカル開発'],
+    'data-analysis.html':['分析の流れ','平均とばらつき','分布','相関と因果','標本と推定','比べる（A/Bテスト）','データを整える','道具とAIへの頼み方'],
     'start.html':['バイブコーディングとは','目的別の読む順番','最初の1時間','まず覚える言葉','つまずいたら','辞典の地図'],
     'ai-basics.html':['AIの地図','学習のしくみ','分ける・まとめる','評価のしかた','ニューラルネット','文章を作るAI','画像・音声を作るAI','限界と付き合い方'],
     'ai-workflow.html':['作るものを決める','要件を書く','画面と流れ','作業を分ける','AIとの開発サイクル','エージェント','確認・テスト','テンプレート'],
@@ -154,7 +155,7 @@
     'release.html':['SEO','SNS共有','表示速度','セキュリティ','アクセシビリティ','法務','直前チェック'],
     'resources.html':['アイコン','イラスト','写真','動画','音','フォント','3D','ゲーム素材','参考サイト','ツール'],
   };
-  const LIVE = { 'start.html':'START', 'ai-basics.html':'LIVE', 'motion-math.html':'LIVE', 'image-prompts.html':'LIVE', 'ux-writing.html':'LIVE','3d.html':'3D', 'dataviz.html':'LIVE', 'automation.html':'LIVE', 'app-distribution.html':'LIVE', 'payments.html':'LIVE', 'testing.html':'TEST', 'ai-workflow.html':'LIVE', 'ai-integration.html':'LIVE', 'security.html':'LIVE', 'database.html':'SQL', 'git-terminal.html':'LIVE', 'motion.html':'LIVE', 'web-design.html':'LIVE', 'ui-components.html':'LIVE', 'color-typography.html':'LIVE', 'video.html':'LIVE', 'sound.html':'SOUND', 'game-dev.html':'LIVE', 'free-api.html':'API', 'release.html':'CHECK' };
+  const LIVE = { 'data-analysis.html':'LIVE', 'start.html':'START', 'ai-basics.html':'LIVE', 'motion-math.html':'LIVE', 'image-prompts.html':'LIVE', 'ux-writing.html':'LIVE','3d.html':'3D', 'dataviz.html':'LIVE', 'automation.html':'LIVE', 'app-distribution.html':'LIVE', 'payments.html':'LIVE', 'testing.html':'TEST', 'ai-workflow.html':'LIVE', 'ai-integration.html':'LIVE', 'security.html':'LIVE', 'database.html':'SQL', 'git-terminal.html':'LIVE', 'motion.html':'LIVE', 'web-design.html':'LIVE', 'ui-components.html':'LIVE', 'color-typography.html':'LIVE', 'video.html':'LIVE', 'sound.html':'SOUND', 'game-dev.html':'LIVE', 'free-api.html':'API', 'release.html':'CHECK' };
   const all = VD.DICTS.concat(VD.EXTRA);
   const grid = document.getElementById('grid'), filter = document.getElementById('filter'), empty = document.getElementById('empty');
   document.getElementById('stats').append(

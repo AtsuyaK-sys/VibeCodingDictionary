@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>データ分析・統計の基本辞典 | Vibe Coding 辞典</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700;800;900&display=swap">
+<link rel="stylesheet" href="assets/dict.css">
+<link rel="stylesheet" href="assets/kit.css">
+<link rel="stylesheet" href="data/da.css">
+</head>
+<body>
+<script src="assets/dict.js"></script>
+<script src="assets/kit.js"></script>
+<script>window.TABS = [];</script>
+<script src="data/da-a.js"></script>
+<script src="data/da-b.js"></script>
+<script>
+VD.render({
+  id: 'data-analysis',
+  icon: '∑',
+  en: 'Data Analysis & Statistics Basics',
+  title: 'データ分析・統計の基本辞典',
+  accent: '#a16207',
+  lead: '数字にだまされず、データから正しく言えることを見つけるための辞典です。分析の流れ、平均と中央値・ばらつき、分布の形、<b>相関と因果の取り違え</b>、何人に聞けばよいか、A/Bテストと「たまたま」の見分け方、データの前処理、スプレッドシート・pandas・SQL の早見表まで。<b>数式なしで、数字を動かして</b>確かめられます。',
+  howto: [
+    ['流れをつかむ', '「分析の流れ」で、問い → 集める → 整える → 調べる → 伝えるを確認'],
+    ['だまされ方を知る', '「平均とばらつき」「相関と因果」「比べる」の見本で、よくある勘違いを体験'],
+    ['AIに頼む', '「道具とAIへの頼み方」の言い方と、報告前のチェックを使う'],
+  ],
+  tabs: TABS,
+});
+</script>
+</body>
+</html>

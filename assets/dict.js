@@ -48,6 +48,7 @@ const DICTS = [
   { file:'game-dev.html',         icon:'◆', group:'メディア',   accent:'#2f9e44', title:'ゲーム制作辞典', short:'ゲーム制作', desc:'ジャンル、メカニクス、手触り演出（ジュース）、物理・当たり判定をCanvasで動かして確認。' },
   { file:'image-prompts.html',    icon:'◩', group:'メディア',   accent:'#0ea5e9', title:'画像・イラスト表現辞典（画像生成プロンプト語彙）', short:'画像・イラスト表現', desc:'旧PDF「Qwen-Image-2.1 プロンプト語彙辞典」をHTML化。人物・背景・光・カメラ・画風・文字・編集など約1,400語＋組み立て機・ライティングや構図の見本。' },
   { file:'3d.html',               icon:'⬢', group:'メディア',   accent:'#7c3aed', title:'3D・WebGL・シェーダー辞典', short:'3D・WebGL・シェーダー', desc:'シーン・カメラ・ライト、PBRの質感、光と影、カメラ操作とクリック判定、シェーダーの遊び場、3Dモデルの軽量化、性能、商品ビューア。three.jsで実際に動かして確認。' },
+  { file:'data-analysis.html',    icon:'∑', group:'開発',       accent:'#a16207', title:'データ分析・統計の基本辞典', short:'データ分析・統計', desc:'分析の流れ、平均と中央値・ばらつき、分布、相関と因果の取り違え、標本と誤差、A/Bテストとp値、データの前処理、スプレッドシート・pandas・SQLの早見表。数字を動かして確かめる。' },
   { file:'free-api.html',         icon:'⇄', group:'開発',       accent:'#1d6fe0', title:'無料API辞典', short:'無料API', desc:'キー不要・無料枠ありのWeb APIと、ブラウザに最初から入っているAPI。その場で呼び出して中身を確認。' },
   { file:'tech-stack.html',       icon:'⚙', group:'開発',       accent:'#475569', title:'技術スタック・ライブラリ辞典', short:'技術スタック', desc:'フロント・バック・DB・ホスティング・グラフ・3D・便利ライブラリの用途と導入コマンド。' },
   { file:'ai-tools.html',         icon:'✧', group:'開発',       accent:'#9333ea', title:'AIツール・モデル辞典', short:'AIツール', desc:'コーディングAI、LLM、画像・動画・音声生成AI、ローカルAI、AI機能の組み込み方。' },

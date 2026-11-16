@@ -46,6 +46,7 @@ GitHub 上で **Pull Request** を作ると、変更の差分をページ単位�
 | `game-dev.html` | `game.js` |
 | `image-prompts.html` | `ig-vocab.js` `ig-a.js` `ig-b.js` `ig.css` |
 | `3d.html` | `threed-a.js` `threed-b.js` `threed.css` |
+| `data-analysis.html` | `da-a.js` `da-b.js` `da.css` |
 | `free-api.html` | `free-api-a.js` `-b.js` `-c.js` |
 | `tech-stack.html` | `tech.js` |
 | `ai-tools.html` | `ai.js` |
