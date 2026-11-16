@@ -59,7 +59,7 @@ GitHub 上で **Pull Request** を作ると、変更の差分をページ単位�
 | `ai-basics.html` | `ab-a.js` `ab-b.js` `ab.css` |
 | `ai-workflow.html` | `wf-a.js` `wf-b.js` `wf.css` |
 | `prompts.html` | `prompts.js` |
-| `errors.html` | `errors.js` |
+| `errors.html` | `errors.js` `errors-b.js` `errors-b.css` |
 | `glossary.html` | `glossary.js` |
 | `release.html` | `release.js` |
 | `testing.html` | `ts-a.js` `ts-b.js` `ts.css` |
