@@ -54,6 +54,7 @@ const DICTS = [
   { file:'security.html',         icon:'⚿', group:'開発',       accent:'#be123c', title:'セキュリティ・認証辞典', short:'セキュリティ・認証', desc:'APIキーの置き場所、ログイン・権限の仕組み、XSS・SQLインジェクションなどの攻撃と対策をその場で再現。AIコードの危険パターンと公開前チェック付き。' },
   { file:'database.html',         icon:'⛁', group:'開発',       accent:'#4f46e5', title:'データベース・データ設計辞典', short:'データベース・設計', desc:'テーブル設計・ER図、ブラウザで実行できるSQL、インデックスとN+1、トランザクションと同時更新、型・日付・お金の落とし穴。' },
   { file:'git-terminal.html',     icon:'⑂', group:'開発',       accent:'#e8590c', title:'Git・ターミナル・開発環境辞典', short:'Git・ターミナル', desc:'Gitの仕組みと元に戻す逆引き、ブランチのシミュレーター、練習用ターミナル、パッケージ・環境変数・ポートの仕組み。' },
+  { file:'start.html',            icon:'🔰', group:'AIとの対話', accent:'#16a34a', title:'はじめてガイド', short:'はじめてガイド', desc:'はじめての人の入口。バイブコーディングの流れ、作りたいもの別の読む順番、最初の1時間と指示文メーカー、まず覚える言葉、つまずいたときの対処、辞典の地図。' },
   { file:'ai-basics.html',        icon:'🧠', group:'AIとの対話', accent:'#0077b6', title:'AI・機械学習のしくみ辞典', short:'AI・機械学習のしくみ', desc:'AIの全体の地図、データから学ぶしくみ、分類とグループ分け、成績の測り方、ニューラルネット、LLMが文章を作るしくみ、画像生成、限界と付き合い方。小さなAIをその場で学習させて確かめる。' },
   { file:'ai-workflow.html',      icon:'▤', group:'AIとの対話', accent:'#0d9488', title:'要件定義・AI開発の進め方辞典', short:'要件定義・AI開発の進め方', desc:'1枚企画書・要件・画面設計・タスク分解、AIとの開発サイクル、CLAUDE.md とエージェントの使いこなし、テスト、テンプレート集。' },
   { file:'automation.html',       icon:'⟳', group:'開発',       accent:'#059669', title:'自動化・Bot辞典', short:'自動化・Bot', desc:'トリガーとアクション、Google Apps Script、ノーコード自動化、Webhookの署名と二重処理、cronとタイムゾーン、LINE・Slack・DiscordのBot、スクレイピングのルール、AI×自動化。' },

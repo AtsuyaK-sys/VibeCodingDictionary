@@ -55,6 +55,7 @@ GitHub 上で **Pull Request** を作ると、変更の差分をページ単位�
 | `automation.html` | `au-a.js` `au-b.js` `au.css` |
 | `payments.html` | `py-a.js` `py-b.js` `py.css` |
 | `ai-integration.html` | `llm-a.js` `llm-b.js` `llm.css` |
+| `start.html` | `start.js` `start.css` |
 | `ai-basics.html` | `ab-a.js` `ab-b.js` `ab.css` |
 | `ai-workflow.html` | `wf-a.js` `wf-b.js` `wf.css` |
 | `prompts.html` | `prompts.js` |

@@ -1,0 +1,35 @@
+/* =========================================================
+   はじめてガイド（st- 接頭辞）
+   ========================================================= */
+.st-out{ font:12.5px/1.7 var(--mono); background:var(--code-bg); border:1px solid var(--border); border-radius:8px; padding:8px 10px; white-space:pre-wrap; overflow-wrap:anywhere; }
+.st-note{ font-size:12px; line-height:1.6; background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:6px 10px; }
+
+/* 言葉の具体さで結果が変わる見本 */
+.st-mock{ flex:1; min-height:110px; border-radius:10px; background:var(--surface); border:1px solid var(--border); display:grid; place-items:center; padding:12px; }
+.st-b0{ font:13px sans-serif; padding:2px 8px; background:#efefef; color:#000; border:1px solid #767676; border-radius:3px; }
+.st-b1{ font:700 14px var(--font); padding:9px 20px; background:#2563eb; color:#fff; border:0; border-radius:10px; cursor:pointer; }
+.st-b2{ font:800 15px var(--font); padding:12px 26px; color:#fff; border:0; border-radius:999px; cursor:pointer; background:linear-gradient(90deg, #2563eb, #9333ea); box-shadow:0 6px 16px rgb(79 70 229 / .35); transition:transform .18s cubic-bezier(.2,.8,.2,1), box-shadow .18s; display:inline-flex; gap:8px; align-items:center; }
+.st-b2:hover{ transform:translateY(-3px); box-shadow:0 12px 26px rgb(79 70 229 / .45); }
+.st-b2:active{ transform:scale(.96); }
+.st-b2 i{ font-style:normal; transition:transform .18s; }
+.st-b2:hover i{ transform:translateX(4px); }
+
+/* 目的別の読む順番 */
+.st-goals{ display:grid; grid-template-columns:repeat(4, 1fr); gap:6px; }
+.st-goals button{ border:1px solid var(--border-strong); background:var(--surface); color:var(--text); border-radius:10px; padding:7px 4px; font:700 11.5px/1.35 var(--font); cursor:pointer; display:flex; flex-direction:column; align-items:center; gap:2px; }
+.st-goals button b{ font-size:18px; font-weight:400; }
+.st-goals button[aria-pressed="true"]{ background:var(--accent); border-color:var(--accent); color:#fff; }
+@media (max-width:560px){ .st-goals{ grid-template-columns:repeat(2, 1fr); } }
+.st-route{ flex:1; min-height:0; overflow:auto; display:flex; flex-direction:column; gap:6px; counter-reset:st; }
+.st-route .goal{ font-size:12px; color:var(--muted); }
+.st-route a{ position:relative; display:block; padding:8px 10px 8px 40px; border-radius:10px; background:var(--surface); border:1px solid var(--border); color:var(--text); font-size:12.5px; line-height:1.5; }
+.st-route a:hover{ border-color:var(--accent); text-decoration:none; }
+.st-route a::before{ counter-increment:st; content:counter(st); position:absolute; left:10px; top:9px; width:22px; height:22px; border-radius:50%; display:grid; place-items:center; background:var(--accent); color:#fff; font:700 12px var(--mono); }
+.st-route a b{ display:block; font-size:13px; }
+.st-route a span{ color:var(--muted); }
+
+/* 最初の指示メーカー */
+.st-form{ display:grid; grid-template-columns:auto 1fr; gap:6px 10px; align-items:center; font-size:12px; }
+.st-form label{ font-weight:700; color:var(--muted); white-space:nowrap; }
+.st-form select, .st-form input{ width:100%; min-width:0; border:1px solid var(--border-strong); background:var(--surface); color:var(--text); border-radius:8px; padding:5px 8px; font:13px var(--font); }
+@media (max-width:420px){ .st-form{ grid-template-columns:1fr; gap:2px 0; } .st-form label{ margin-top:4px; } }

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>はじめてガイド | Vibe Coding 辞典</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700;800;900&display=swap">
+<link rel="stylesheet" href="assets/dict.css">
+<link rel="stylesheet" href="assets/kit.css">
+<link rel="stylesheet" href="data/start.css">
+</head>
+<body>
+<script src="assets/dict.js"></script>
+<script src="assets/kit.js"></script>
+<script>window.TABS = [];</script>
+<script src="data/start.js"></script>
+<script>
+VD.render({
+  id: 'start',
+  icon: '🔰',
+  en: 'Getting Started',
+  title: 'はじめてガイド',
+  accent: '#16a34a',
+  lead: 'バイブコーディング（AIに言葉で頼んで作る作り方）を<b>はじめて試す人</b>のための入口です。全体の流れ、<b>作りたいもの別の読む順番</b>、最初の1時間の進め方と指示文メーカー、まず覚える24の言葉、つまずいたときの対処、そして30冊以上ある辞典の地図をまとめました。',
+  howto: [
+    ['流れをつかむ', '「バイブコーディングとは」で、頼む → 動かす → 直すの流れを見る'],
+    ['読む順番を決める', '「目的別の読む順番」で、作りたいものを選ぶ'],
+    ['1周やってみる', '「最初の1時間」の指示メーカーで指示を作り、AIに渡してみる'],
+  ],
+  tabs: TABS,
+});
+</script>
+</body>
+</html>
