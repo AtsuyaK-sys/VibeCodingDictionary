@@ -48,7 +48,7 @@ GitHub 上で **Pull Request** を作ると、変更の差分をページ単位�
 | `3d.html` | `threed-a.js` `threed-b.js` `threed.css` |
 | `data-analysis.html` | `da-a.js` `da-b.js` `da.css` |
 | `free-api.html` | `free-api-a.js` `-b.js` `-c.js` |
-| `tech-stack.html` | `tech.js` |
+| `tech-stack.html` | `tech.js` `tech-b.js` `tech-b.css` |
 | `ai-tools.html` | `ai.js` |
 | `security.html` | `security-a.js` `-b.js` `-c.js` `security.css` |
 | `database.html` | `db-a.js` `-b.js` `-c.js` `db.css` |
