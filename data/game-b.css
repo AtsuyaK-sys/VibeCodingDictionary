@@ -1,0 +1,16 @@
+/* ゲーム制作辞典 — 追加分（gb- 接頭辞）：実装パターン */
+.gb{ position:absolute; inset:0; display:flex; flex-direction:column; gap:6px; padding:8px; }
+.gb-ctl{ display:flex; flex-wrap:wrap; gap:4px; align-items:center; }
+.gb-ctl button{ border:1px solid var(--border-strong); background:var(--surface); color:var(--text); border-radius:8px; padding:3px 9px; font:700 11.5px var(--font); cursor:pointer; }
+.gb-ctl button.on{ background:var(--accent); border-color:var(--accent); color:#fff; }
+.gb-ctl label{ font-size:11.5px; display:flex; gap:4px; align-items:center; cursor:pointer; }
+.gb-cv{ position:relative; flex:1; min-height:0; border-radius:10px; overflow:hidden; }
+.gb-note{ font-size:11.5px; line-height:1.55; color:var(--muted); min-height:2.8em; }
+.gb-note b{ color:var(--text); }
+.gb-save{ display:grid; grid-template-columns:1fr 1fr; gap:8px; flex:1; min-height:0; }
+.gb-save .st{ background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:8px 10px; font-size:12.5px; display:flex; flex-direction:column; gap:6px; }
+.gb-save .st .v{ font:800 18px var(--mono); }
+.gb-save pre{ margin:0; font:11px/1.5 var(--mono); background:var(--code-bg); border:1px solid var(--border); border-radius:10px; padding:8px 10px; overflow:auto; white-space:pre-wrap; overflow-wrap:anywhere; color:var(--text); }
+.gb-save .msg{ font-size:11.5px; font-weight:700; min-height:1.4em; }
+.gb-save .msg.ok{ color:var(--ok); } .gb-save .msg.bad{ color:var(--bad); }
+@media (max-width:560px){ .gb-save{ grid-template-columns:1fr; } }
