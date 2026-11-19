@@ -49,7 +49,7 @@ GitHub 上で **Pull Request** を作ると、変更の差分をページ単位�
 | `data-analysis.html` | `da-a.js` `da-b.js` `da.css` |
 | `free-api.html` | `free-api-a.js` `-b.js` `-c.js` |
 | `tech-stack.html` | `tech.js` `tech-b.js` `tech-b.css` |
-| `ai-tools.html` | `ai.js` |
+| `ai-tools.html` | `ai.js` `ai-b.js`（見た目は `tech-b.css` を共用） |
 | `security.html` | `security-a.js` `-b.js` `-c.js` `security.css` |
 | `database.html` | `db-a.js` `-b.js` `-c.js` `db.css` |
 | `git-terminal.html` | `git-a.js` `git-b.js` `git.css` |
