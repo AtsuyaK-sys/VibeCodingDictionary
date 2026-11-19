@@ -1,0 +1,112 @@
+/* =========================================================
+   コードの読み方辞典（cr- 接頭辞）
+   ========================================================= */
+:root{ --cr-k:#7c3aed; --cr-s:#0f766e; --cr-n:#c2410c; --cr-c:#8a8a93; }
+@media (prefers-color-scheme:dark){ :root:not([data-theme="light"]){ --cr-k:#c4b5fd; --cr-s:#5eead4; --cr-n:#fdba74; --cr-c:#7d7d88; } }
+:root[data-theme="dark"]{ --cr-k:#c4b5fd; --cr-s:#5eead4; --cr-n:#fdba74; --cr-c:#7d7d88; }
+
+/* 色付け */
+.cr-code .k, .cr-pre .k{ color:var(--cr-k); font-weight:700; }
+.cr-code .s, .cr-pre .s{ color:var(--cr-s); }
+.cr-code .n, .cr-pre .n{ color:var(--cr-n); }
+.cr-code .c, .cr-pre .c{ color:var(--cr-c); font-style:italic; }
+
+/* 行番号つきのコード */
+.cr-code{ list-style:none; margin:0; padding:5px 0; font:11.5px/1.6 var(--mono); background:var(--code-bg); color:var(--text); border:1px solid var(--border); border-radius:8px; overflow:auto; min-height:0; }
+.cr-code li{ display:flex; gap:8px; padding-right:8px; border-left:3px solid transparent; transition:background .15s; }
+.cr-code .ln{ flex:none; width:2em; text-align:right; color:var(--faint); user-select:none; }
+.cr-code .tx{ white-space:pre-wrap; overflow-wrap:anywhere; min-width:0; }
+.cr-code li.cur{ background:color-mix(in srgb, var(--accent) 20%, transparent); border-left-color:var(--accent); }
+.cr-code li.was{ background:color-mix(in srgb, var(--accent) 7%, transparent); }
+.cr-code li.pick{ cursor:pointer; }
+.cr-code li.pick:hover{ background:color-mix(in srgb, var(--stage-ink) 7%, transparent); }
+.cr-code li.bad{ background:color-mix(in srgb, var(--bad) 18%, transparent); border-left-color:var(--bad); }
+.cr-code li.good{ background:color-mix(in srgb, var(--ok) 18%, transparent); border-left-color:var(--ok); }
+.cr-code li.add{ background:color-mix(in srgb, var(--ok) 13%, transparent); }
+.cr-code li.del{ background:color-mix(in srgb, var(--bad) 12%, transparent); }
+.cr-code li.hunk{ color:var(--muted); background:color-mix(in srgb, var(--stage-ink) 6%, transparent); }
+.cr-code li.dim{ opacity:.35; }
+
+/* 部位を光らせるコード */
+.cr-pre{ margin:0; font:11.5px/1.65 var(--mono); background:var(--code-bg); color:var(--text); border:1px solid var(--border); border-radius:8px; padding:7px 10px; white-space:pre-wrap; overflow-wrap:anywhere; overflow:auto; min-height:0; flex:1; }
+.cr-p{ border-radius:4px; transition:background .2s, box-shadow .2s, opacity .2s; }
+.cr-pre.focus{ color:color-mix(in srgb, var(--text) 55%, transparent); }
+.cr-pre.focus .cr-p.on{ color:var(--text); }
+.cr-p.on{ background:color-mix(in srgb, var(--accent) 22%, transparent); box-shadow:0 0 0 2px color-mix(in srgb, var(--accent) 45%, transparent); }
+
+/* 1行ずつ実行（トレーサー） */
+.cr-tr{ container-type:inline-size; container-name:cr; }
+.cr-tw{ flex:1; min-height:0; display:grid; gap:6px; grid-template-rows:minmax(0, 1.15fr) minmax(0, 1fr); overflow:hidden; }
+.cr-side{ display:flex; flex-direction:column; gap:6px; min-width:0; min-height:0; overflow:auto; }
+.cr-box{ border:1px solid var(--border); background:var(--surface); border-radius:8px; padding:5px 8px; }
+.cr-box .kt-lbl{ font-size:10px; margin-bottom:2px; }
+.cr-vt table{ border-collapse:collapse; width:100%; font:11.5px var(--mono); }
+.cr-vt th, .cr-vt td{ text-align:left; padding:2px 4px; border-top:1px solid var(--border); vertical-align:top; }
+.cr-vt tr:first-child th, .cr-vt tr:first-child td{ border-top:0; }
+.cr-vt th{ font-weight:700; color:var(--muted); white-space:nowrap; width:1%; }
+.cr-vt td{ overflow-wrap:anywhere; }
+.cr-vt tr.chg td{ background:color-mix(in srgb, var(--accent) 16%, transparent); font-weight:700; }
+.cr-stack{ display:flex; flex-direction:column; gap:3px; }
+.cr-stack div{ font:700 11px var(--mono); padding:3px 7px; border-radius:6px; border:1px dashed var(--border-strong); color:var(--muted); }
+.cr-stack div.top{ border-style:solid; border-color:var(--accent); color:var(--text); background:color-mix(in srgb, var(--accent) 10%, var(--surface)); }
+.cr-queue{ display:flex; flex-wrap:wrap; gap:4px; font-size:11px; }
+.cr-queue span{ padding:2px 7px; border-radius:999px; background:color-mix(in srgb, var(--warn) 16%, var(--surface)); border:1px solid color-mix(in srgb, var(--warn) 40%, var(--border)); }
+.cr-queue span.mi{ background:color-mix(in srgb, var(--accent) 12%, var(--surface)); border-color:color-mix(in srgb, var(--accent) 40%, var(--border)); }
+.cr-out{ margin:0; font:11.5px/1.5 var(--mono); white-space:pre-wrap; overflow-wrap:anywhere; min-height:1.5em; }
+.cr-out span{ display:block; }
+.cr-out span.new{ color:var(--accent); font-weight:700; }
+.cr-out span.err{ color:var(--bad); font-weight:700; }
+.cr-note{ font-size:12px; min-height:3.2em; }
+.cr-note .no{ display:inline-grid; place-items:center; min-width:1.6em; height:1.6em; border-radius:999px; background:var(--accent); color:#fff; font:800 10.5px var(--mono); margin-right:6px; padding:0 4px; }
+.cr-note code, .cr-res code{ font-size:11px; padding:0 3px; border-radius:4px; background:var(--code-bg); }
+@container cr (min-width:540px){
+  .cr-tw{ grid-template-columns:minmax(0, 1.25fr) minmax(0, 1fr); grid-template-rows:minmax(0, 1fr); gap:8px; }
+}
+
+/* 予想してからめくるカード */
+.cr-cards{ flex:1; min-height:0; overflow:auto; display:grid; grid-template-columns:repeat(auto-fill, minmax(150px, 1fr)); gap:6px; align-content:start; }
+.cr-card{ text-align:left; border:1px solid var(--border-strong); background:var(--surface); color:var(--text); border-radius:9px; padding:6px 8px; font:12px/1.5 var(--font); cursor:pointer; display:flex; flex-direction:column; gap:3px; }
+.cr-card:hover{ border-color:var(--accent); }
+.cr-card code{ font:700 12px var(--mono); }
+.cr-card .a{ font:11.5px var(--mono); color:var(--muted); }
+.cr-card.open{ border-color:var(--accent); background:color-mix(in srgb, var(--accent) 7%, var(--surface)); }
+.cr-card.open .a{ color:var(--accent); font-weight:700; }
+.cr-card .why{ display:none; font-size:11px; color:var(--muted); line-height:1.5; }
+.cr-card.open .why{ display:block; }
+
+/* 配列の処理（パイプライン） */
+.cr-items{ display:flex; flex-wrap:wrap; gap:5px; align-content:flex-start; }
+.cr-item{ border:1.5px solid var(--border-strong); background:var(--surface); border-radius:9px; padding:4px 8px; font-size:11.5px; line-height:1.4; transition:opacity .25s, transform .25s; }
+.cr-item b{ display:block; font-size:12px; }
+.cr-item small{ font-family:var(--mono); color:var(--muted); }
+.cr-item.out{ opacity:.28; transform:scale(.94); }
+.cr-item.hit{ border-color:var(--accent); background:color-mix(in srgb, var(--accent) 10%, var(--surface)); }
+.cr-big{ font:800 22px var(--mono); color:var(--accent); }
+
+/* JSON の木 */
+.cr-json{ flex:1; min-height:0; overflow:auto; font:11.5px/1.7 var(--mono); background:var(--code-bg); border:1px solid var(--border); border-radius:8px; padding:6px 10px; }
+.cr-json .row{ white-space:pre; }
+.cr-json .key{ color:var(--muted); }
+.cr-json button{ font:inherit; border:0; background:color-mix(in srgb, var(--accent) 9%, transparent); color:var(--text); border-radius:4px; padding:0 4px; cursor:pointer; }
+.cr-json button:hover{ background:color-mix(in srgb, var(--accent) 22%, transparent); }
+.cr-json button.on{ background:var(--accent); color:#fff; }
+.cr-json button.s{ color:var(--cr-s); } .cr-json button.n{ color:var(--cr-n); }
+.cr-json button.on.s, .cr-json button.on.n{ color:#fff; }
+.cr-res{ font-size:12px; }
+.cr-path{ font:700 12.5px var(--mono); overflow-wrap:anywhere; }
+
+/* 時間の棒（直列と並列） */
+.cr-lanes{ display:grid; grid-template-columns:auto 1fr; gap:4px 8px; align-items:center; font-size:11.5px; }
+.cr-lanes .bar{ position:relative; height:18px; border-radius:6px; background:var(--surface-2); overflow:hidden; }
+.cr-lanes .bar i{ position:absolute; top:0; bottom:0; left:0; width:0; border-radius:6px; background:var(--accent); opacity:.85; }
+.cr-lanes .bar span{ position:absolute; right:6px; top:0; font:700 10.5px/18px var(--mono); color:var(--muted); }
+.cr-lanes .h{ grid-column:1 / -1; font-weight:800; font-size:11px; color:var(--muted); margin-top:4px; }
+
+/* 言語クイズ */
+.cr-opts{ display:flex; flex-wrap:wrap; gap:4px; }
+.cr-opts .kt-btn.ok{ background:var(--ok); border-color:var(--ok); color:#fff; }
+.cr-opts .kt-btn.ng{ background:var(--bad); border-color:var(--bad); color:#fff; }
+.cr-score{ font:800 12px var(--mono); }
+
+/* 記号を合字（>= → ≥ など）にしない。読み方を学ぶページなので、打つとおりの文字で見せる */
+code, pre, kbd, .cr-code, .cr-pre, .cr-json, .kt-code, .item .code{ font-variant-ligatures:none; font-feature-settings:"calt" 0, "liga" 0; }
