@@ -66,6 +66,7 @@ const DICTS = [
   { file:'errors.html',           icon:'⚠', group:'AIとの対話', accent:'#dc2626', title:'エラー・トラブル辞典', short:'エラー対処', desc:'よく出るエラーの意味と原因、AIへの伝え方。HTTPステータスコード一覧付き。' },
   { file:'glossary.html',         icon:'≡', group:'AIとの対話', accent:'#0369a1', title:'開発用語辞典', short:'開発用語', desc:'非エンジニアがAIと会話するための基本用語。Web・データ・Git・インフラ・AI用語。' },
   { file:'release.html',          icon:'✓', group:'公開・素材', accent:'#15803d', title:'公開・品質チェック辞典', short:'公開チェック', desc:'SEO・OGP・パフォーマンス・セキュリティ・アクセシビリティ・法務。チェックを付けながら確認。' },
+  { file:'accessibility.html',    icon:'♿', group:'公開・素材', accent:'#0e7490', title:'アクセシビリティ辞典', short:'アクセシビリティ', desc:'見え方の体験、スクリーンリーダーにどう聞こえるか、alt と見出し、コントラストと色、拡大とリフロー、キーボードとフォーカス、HTMLとARIA、フォームのエラー、動きと字幕、自動チェックとルール。よくない作りと配慮した作りを切り替えて比べる。' },
   { file:'licenses.html',         icon:'©', group:'公開・素材', accent:'#1e3a8a', title:'著作権・ライセンス・AIのルール辞典', short:'著作権・ライセンス', desc:'著作物と保護期間、引用の条件、OSSライセンスの義務、自分の作品へのライセンスの付け方、素材・フォント・音楽の規約、生成AIと著作権、個人情報・肖像・商標、公開前チェックと困ったときの相談先。' },
   { file:'testing.html',          icon:'☑', group:'公開・素材', accent:'#4d7c0f', title:'テスト・品質辞典', short:'テスト・品質', desc:'テストの種類と書き方、ページ内で動くミニテストランナー、境界値・モック・カバレッジ、PlaywrightのE2E、アクセシビリティと表示速度、見た目のテスト、CI、AIが書きがちな悪いテスト。' },
   { file:'app-distribution.html', icon:'▯', group:'公開・素材', accent:'#0284c7', title:'スマホアプリ・配布形態辞典', short:'アプリ・配布形態', desc:'Web・PWA・スマホアプリ・デスクトップ・ブラウザ拡張・LINEミニアプリの選び方、許可の聞き方、ストア審査と日本の手数料、段階的公開と更新。' },

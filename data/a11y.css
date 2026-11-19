@@ -1,0 +1,110 @@
+/* =========================================================
+   アクセシビリティ辞典（ax- 接頭辞）
+   ========================================================= */
+.ax-mk{ display:inline-grid; place-items:center; min-width:1.6em; height:1.6em; border-radius:999px; font:900 11px var(--font); color:#fff; flex:none; }
+.ax-mk.ok{ background:var(--ok); } .ax-mk.warn{ background:var(--warn); } .ax-mk.bad{ background:var(--bad); }
+.ax-row2{ display:flex; gap:6px; align-items:center; flex-wrap:wrap; font-size:11px; }
+.ax-row2 > .kt-lbl{ min-width:4em; }
+
+/* 見本の小さなページ（テーマに関係なく、明るい紙として見せる） */
+.ax-frame{ position:relative; flex:1; min-height:0; overflow:auto; border-radius:10px; border:1px solid var(--border-strong); background:#fff; }
+.ax-mini{ color:#222; background:#fff; font:13px/1.6 var(--font); padding:10px 12px; display:flex; flex-direction:column; gap:6px; min-width:0; }
+.ax-mini h1, .ax-mini h2, .ax-mini h3, .ax-mini p{ margin:0; }
+.ax-top{ display:flex; gap:8px; align-items:center; border-bottom:1px solid #e5e5e5; padding-bottom:6px; }
+.ax-top img{ border-radius:6px; flex:none; }
+.ax-big{ font-size:15px; font-weight:800; }
+.ax-h{ font-size:14px; font-weight:800; }
+.ax-mini a{ color:#1d4ed8; }
+.ax-mini label{ font-size:12px; font-weight:700; }
+.ax-mini input[type=text], .ax-mini input[type=search], .ax-mini input[type=email], .ax-mini input:not([type]){ font:13px var(--font); padding:4px 8px; border:1px solid #999; border-radius:6px; min-width:0; flex:1 1 120px; background:#fff; color:#222; }
+.ax-mini button, .ax-btn, .ax-icbtn{ font:700 13px var(--font); border-radius:8px; border:0; padding:6px 12px; background:#1d4ed8; color:#fff; cursor:pointer; display:inline-block; }
+.ax-icbtn{ padding:4px 8px; background:#e5e7eb; color:#222; }
+.ax-mini button.ic{ padding:4px 8px; background:#e5e7eb; color:#222; }
+.ax-mini .ax-r{ display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
+.ax-mini :focus-visible{ outline:3px solid #f59e0b; outline-offset:2px; }
+.ax-noring :focus, .ax-noring :focus-visible{ outline:none !important; }
+
+/* 体験のフィルター */
+.ax-blur{ filter:blur(2.2px); }
+.ax-dim{ filter:contrast(.45) brightness(1.35); }
+.ax-p{ filter:url(#ax-f-p); } .ax-d{ filter:url(#ax-f-d); } .ax-t{ filter:url(#ax-f-t); } .ax-g{ filter:grayscale(1); }
+.ax-hide .ax-mini{ visibility:hidden; }
+
+/* 読み上げの一覧 */
+.ax-say{ margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:3px; overflow:auto; min-height:0; font-size:12px; }
+.ax-say li{ display:flex; gap:6px; align-items:flex-start; padding:3px 7px; border-radius:7px; background:var(--surface); border:1px solid var(--border); line-height:1.5; }
+.ax-say li .v{ font-family:var(--mono); font-size:11.5px; font-weight:700; }
+.ax-say li small{ display:block; color:var(--muted); font-size:10.5px; }
+.ax-say li.bad{ border-color:color-mix(in srgb, var(--bad) 50%, var(--border)); background:color-mix(in srgb, var(--bad) 7%, var(--surface)); }
+.ax-say li.warn{ border-color:color-mix(in srgb, var(--warn) 50%, var(--border)); background:color-mix(in srgb, var(--warn) 7%, var(--surface)); }
+.ax-say li .n{ font:700 10px var(--mono); color:var(--faint); min-width:1.4em; text-align:right; padding-top:2px; }
+.ax-split{ display:flex; gap:8px; flex:1; min-height:0; }
+.ax-split > *{ flex:1 1 0; min-width:0; display:flex; flex-direction:column; gap:5px; min-height:0; }
+@media (max-width:640px){ .ax-split{ flex-direction:column; } }
+
+/* 見出しの目次 */
+.ax-outline{ margin:0; padding:6px 8px; list-style:none; font-size:12px; border:1px solid var(--border); border-radius:8px; background:var(--surface); overflow:auto; min-height:0; }
+.ax-outline li{ padding:1px 0; }
+.ax-outline li b{ font:700 10.5px var(--mono); color:var(--accent); margin-right:5px; }
+.ax-outline li.skip{ color:var(--bad); }
+
+/* コントラスト */
+.ax-cc{ display:grid; grid-template-columns:auto auto 1fr; gap:4px 8px; align-items:center; font-size:11.5px; }
+.ax-cc input[type=color]{ width:34px; height:24px; padding:0; border:1px solid var(--border-strong); border-radius:6px; background:none; }
+.ax-cc .kt-in{ padding:3px 7px; font:12px var(--mono); max-width:110px; }
+.ax-prev{ border-radius:10px; padding:8px 12px; border:1px solid var(--border); }
+.ax-prev .s{ font-size:15px; } .ax-prev .l{ font-size:24px; font-weight:700; line-height:1.3; }
+.ax-ratio{ font:800 26px var(--mono); }
+.ax-badges{ display:flex; flex-wrap:wrap; gap:4px; }
+
+/* キーボード */
+.ax-kf{ position:relative; }
+.ax-no{ position:absolute; z-index:2; min-width:18px; height:18px; border-radius:999px; background:#7c3aed; color:#fff; font:800 10.5px/18px var(--mono); text-align:center; pointer-events:none; box-shadow:0 0 0 2px #fff; }
+.ax-no.x{ background:#dc2626; }
+.ax-mini .chk{ display:flex; gap:5px; align-items:center; font-size:12px; }
+.ax-status{ font:12px var(--mono); padding:4px 8px; border-radius:7px; background:var(--surface); border:1px solid var(--border); overflow-wrap:anywhere; }
+.ax-ov{ position:absolute; inset:0; background:rgb(0 0 0 / .45); display:flex; align-items:center; justify-content:center; z-index:3; border-radius:10px; }
+.ax-dlg{ background:#fff; color:#222; border-radius:12px; padding:12px 14px; width:min(260px, 90%); font-size:13px; display:flex; flex-direction:column; gap:8px; box-shadow:0 10px 30px rgb(0 0 0 / .3); }
+.ax-dlg input{ font:13px var(--font); padding:4px 8px; border:1px solid #999; border-radius:6px; }
+dialog.ax-dlg{ border:0; }
+dialog.ax-dlg::backdrop{ background:rgb(0 0 0 / .45); }
+
+/* イベントのログ */
+.ax-log{ margin:0; font:11.5px/1.5 var(--mono); white-space:pre-wrap; overflow:auto; min-height:0; flex:1; background:var(--code-bg); border:1px solid var(--border); border-radius:8px; padding:6px 9px; color:var(--text); }
+.ax-log span{ display:block; } .ax-log .new{ color:var(--accent); font-weight:700; }
+.ax-code{ margin:0; font:11.5px/1.6 var(--mono); white-space:pre-wrap; overflow-wrap:anywhere; background:var(--code-bg); border:1px solid var(--border); border-radius:8px; padding:6px 9px; color:var(--text); }
+.ax-code b{ color:var(--accent); }
+
+/* フォーム */
+.ax-mini .fld{ display:flex; flex-direction:column; gap:2px; }
+.ax-mini .req{ color:#b91c1c; font-size:11px; font-weight:700; margin-left:4px; }
+.ax-mini .err{ color:#b91c1c; font-size:12px; font-weight:700; }
+.ax-mini input.bad{ border-color:#dc2626 !important; border-width:2px !important; }
+.ax-mini .sum{ border:2px solid #b91c1c; border-radius:8px; padding:6px 9px; font-size:12px; background:#fef2f2; }
+.ax-mini .sum:focus{ outline:3px solid #f59e0b; }
+.ax-mini .sum ul{ margin:2px 0 0; padding-left:1.2em; }
+.ax-mini .sum a{ color:#991b1b; }
+
+/* リフロー */
+.ax-zoomframe{ flex:1; min-height:0; overflow:auto; border:1px solid var(--border-strong); border-radius:10px; background:#fff; }
+.ax-page{ color:#222; font:13px/1.6 var(--font); padding:8px; }
+.ax-page .bar{ display:flex; gap:8px; align-items:center; background:#1e3a8a; color:#fff; padding:6px 10px; border-radius:6px; font-weight:800; }
+.ax-page .cols{ display:flex; gap:8px; margin-top:8px; }
+.ax-page .cols > div{ border:1px solid #ddd; border-radius:6px; padding:6px 8px; }
+.ax-page.fixed{ width:620px; }
+.ax-page.fixed .cols > div{ width:300px; flex:none; }
+.ax-page.fluid .cols{ flex-wrap:wrap; }
+.ax-page.fluid .cols > div{ flex:1 1 180px; min-width:0; }
+
+/* 動き */
+.ax-stagebox{ flex:1; min-height:0; border-radius:10px; border:1px solid var(--border); background:var(--surface); display:flex; align-items:center; justify-content:center; overflow:hidden; position:relative; }
+.ax-mv{ width:120px; height:76px; border-radius:14px; background:linear-gradient(135deg, var(--accent), #7c3aed); color:#fff; display:grid; place-items:center; font-weight:800; font-size:13px; }
+.ax-mv.anim{ animation:ax-mv 1.6s ease-in-out infinite alternate; }
+.ax-mv.calm{ animation:ax-fade 2.4s ease-in-out infinite alternate; }
+@keyframes ax-mv{ from{ transform:translateX(-70px) rotate(-12deg) scale(.9); } to{ transform:translateX(70px) rotate(12deg) scale(1.1); } }
+@keyframes ax-fade{ from{ opacity:.55; } to{ opacity:1; } }
+
+/* 自動チェック */
+.ax-res{ margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:3px; overflow:auto; min-height:0; flex:1; font-size:12px; }
+.ax-res li{ display:flex; gap:6px; align-items:flex-start; padding:3px 7px; border-radius:7px; background:var(--surface); border:1px solid var(--border); line-height:1.5; }
+.ax-res li code{ font-size:11px; }
