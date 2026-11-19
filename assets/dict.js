@@ -57,6 +57,7 @@ const DICTS = [
   { file:'git-terminal.html',     icon:'⑂', group:'開発',       accent:'#e8590c', title:'Git・ターミナル・開発環境辞典', short:'Git・ターミナル', desc:'Gitの仕組みと元に戻す逆引き、ブランチのシミュレーター、練習用ターミナル、パッケージ・環境変数・ポートの仕組み。' },
   { file:'start.html',            icon:'🔰', group:'AIとの対話', accent:'#16a34a', title:'はじめてガイド', short:'はじめてガイド', desc:'はじめての人の入口。バイブコーディングの流れ、作りたいもの別の読む順番、最初の1時間と指示文メーカー、まず覚える言葉、つまずいたときの対処、辞典の地図。' },
   { file:'ai-basics.html',        icon:'🧠', group:'AIとの対話', accent:'#0077b6', title:'AI・機械学習のしくみ辞典', short:'AI・機械学習のしくみ', desc:'AIの全体の地図、データから学ぶしくみ、分類とグループ分け、成績の測り方、ニューラルネット、LLMが文章を作るしくみ、画像生成、限界と付き合い方。小さなAIをその場で学習させて確かめる。' },
+  { file:'ai-daily.html',         icon:'🤝', group:'AIとの対話', accent:'#ea580c', title:'AIの使い方辞典', short:'AIの使い方', desc:'AI企業の公式ガイドの共通点から、任せ方・伝え方・見極め方を整理。文章・要約・調べもの・考える・学ぶ・表計算・資料・メール・会議・翻訳・画像を、状況に合わせて選べる複数の道で紹介。安全な使い方とツールの選び方も。' },
   { file:'ai-workflow.html',      icon:'▤', group:'AIとの対話', accent:'#0d9488', title:'要件定義・AI開発の進め方辞典', short:'要件定義・AI開発の進め方', desc:'1枚企画書・要件・画面設計・タスク分解、AIとの開発サイクル、CLAUDE.md とエージェントの使いこなし、テスト、テンプレート集。' },
   { file:'automation.html',       icon:'⟳', group:'開発',       accent:'#059669', title:'自動化・Bot辞典', short:'自動化・Bot', desc:'トリガーとアクション、Google Apps Script、ノーコード自動化、Webhookの署名と二重処理、cronとタイムゾーン、LINE・Slack・DiscordのBot、スクレイピングのルール、AI×自動化。' },
   { file:'payments.html',         icon:'¥', group:'開発',       accent:'#b45309', title:'決済・収益化辞典', short:'決済・収益化', desc:'収益モデルとサブスクの数字、料金表と総額表示、Stripeの決済とWebhook、サブスクの状態管理、特商法・景表法・資金決済法・インボイス、カード情報の非保持化と3Dセキュア、広告。' },
