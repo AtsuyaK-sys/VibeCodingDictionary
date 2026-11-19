@@ -36,7 +36,7 @@ GitHub 上で **Pull Request** を作ると、変更の差分をページ単位�
 |---|---|
 | `web-design.html` | `web-design-a.js` `-b.js` `-c.js` `web-design-demos.css` `web-design-skins.css` |
 | `motion.html` | `motion-a.js` 〜 `motion-e.js` `motion.css` `motion-play.css` |
-| `ui-components.html` | `ui.js` `ui.css` |
+| `ui-components.html` | `ui.js` `ui.css` `ui-b.js` `ui-b.css` |
 | `color-typography.html` | `color.js` `color.css` |
 | `ux-writing.html` | `ux-a.js` `ux-b.js` `ux.css` |
 | `motion-math.html` | `mm-a.js` `mm-b.js` `mm.css` |

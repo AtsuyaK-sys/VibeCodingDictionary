@@ -38,7 +38,7 @@ const GROUPS = ['デザイン', 'メディア', '開発', 'AIとの対話', '公
 const DICTS = [
   { file:'web-design.html',       icon:'✦', group:'デザイン',   accent:'#6d4cff', title:'Webデザイン・アニメーション辞典', short:'Webデザイン・アニメ', desc:'デザインスタイル、CSSアニメーション、ホバー、スクロール演出、テキスト・背景エフェクト、イージングを実際に動かして確認。' },
   { file:'motion.html',           icon:'◉', group:'デザイン',   accent:'#c026d3', title:'モーション・インタラクション辞典', short:'モーション・操作感', desc:'押す・切り替える・現れる・スクロールするときの動き。Xで話題の演出、CSS／JSで作る遊び心のあるおもちゃ、気持ちよく見せる調整のコツまで触って確認。' },
-  { file:'ui-components.html',    icon:'▣', group:'デザイン',   accent:'#0f8b8d', title:'UIコンポーネント辞典', short:'UIコンポーネント', desc:'ボタン、フォーム、ナビ、モーダル、トースト、テーブル…画面部品の正式名称と動く見本。' },
+  { file:'ui-components.html',    icon:'▣', group:'デザイン',   accent:'#0f8b8d', title:'UIコンポーネント辞典', short:'UIコンポーネント', desc:'ボタン、フォーム、ナビ、モーダル、トースト、テーブル、スマホのボトムシートやスワイプ、カレンダー・カンバン・チャット…画面部品の正式名称と動く見本。' },
   { file:'color-typography.html', icon:'◐', group:'デザイン',   accent:'#e2562b', title:'配色・タイポグラフィ辞典', short:'配色・フォント', desc:'配色理論、雰囲気別パレット、グラデーション、日本語/欧文フォント、余白・影・角丸のスケール。' },
   { file:'ux-writing.html',       icon:'✎', group:'デザイン',   accent:'#db2777', title:'UXライティング辞典', short:'UXライティング', desc:'ボタン・ラベル・エラー・空の状態・通知の文言、トーンと敬語、日本語の表記ゆれチェッカー、多言語化、AIへの文言の頼み方。' },
   { file:'motion-math.html',      icon:'∿', group:'デザイン',   accent:'#65a30d', title:'動きの計算辞典（数学・物理）', short:'動きの計算', desc:'座標とベクトル、lerpとイージング、重力と積分、ばね、波とノイズ、当たり判定、ベジェ曲線と等速移動、スクロール・FLIP・慣性などUIの計算。点をドラッグして式を確かめる。' },
