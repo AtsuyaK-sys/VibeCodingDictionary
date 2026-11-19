@@ -1,0 +1,37 @@
+/* 指示文テンプレ辞典 — 追加分（pb- 接頭辞） */
+.pb{ position:absolute; inset:0; display:flex; flex-direction:column; gap:7px; padding:10px 12px; font-size:12.5px; color:var(--stage-ink); }
+.pb-seg{ display:flex; flex-wrap:wrap; gap:3px; }
+.pb-seg button{ border:1px solid var(--border-strong); background:var(--surface); color:var(--text); border-radius:8px; padding:3px 9px; font:700 11.5px var(--font); cursor:pointer; }
+.pb-seg button.on{ background:var(--accent); border-color:var(--accent); color:#fff; }
+.pb-two{ display:grid; grid-template-columns:1fr 1fr; gap:8px; flex:1; min-height:0; }
+.pb-two > div{ display:flex; flex-direction:column; gap:4px; min-height:0; }
+.pb-lbl{ font-size:11px; font-weight:800; color:var(--muted); }
+.pb-lbl.bad{ color:var(--bad); } .pb-lbl.ok{ color:var(--ok); }
+.pb-box{ margin:0; flex:1; min-height:0; overflow:auto; border-radius:10px; padding:7px 10px; font:12px/1.65 var(--font); white-space:pre-wrap; overflow-wrap:anywhere; border:1px solid var(--border); background:var(--surface); color:var(--text); }
+.pb-box.bad{ border-color:color-mix(in srgb, var(--bad) 45%, var(--border)); }
+.pb-box.ok{ border-color:color-mix(in srgb, var(--ok) 45%, var(--border)); }
+.pb-box mark{ background:color-mix(in srgb, var(--ok) 22%, transparent); color:inherit; border-radius:3px; padding:0 1px; }
+.pb-why{ margin:0; padding-left:1.2em; font-size:11.5px; line-height:1.55; color:var(--muted); }
+.pb-pts{ display:flex; flex-wrap:wrap; gap:4px; }
+.pb-pts span{ font-size:10.5px; font-weight:800; border-radius:999px; padding:1px 8px; background:color-mix(in srgb, var(--ok) 14%, var(--surface)); color:var(--ok); }
+@media (max-width:560px){ .pb-two{ grid-template-columns:1fr; } }
+.pb-in{ width:100%; flex:1; min-height:70px; font:12.5px/1.6 var(--font); padding:7px 10px; border-radius:10px; border:1px solid var(--border-strong); background:var(--surface); color:var(--text); resize:none; box-sizing:border-box; }
+.pb-score{ display:flex; gap:8px; align-items:center; }
+.pb-score b{ font:800 20px var(--mono); }
+.pb-meter{ flex:1; height:8px; border-radius:9px; background:var(--surface-2); overflow:hidden; }
+.pb-meter i{ display:block; height:100%; background:var(--accent); transition:width .25s; }
+.pb-list{ margin:0; padding:0; list-style:none; display:grid; grid-template-columns:1fr 1fr; gap:3px 10px; font-size:11.5px; overflow:auto; min-height:0; }
+.pb-list li{ display:flex; gap:5px; align-items:flex-start; line-height:1.45; }
+.pb-list li i{ font-style:normal; font-weight:900; }
+.pb-list li.ok i{ color:var(--ok); } .pb-list li.no i{ color:var(--muted); }
+.pb-list li.no{ color:var(--muted); }
+@media (max-width:420px){ .pb-list{ grid-template-columns:1fr; } }
+.pb-steps{ flex:1; min-height:0; overflow:auto; display:flex; flex-direction:column; gap:5px; }
+.pb-steps > div{ border:1px solid var(--border); border-radius:10px; padding:6px 10px; background:var(--surface); font-size:12px; line-height:1.55; opacity:.5; transition:opacity .2s, border-color .2s; color:var(--text); }
+.pb-steps > div.on{ opacity:1; border-color:var(--accent); }
+.pb-steps > div.done{ opacity:.85; }
+.pb-steps pre{ margin:4px 0 0; font:11.5px/1.55 var(--mono); background:var(--code-bg); border-radius:7px; padding:5px 8px; white-space:pre-wrap; overflow-wrap:anywhere; }
+.pb-nav{ display:flex; gap:6px; align-items:center; }
+.pb-nav button{ border:1px solid var(--border-strong); background:var(--surface); color:var(--text); border-radius:8px; padding:3px 10px; font:700 11.5px var(--font); cursor:pointer; }
+.pb-nav button.pri{ background:var(--accent); border-color:var(--accent); color:#fff; }
+.pb-nav span{ margin-left:auto; font:700 11px var(--mono); color:var(--muted); }
