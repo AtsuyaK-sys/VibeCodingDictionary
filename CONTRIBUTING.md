@@ -69,7 +69,7 @@ GitHub 上で **Pull Request** を作ると、変更の差分をページ単位�
 | `release.html` | `release.js` `release-b.js` `release-b.css` |
 | `testing.html` | `ts-a.js` `ts-b.js` `ts.css` |
 | `app-distribution.html` | `ap-a.js` `ap-b.js` `ap.css` |
-| `resources.html` | `resources.js` |
+| `resources.html` | `resources.js` `resources-b.js` |
 
 **タブを増やした・名前を変えたとき**は、同じブランチで `index.html` の `TOC`（一覧に出るタブ名）も合わせて直します。
 
