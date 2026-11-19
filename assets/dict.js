@@ -62,6 +62,7 @@ const DICTS = [
   { file:'payments.html',         icon:'¥', group:'開発',       accent:'#b45309', title:'決済・収益化辞典', short:'決済・収益化', desc:'収益モデルとサブスクの数字、料金表と総額表示、Stripeの決済とWebhook、サブスクの状態管理、特商法・景表法・資金決済法・インボイス、カード情報の非保持化と3Dセキュア、広告。' },
   { file:'ai-integration.html',   icon:'◈', group:'開発',       accent:'#0891b2', title:'AI組み込み辞典（LLMアプリ開発）', short:'AI組み込み（LLM）', desc:'トークン、APIの呼び方、構造化出力、ツールとエージェント、RAG、料金計算とプロンプトキャッシュ、評価と安全、AI機能のUX。' },
   { file:'prompts.html',          icon:'❝', group:'AIとの対話', accent:'#d97706', title:'バイブコーディング指示文辞典', short:'指示文テンプレ', desc:'作成依頼・修正依頼・デバッグ・デザイン指示・品質要求の伝え方テンプレート集。' },
+  { file:'code-reading.html',     icon:'📖', group:'AIとの対話', accent:'#5b21b6', title:'コードの読み方辞典', short:'コードの読み方', desc:'AIが書いたコードを自分で読むための辞典。読み方のコツ、変数と型、条件とくり返し、関数とスコープ、配列・JSON、非同期、言語の見分け方、AIのコードの確認ポイント。1行ずつ実行して変数の中身を見る。' },
   { file:'errors.html',           icon:'⚠', group:'AIとの対話', accent:'#dc2626', title:'エラー・トラブル辞典', short:'エラー対処', desc:'よく出るエラーの意味と原因、AIへの伝え方。HTTPステータスコード一覧付き。' },
   { file:'glossary.html',         icon:'≡', group:'AIとの対話', accent:'#0369a1', title:'開発用語辞典', short:'開発用語', desc:'非エンジニアがAIと会話するための基本用語。Web・データ・Git・インフラ・AI用語。' },
   { file:'release.html',          icon:'✓', group:'公開・素材', accent:'#15803d', title:'公開・品質チェック辞典', short:'公開チェック', desc:'SEO・OGP・パフォーマンス・セキュリティ・アクセシビリティ・法務。チェックを付けながら確認。' },

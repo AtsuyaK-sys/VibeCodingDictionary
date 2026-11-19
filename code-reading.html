@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>コードの読み方辞典 | Vibe Coding 辞典</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700;800;900&display=swap">
+<link rel="stylesheet" href="assets/dict.css">
+<link rel="stylesheet" href="assets/kit.css">
+<link rel="stylesheet" href="data/cr.css">
+</head>
+<body>
+<script src="assets/dict.js"></script>
+<script src="assets/kit.js"></script>
+<script>window.TABS = [];</script>
+<script src="data/cr-a.js"></script>
+<script src="data/cr-b.js"></script>
+<script>
+VD.render({
+  id: 'code-reading',
+  icon: '📖',
+  en: 'How to Read Code',
+  title: 'コードの読み方辞典',
+  accent: '#5b21b6',
+  lead: 'AIが書いたコードを「なんとなく」ではなく、<b>自分で読んで確かめられる</b>ようになるための辞典です。読み方のコツ、変数と値、条件とくり返し、関数、配列とオブジェクト、待つ処理（非同期）、言語の見分け方、AIのコードの確認ポイントまで。<b>コードを1行ずつ実行して、変数の中身が変わる様子</b>をその場で見られます。',
+  howto: [
+    ['1行ずつ進める', '見本の「次へ ▶」で1行ずつ実行。右側の「変数の中身」と「出力」がどう変わるかを見る'],
+    ['入力を変える', '年齢や条件を切り替えると、通る行が変わる。境目の値も試す'],
+    ['AIに聞く', '各項目の「AIへの指示例」で、自分のコードを同じように説明してもらう'],
+  ],
+  tabs: TABS,
+});
+</script>
+</body>
+</html>
