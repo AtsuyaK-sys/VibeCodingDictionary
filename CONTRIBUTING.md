@@ -60,7 +60,7 @@ GitHub 上で **Pull Request** を作ると、変更の差分をページ単位�
 | `ai-basics.html` | `ab-a.js` `ab-b.js` `ab.css` |
 | `ai-daily.html` | `ad-a.js` `ad-b.js` `ad.css` |
 | `ai-workflow.html` | `wf-a.js` `wf-b.js` `wf.css` |
-| `prompts.html` | `prompts.js` |
+| `prompts.html` | `prompts.js` `prompts-b.js` `prompts-b.css` |
 | `code-reading.html` | `cr-a.js` `cr-b.js` `cr.css` |
 | `accessibility.html` | `a11y-a.js` `a11y-b.js` `a11y.css` |
 | `licenses.html` | `lc-a.js` `lc-b.js` `lc.css`（設計書：`docs/design/licenses.md`） |
