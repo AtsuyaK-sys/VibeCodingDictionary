@@ -45,7 +45,7 @@ const DICTS = [
   { file:'dataviz.html',          icon:'▥', group:'デザイン',   accent:'#2a78d6', title:'グラフ・データ可視化辞典', short:'グラフ・データ可視化', desc:'目的別のグラフの選び方、基本のグラフ、2軸・虹色などの失敗と直し方、操作できるグラフ、ダッシュボードとKPI、データの準備、ライブラリ、地図。' },
   { file:'video.html',            icon:'▶', group:'メディア',   accent:'#e0364f', title:'動画制作辞典', short:'動画制作', desc:'ショットサイズ、カメラワーク、トランジション、カラーグレーディング、テロップ、仕様、FFmpeg・AI動画プロンプト。' },
   { file:'sound.html',            icon:'♪', group:'メディア',   accent:'#c2410c', title:'サウンド・効果音辞典', short:'サウンド・効果音', desc:'その場で鳴らせる効果音・波形・和音・音階・BPM、BGMジャンル語彙、音響用語、Web Audioの実装。' },
-  { file:'game-dev.html',         icon:'◆', group:'メディア',   accent:'#2f9e44', title:'ゲーム制作辞典', short:'ゲーム制作', desc:'ジャンル、メカニクス、手触り演出（ジュース）、物理・当たり判定をCanvasで動かして確認。' },
+  { file:'game-dev.html',         icon:'◆', group:'メディア',   accent:'#2f9e44', title:'ゲーム制作辞典', short:'ゲーム制作', desc:'ジャンル、メカニクス、手触り演出（ジュース）、敵の動き・セーブ・HUD・ステージ作りの実装パターン、物理・当たり判定をCanvasで動かして確認。' },
   { file:'image-prompts.html',    icon:'◩', group:'メディア',   accent:'#0ea5e9', title:'画像・イラスト表現辞典（画像生成プロンプト語彙）', short:'画像・イラスト表現', desc:'旧PDF「Qwen-Image-2.1 プロンプト語彙辞典」をHTML化。人物・背景・光・カメラ・画風・文字・編集など約1,400語＋組み立て機・ライティングや構図の見本。' },
   { file:'3d.html',               icon:'⬢', group:'メディア',   accent:'#7c3aed', title:'3D・WebGL・シェーダー辞典', short:'3D・WebGL・シェーダー', desc:'シーン・カメラ・ライト、PBRの質感、光と影、カメラ操作とクリック判定、シェーダーの遊び場、3Dモデルの軽量化、性能、商品ビューア。three.jsで実際に動かして確認。' },
   { file:'data-analysis.html',    icon:'∑', group:'開発',       accent:'#a16207', title:'データ分析・統計の基本辞典', short:'データ分析・統計', desc:'分析の流れ、平均と中央値・ばらつき、分布、相関と因果の取り違え、標本と誤差、A/Bテストとp値、データの前処理、スプレッドシート・pandas・SQLの早見表。数字を動かして確かめる。' },

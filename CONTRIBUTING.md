@@ -43,7 +43,7 @@ GitHub 上で **Pull Request** を作ると、変更の差分をページ単位�
 | `dataviz.html` | `dv-a.js` `dv-b.js` `dv.css` |
 | `video.html` | `video-a.js` `-b.js` `-c.js` `video.css` |
 | `sound.html` | `sound.js` |
-| `game-dev.html` | `game.js` |
+| `game-dev.html` | `game.js` `game-b.js` `game-b.css` |
 | `image-prompts.html` | `ig-vocab.js` `ig-a.js` `ig-b.js` `ig.css` |
 | `3d.html` | `threed-a.js` `threed-b.js` `threed.css` |
 | `data-analysis.html` | `da-a.js` `da-b.js` `da.css` |
