@@ -1,0 +1,20 @@
+/* 技術スタック辞典 — 追加分（tc- 接頭辞）：構成を選ぶチャート */
+.tc{ position:absolute; inset:0; display:flex; flex-direction:column; gap:8px; padding:10px 12px; color:var(--stage-ink); }
+.tc-path{ display:flex; flex-wrap:wrap; gap:4px; font-size:10.5px; color:var(--muted); }
+.tc-path span{ padding:1px 7px; border-radius:999px; background:color-mix(in srgb, var(--stage-ink) 7%, transparent); }
+.tc-body{ flex:1; min-height:0; overflow:auto; display:flex; flex-direction:column; gap:8px; }
+.tc-q{ font:800 14px/1.5 var(--font); }
+.tc-opts{ display:grid; grid-template-columns:repeat(auto-fill, minmax(220px, 1fr)); gap:6px; }
+.tc-opts button{ text-align:left; border:1.5px solid var(--border-strong); background:var(--surface); color:var(--text); border-radius:10px; padding:8px 11px; font:700 12.5px/1.45 var(--font); cursor:pointer; }
+.tc-opts button:hover{ border-color:var(--accent); background:color-mix(in srgb, var(--accent) 6%, var(--surface)); }
+.tc-res{ border:2px solid var(--accent); border-radius:12px; padding:10px 13px; background:color-mix(in srgb, var(--accent) 5%, var(--surface)); font-size:12.5px; line-height:1.6; color:var(--text); }
+.tc-res > b{ font:900 16px var(--font); color:var(--accent); display:block; margin-bottom:4px; }
+.tc-res dl{ margin:0 0 6px; display:grid; grid-template-columns:auto 1fr; gap:3px 10px; }
+.tc-res dt{ color:var(--muted); font-weight:700; white-space:nowrap; }
+.tc-res dd{ margin:0; }
+.tc-res p{ margin:0 0 8px; }
+.tc-cp, .tc-nav button{ border:1px solid var(--border-strong); background:var(--surface); color:var(--text); border-radius:8px; padding:4px 10px; font:700 11.5px var(--font); cursor:pointer; }
+.tc-cp{ background:var(--accent); border-color:var(--accent); color:#fff; }
+.tc-nav{ display:flex; gap:6px; }
+.tc-nav button[disabled]{ opacity:.45; cursor:default; }
+@media (max-width:420px){ .tc-res dl{ grid-template-columns:1fr; } }
