@@ -1,0 +1,26 @@
+/* 配色・タイポグラフィ辞典 — 追加分（tg- 接頭辞）：トークン・ジェネレーター */
+.tg{ position:absolute; inset:0; display:flex; flex-direction:column; gap:7px; padding:10px 12px; font-size:12px; color:var(--stage-ink); }
+.tg-row{ display:flex; gap:6px; align-items:center; flex-wrap:wrap; }
+.tg-row > span:first-child{ font-size:11px; font-weight:800; color:var(--muted); }
+.tg-row input[type=color]{ width:36px; height:26px; padding:0; border:1px solid var(--border-strong); border-radius:6px; background:none; }
+.tg-row .hx{ width:90px; font:12px var(--mono); padding:3px 7px; border-radius:7px; border:1px solid var(--border-strong); background:var(--surface); color:var(--text); }
+.tg-pre{ display:flex; gap:4px; }
+.tg-pre button{ width:20px; height:20px; border-radius:50%; border:2px solid var(--surface); box-shadow:0 0 0 1px var(--border-strong); cursor:pointer; }
+.tg-scale{ display:grid; grid-template-columns:repeat(10, 1fr); border-radius:8px; overflow:hidden; }
+.tg-scale span{ font:700 9.5px var(--mono); text-align:center; padding:6px 0; }
+.tg-two{ display:grid; grid-template-columns:minmax(0, 1fr) minmax(0, 1fr); gap:8px; flex:1; min-height:0; }
+.tg-prev{ display:flex; flex-direction:column; gap:6px; min-height:0; overflow:auto; }
+.tg-card{ border:1px solid; border-radius:10px; padding:6px 8px; }
+.tg-card small{ font-size:10px; font-weight:700; }
+.tg-in{ border:1px solid; border-radius:8px; padding:6px 9px; display:flex; flex-wrap:wrap; gap:4px 8px; align-items:center; margin-top:3px; font-size:12px; }
+.tg-in b{ width:100%; }
+.tg-tag{ font:800 10px var(--font); border-radius:999px; padding:1px 7px; }
+.tg-in button{ margin-left:auto; border:0; border-radius:7px; padding:4px 10px; font:700 11.5px var(--font); }
+.tg-right{ display:flex; flex-direction:column; gap:5px; min-height:0; }
+.tg-code{ margin:0; flex:1; min-height:0; overflow:auto; font:10.5px/1.5 var(--mono); background:var(--code-bg); border:1px solid var(--border); border-radius:8px; padding:6px 8px; white-space:pre; color:var(--text); }
+.tg-btn{ align-self:flex-start; border:0; border-radius:8px; padding:4px 10px; background:var(--accent); color:#fff; font:700 11.5px var(--font); cursor:pointer; }
+.tg-chk{ display:flex; flex-wrap:wrap; gap:4px; }
+.tg-chk span{ font:700 10.5px var(--font); border-radius:999px; padding:1px 8px; }
+.tg-chk .ok{ background:color-mix(in srgb, var(--ok) 14%, var(--surface)); color:var(--ok); }
+.tg-chk .ng{ background:color-mix(in srgb, var(--bad) 14%, var(--surface)); color:var(--bad); }
+@media (max-width:640px){ .tg-two{ grid-template-columns:1fr; grid-template-rows:auto minmax(140px, 1fr); overflow:auto; } }
