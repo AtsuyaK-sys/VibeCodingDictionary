@@ -21,7 +21,7 @@ function flow(el){ let k = 0; const box = $(el, '.rb-steps');
   const draw = () => { ds.forEach((d, i) => { d.classList.toggle('on', i === k); d.classList.toggle('done', i < k); }); $(el, '.pg').textContent = `${k + 1} / ${ds.length}`; $(el, '.nx').textContent = k >= ds.length - 1 ? '最初から ↺' : '次へ ▶'; box.scrollTop = Math.max(0, ds[k].offsetTop - box.offsetTop - 8); };
   $(el, '.pv').onclick = () => { if (k > 0){ k--; draw(); } }; $(el, '.nx').onclick = () => { k = k >= ds.length - 1 ? 0 : k + 1; draw(); }; draw(); }
 
-TABS.push({ id:'launch', label:'公開の手順と運用', icon:'🌐', intro:'チェックが終わったら、いよいよ公開です。ここでは<b>公開までの流れ</b>と、<b>公開したあとに続けること</b>をまとめます。ホスティングやドメインのくわしい比較は、今後「公開のしかた辞典」で扱う予定です。<b>チェックはこのブラウザに保存</b>されます。', sections:[ P,
+TABS.push({ id:'launch', label:'公開の手順と運用', icon:'🌐', intro:'チェックが終わったら、いよいよ公開です。ここでは<b>公開までの流れ</b>と、<b>公開したあとに続けること</b>をまとめます。ホスティングの選び方やドメインの設定は <a href="deploy.html">公開のしかた辞典</a> にくわしくまとめています。<b>チェックはこのブラウザに保存</b>されます。', sections:[ P,
   { title:'公開までの流れ', items:[
     { name:'公開までの7ステップ', en:'From checklist to launch', h:430, wide:true, tags:['全体像','最重要'], demo:'<div class="rb"><div class="rb-steps"></div><div class="rb-nav"><button type="button" class="pv">◀ 戻る</button><button type="button" class="pri nx">次へ ▶</button><span class="pg"></span></div></div>', init:(el) => flow(el),
       desc:'各ステップに<b>選べる道</b>を並べています。小さな個人サイトなら、無料のURLのまま・プレビューなしでも十分。お金や個人情報を扱うなら、プレビュー環境と監視までそろえます。',

@@ -66,6 +66,7 @@ GitHub 上で **Pull Request** を作ると、変更の差分をページ単位�
 | `licenses.html` | `lc-a.js` `lc-b.js` `lc.css`（設計書：`docs/design/licenses.md`） |
 | `errors.html` | `errors.js` `errors-b.js` `errors-b.css` |
 | `glossary.html` | `glossary.js` `glossary-b.js` |
+| `deploy.html` | `dp-a.js` `dp-b.js` `dp.css` |
 | `release.html` | `release.js` `release-b.js` `release-b.css` |
 | `testing.html` | `ts-a.js` `ts-b.js` `ts.css` |
 | `app-distribution.html` | `ap-a.js` `ap-b.js` `ap.css` |
