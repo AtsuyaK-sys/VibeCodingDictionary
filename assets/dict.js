@@ -36,6 +36,7 @@ try{
 /* ---- 辞典の一覧（ポータル・メニュー共通） ---- */
 const GROUPS = ['デザイン', 'メディア', '開発', 'AIとの対話', '公開・素材'];
 const DICTS = [
+  { file:'html-css.html',         icon:'🧱', group:'デザイン',   accent:'#1971c2', title:'HTML・CSSの基本辞典', short:'HTML・CSSの基本', desc:'HTMLとCSSのしくみ、よく使うタグ、セレクタと優先順位、ボックスモデル、Flexbox、Grid、位置と重なり、レスポンシブと文字・色。書き換えるとすぐ結果が出るライブエディタと、値を動かす見本つき。' },
   { file:'web-design.html',       icon:'✦', group:'デザイン',   accent:'#6d4cff', title:'Webデザイン・アニメーション辞典', short:'Webデザイン・アニメ', desc:'デザインスタイル、CSSアニメーション、ホバー、スクロール演出、テキスト・背景エフェクト、イージングを実際に動かして確認。' },
   { file:'motion.html',           icon:'◉', group:'デザイン',   accent:'#c026d3', title:'モーション・インタラクション辞典', short:'モーション・操作感', desc:'押す・切り替える・現れる・スクロールするときの動き。Xで話題の演出、CSS／JSで作る遊び心のあるおもちゃ、気持ちよく見せる調整のコツまで触って確認。' },
   { file:'ui-components.html',    icon:'▣', group:'デザイン',   accent:'#0f8b8d', title:'UIコンポーネント辞典', short:'UIコンポーネント', desc:'ボタン、フォーム、ナビ、モーダル、トースト、テーブル、スマホのボトムシートやスワイプ、カレンダー・カンバン・チャット…画面部品の正式名称と動く見本。' },

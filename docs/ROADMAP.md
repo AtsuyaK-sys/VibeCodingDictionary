@@ -56,7 +56,7 @@
 
 | 状態 | 案 | ブランチ |
 |---|---|---|
-| ⬜ | HTML・CSSの基本辞典（タグとボックスを触る） | `new/html-css` |
+| ✅ | HTML・CSSの基本辞典（タグとボックスを触る） | `new/html-css` |
 | ⬜ | スプレッドシート・Excel辞典（関数・ピボット・自動化） | `new/spreadsheet` |
 | ⬜ | Webのしくみ辞典（HTTP・DNS・Cookie を図で追う） | `new/web-basics` |
 | ⬜ | スマホUI・レスポンシブ辞典 | `new/mobile-ui` |
